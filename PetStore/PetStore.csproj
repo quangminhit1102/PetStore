@@ -120,23 +120,53 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Admin\css\app.css" />
+    <Content Include="Content\Admin\css\grid.css" />
+    <Content Include="Content\Admin\css\login.css" />
+    <Content Include="Content\Admin\img\backpack.jpg" />
+    <Content Include="Content\Admin\img\bg-07.svg" />
+    <Content Include="Content\Admin\img\headphone.jpg" />
+    <Content Include="Content\Admin\img\logo-lg.png" />
+    <Content Include="Content\Admin\img\logo-mb.png" />
+    <Content Include="Content\Admin\img\sneaker.jpg" />
+    <Content Include="Content\Admin\img\thumb-7.jpg" />
+    <Content Include="Content\Admin\img\user-image-2.png" />
+    <Content Include="Content\Admin\img\user-image-3.png" />
+    <Content Include="Content\Admin\img\user-image.jpg" />
+    <Content Include="Content\Admin\js\app.js" />
+    <Content Include="Content\Admin\vendor\mixitup.min.js" />
+    <Content Include="Content\Admin\vendor\owl.carousel.min.js" />
+    <Content Include="Content\Admin\vendor\slick-theme.css" />
+    <Content Include="Content\Admin\vendor\slick.css" />
+    <Content Include="Content\Admin\vendor\slick.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Content\Admin\css\login.css.map" />
+    <Content Include="Content\Admin\scss\Base\_reset.scss" />
+    <Content Include="Content\Admin\scss\Helper\_function.scss" />
+    <Content Include="Content\Admin\scss\Helper\_mixin.scss" />
+    <Content Include="Content\Admin\scss\Helper\_variable.scss" />
+    <Content Include="Content\Admin\scss\Layouts\_detail-content.scss" />
+    <Content Include="Content\Admin\scss\Layouts\_Footer.scss" />
+    <Content Include="Content\Admin\scss\Layouts\_header.scss" />
+    <Content Include="Content\Admin\scss\Layouts\_login.scss" />
+    <Content Include="Content\Admin\scss\Pages\login.scss" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Login.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -156,26 +186,22 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Content\Client\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />

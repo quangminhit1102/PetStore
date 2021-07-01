@@ -1,0 +1,138 @@
+.forny-container {
+  display: block;
+  align-items: center;
+  background-color: white;
+  .cursor-pointer {
+    cursor: pointer;
+  }
+  .forny-inner {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    & > div {
+      flex: 1;
+    }
+    & > div:first-child {
+      background-image: url(../img/bg-07.svg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-color: #ff6b6b;
+      color: hsla(210, 39%, 23%, 1);
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      @include Mediaquery($md) {
+        display: none;
+      }
+    }
+    & > div:last-child {
+      display: flex;
+      align-items: center;
+      .forny-form {
+        margin: 0 auto;
+        padding: 2.5rem;
+        width: 30rem;
+        @include Mediaquery($sm) {
+          width: 90%;
+          padding: 2rem;
+        }
+        @include Mediaquery($xs) {
+          width: 100%;
+          padding: 1.5rem;
+        }
+        .forny-logo {
+          text-align: left;
+
+          color: hsla(210, 39%, 23%, 1);
+          margin-bottom: 1rem;
+          img{
+            width: 100px;
+          }
+        }
+        .nav-tabs {
+          margin-bottom: 1.5rem;
+          border-bottom: 0;
+          .nav-item {
+            margin-bottom: 0;
+          }
+
+          .nav-link {
+            padding: 8px 0;
+            margin-right: 8px;
+            border: 3px solid transparent;
+            border-radius: 3px;
+          }
+          .active {
+            border-bottom-color: #3124e5;
+          }
+        }
+        .tab-content {
+          .active {
+            display: block;
+          }
+        }
+        .form_control {
+          position: relative;
+          margin: 15px 0 40px;
+          width: 100%;
+          & > input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 3px #e0e0e0 solid;
+
+            display: block;
+            width: 100%;
+            color: #000;
+            padding: 6px 0 7px;
+            font-size: 18px;
+            transition: all 0.3s ease-in-out;
+            &:focus-visible {
+              outline: none;
+            }
+            &:focus + .input-group-append + label,
+            &:focus + label,
+            &:valid + label,
+            &:valid + .input-group-append + label {
+              transform: translateY(-23px);
+              font-size: 15px;
+            }
+            &:focus + .input-group-append + label,
+            &:focus + .input-group-append .input-group-text,
+            &:focus + label {
+              color: #3498db;
+            }
+            &:focus {
+              border-color: #3498db;
+            }
+          }
+          & > label {
+            pointer-events: none;
+            display: block;
+            font-size: 18px;
+            position: absolute;
+            top: 6px;
+            left: 0;
+            transition: all 0.3s ease-in-out;
+            color: #7f8c8d;
+          }
+          .input-group-append {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            &:hover .input-group-text {
+              color: #000;
+              transition: color 0.3s ease;
+            }
+            .input-group-text {
+              background-color: transparent;
+              border: 0;
+              color: #7f8c8d;
+            }
+          }
+        }
+      }
+    }
+  }
+}
