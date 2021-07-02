@@ -1,4 +1,5 @@
 ﻿using Model.DAO;
+using Model.EF;
 using PetStore.Models;
 using PetStore.Models.Common;
 using System;
@@ -68,6 +69,15 @@ namespace PetStore.Controllers
             Session[ConmmonConstants.USER_SESSION] = null;
             return Redirect("/");
         }
-
+        //Register
+        [HttpPost]
+        public ActionResult Register(string username, string email, string pass, string confpass)
+        {
+            if(pass != confpass)
+            {
+                ModelState.AddModelError("", "Mật khẩu không trung khớp!");
+            }
+            return View("Index");
+        }
     }
 }

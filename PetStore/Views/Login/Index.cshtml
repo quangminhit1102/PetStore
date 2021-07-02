@@ -32,15 +32,15 @@
                     </div>
                     <ul class="nav nav-tabs justify-content-center m-4" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link bg-transparent active"
+                            <a class="nav-link bg-transparent"
                                href="#login"
                                data-toggle="tab"
                                role="tab"
                                aria-selected="false">
-                                <span>Login</span>
+                                <span style="font-weight:700;  font-size:24px">Login</span>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        @*<li class="nav-item">
                             <a class="nav-link bg-transparent"
                                href="#register"
                                data-toggle="tab"
@@ -48,21 +48,24 @@
                                aria-selected="true">
                                 <span>Register</span>
                             </a>
-                        </li>
+                        </li>*@
                     </ul>
                     @* FORM LOGIN *@
                     <div class="tab-content">
                         <div class="tab-pane fade show active" role="tabpanel" id="login">
                             @* Alert catching *@
-                            @{
+                            @*@{
                                 var anyErrors = ViewData.ModelState.Values.Where(v => v.Errors.Count != 0).Any();
                             }
                             @if (anyErrors)
                             {
+                                <div class="alert alert-danger">
+                                    @Html.ValidationSummary()
+                                </div>
+                            }*@
                             <div class="alert alert-danger">
                                 @Html.ValidationSummary()
                             </div>
-                            }
                             @using (Html.BeginForm("Login", "Login", FormMethod.Post))
                             {
                                 <div class="form_control">
@@ -75,9 +78,9 @@
                                     @*@Html.TextBoxFor(model => model.Password)*@
                                     <input required name="password" type="password" />
                                     <div class="input-group-append cursor-pointer">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-eye"></i>
-                                        </span>
+                                        @*<span class="input-group-text">
+                        <i class="fa fa-eye"></i>
+                    </span>*@
                                     </div>
                                     <label>Password</label>
                                 </div>
@@ -93,47 +96,52 @@
                         </div>
                         @* EBD FORM LOGIN *@
                         @* FORM REGISTER *@
-                        <div class="tab-pane fade" role="tabpanel" id="register">
-                            <form>
-                                <div class="form_control">
-                                    <input required name="username" type="text" />
-                                    <label>User Name</label>
-                                </div>
+                    <!--<div class="tab-pane fade" role="tabpanel" id="register">-->
+                        @* Alert catching *@
+                            <!--<div class="alert alert-danger">
+                                @Html.ValidationSummary()
+                            </div>
+                        @using (Html.BeginForm("Register", "Login", FormMethod.Post))
+                        {
+                            <div class="form_control">
+                                <input required name="username" type="text" />
+                                <label>User Name</label>
+                            </div>
 
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>Email</label>
-                                </div>
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>Email</label>
+                            </div>
 
-                                <div class="form_control">
-                                    <input required name="password" type="password" />
-                                    <div class="input-group-append cursor-pointer">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-eye"></i>
-                                        </span>
-                                    </div>
-                                    <label>Password</label>
+                            <div class="form_control">
+                                <input required name="password" type="password" />
+                                <div class="input-group-append cursor-pointer">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-eye"></i>
+                                    </span>
                                 </div>
-                                <div class="form_control">
-                                    <input required name="confpassword" type="password" />
-                                    <div class="input-group-append cursor-pointer">
-                                        <span class="input-group-text">
-                                            <i class="fa fa-eye"></i>
-                                        </span>
-                                    </div>
-                                    <label>Confirm Password</label>
+                                <label>Password</label>
+                            </div>
+                            <div class="form_control">
+                                <input required name="confpassword" type="password" />
+                                <div class="input-group-append cursor-pointer">
+                                    <span class="input-group-text">
+                                        <i class="fa fa-eye"></i>
+                                    </span>
                                 </div>
+                                <label>Confirm Password</label>
+                            </div>
 
-                                <div class="row">
-                                    <div class="col-12">
-                                        <button class="btn btn-primary btn-block">
-                                            Register
-                                        </button>
-                                    </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-primary btn-block">
+                                        Register
+                                    </button>
                                 </div>
-                            </form>
-                            @*END FORM REGISTER *@
-                        </div>
+                            </div>
+                        }-->
+                        @*END FORM REGISTER *@
+                    </div>
                     </div>
                 </div>
             </div>

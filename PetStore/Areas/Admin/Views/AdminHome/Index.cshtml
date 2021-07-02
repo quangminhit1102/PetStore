@@ -9,7 +9,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Apex Admin</title>
+    <title>Pet Store - Quản Trị</title>
     <link rel="shortcut icon" href="~/Content/Admin/img/logo-mb.png" type="image/png" />
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -292,7 +292,7 @@
         <!-- SIDEBAR MENU -->
         <ul class="sidebar-menu">
             <li>
-                <a href="#" class="active">
+                <a href="@Url.Action("Index","AdminHome")" class="active">
                     <i class="bx bx-home"></i>
                     <span>dashboard</span>
                 </a>
@@ -300,19 +300,52 @@
             <li>
                 <a href="#">
                     <i class="bx bx-shopping-bag"></i>
-                    <span>sales</span>
+                    <span>Quản lý đơn đặt hàng</span>
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="bx bx-chart"></i>
-                    <span>analytic</span>
+            @* Quan ly san pham *@
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class="bx bx-category"></i>
+                    <span>Quản lý sản phẩm</span>
+                    <div class="dropdown-icon"></div>
                 </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#"> Danh sách sản phẩm </a>
+                    </li>
+                    <li>
+                        <a href="#"> Thêm sản phẩm </a>
+                    </li>
+                    <li>
+                        <a href="#"> Thêm loại sản phẩm </a>
+                    </li>
+                    <li>
+                        <a href="#"> Quản lý thương hiệu </a>
+                    </li>
+                </ul>
             </li>
+
+            <li class="sidebar-submenu">
+                <a href="#" class="sidebar-menu-dropdown">
+                    <i class="bx bx-news"></i>
+                    <span>Quản lý bài viết</span>
+                    <div class="dropdown-icon"></div>
+                </a>
+                <ul class="sidebar-menu sidebar-menu-dropdown-content">
+                    <li>
+                        <a href="#">Danh sách bài viết</a>
+                    </li>
+                    <li>
+                        <a href="#">Thêm bài viết</a>
+                    </li>
+                </ul>
+            </li>
+            @* Quản lý tài khoản *@
             <li class="sidebar-submenu">
                 <a href="#" class="sidebar-menu-dropdown">
                     <i class="bx bx-user-circle"></i>
-                    <span>account</span>
+                    <span>Quản lý tài khoản</span>
                     <div class="dropdown-icon"></div>
                 </a>
                 <ul class="sidebar-menu sidebar-menu-dropdown-content">
@@ -327,38 +360,12 @@
                     </li>
                 </ul>
             </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class="bx bx-category"></i>
-                    <span>project</span>
-                    <div class="dropdown-icon"></div>
+            @* Thống kê *@
+            <li>
+                <a href="#">
+                    <i class="bx bx-chart"></i>
+                    <span>Thống Kê</span>
                 </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#"> list </a>
-                    </li>
-                    <li>
-                        <a href="#"> add project </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class="bx bx-category"></i>
-                    <span>e-commerce</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#"> list product </a>
-                    </li>
-                    <li>
-                        <a href="#"> add product </a>
-                    </li>
-                    <li>
-                        <a href="#"> orders </a>
-                    </li>
-                </ul>
             </li>
             <li>
                 <a href="#">
