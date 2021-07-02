@@ -10,13 +10,15 @@ namespace PetStore.Areas.Admin.Controllers
 {
     public class BaseController : Controller
     {
-        protected override void OnActionExecuted(ActionExecutedContext filterContext)
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
             var session = (UserLogin)Session[ConmmonConstants.USER_SESSION];
-            if(session == null)
+            if(session==null || (session.Role != 1 && session.Role != 2 && session.Role != 3))
             {
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", action = "Index", Area = ""}));
-            }    
+            }
+
+            base.OnActionExecuting(filterContext);
         }
        
     }

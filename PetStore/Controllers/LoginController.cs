@@ -16,6 +16,8 @@ namespace PetStore.Controllers
         {
             return View();
         }
+        
+        [HttpPost]
         public ActionResult Login(LoginModel model)
         {
             var dao = new UserDao();
@@ -60,7 +62,12 @@ namespace PetStore.Controllers
             }
             return View("Index");
         }
-
+        //LOGOUT
+        public ActionResult Logout()
+        {
+            Session[ConmmonConstants.USER_SESSION] = null;
+            return Redirect("/");
+        }
 
     }
 }
