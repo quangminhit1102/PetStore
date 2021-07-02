@@ -51,8 +51,11 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\roslyn\vbc.rs
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\roslyn\VBCSCompiler.exe
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\roslyn\VBCSCompiler.exe.config
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Antlr3.Runtime.dll
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\EntityFramework.dll
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\EntityFramework.SqlServer.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Model.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Newtonsoft.Json.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.Helpers.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.Mvc.dll
@@ -62,6 +65,10 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.We
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.WebPages.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.WebPages.Razor.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\WebGrease.dll
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Model.pdb
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\Model.dll.config
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\EntityFramework.xml
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\EntityFramework.SqlServer.xml
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.Helpers.xml
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.Mvc.xml
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\bin\System.Web.Optimization.xml

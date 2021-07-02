@@ -201,4 +201,7 @@ body {
   border: 0;
   color: #7f8c8d;
 }
+.validation-summary-errors ul li {
+    list-style-type: none;
+}
 /*# sourceMappingURL=login.css.map */
