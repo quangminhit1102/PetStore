@@ -55,8 +55,6 @@
                         <div class="tab-pane fade show active" role="tabpanel" id="login">
                             @* Alert catching *@
                             @*@{
-                                var anyErrors = ViewData.ModelState.Values.Where(v => v.Errors.Count != 0).Any();
-                            }
                                     var anyErrors = ViewData.ModelState.Values.Where(v => v.Errors.Count != 0).Any();
                                 }
                                 @if (anyErrors)
