@@ -92,6 +92,18 @@ a {
 .mobile-toggle {
   flex-basis: var(--sidebar-size);
 }
+::-webkit-scrollbar {
+  width: 12px;
+  
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 100rem;
+  border: 1px solid var(--main-bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 .navbar-nav:last-child {
   justify-content: flex-end;
 }
