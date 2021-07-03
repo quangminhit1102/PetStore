@@ -32,8 +32,8 @@
                     </div>
                     <ul class="nav nav-tabs justify-content-center m-4" role="tablist">
                         <li class="nav-item">
-                            <a class="nav-link bg-transparent active"
-                               href="#login"
+                            <a class="nav-link bg-transparent"
+                               href="@Url.Action("Index","Login")"
                                data-toggle="tab"
                                role="tab"
                                aria-selected="false">
@@ -41,8 +41,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link bg-transparent"
-                               href="@Url.Action("Register","Login")"
+                            <a class="nav-link bg-transparent active"
+                               href="#regiter"
                                data-toggle="tab"
                                role="tab"
                                aria-selected="true">
@@ -51,52 +51,41 @@
                         </li>
                     </ul>
                     @* FORM LOGIN *@
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" role="tabpanel" id="login">
-                            @* Alert catching *@
-                            @*@{
-                                var anyErrors = ViewData.ModelState.Values.Where(v => v.Errors.Count != 0).Any();
-                            }
-                                    var anyErrors = ViewData.ModelState.Values.Where(v => v.Errors.Count != 0).Any();
-                                }
-                                @if (anyErrors)
-                                {
-                                    <div class="alert alert-danger">
-                                        @Html.ValidationSummary()
-                                    </div>
-                                }*@
-                            <div class="text-danger" style="height:24px">
-                                @Html.ValidationSummary()
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" role="tabpanel" id="register">
+                        <form>
+                            <div class="form_control">
+                                <input required name="username" type="text" />
+                                <label>User Name</label>
                             </div>
-                            @using (Html.BeginForm("Login", "Login", FormMethod.Post))
-                            {
-                                <div class="form_control">
-                                    @*@Html.TextBoxFor(model => model.Username)*@
-                                    <input required name="username" type="text" />
-                                    <label>User Name</label>
-                                </div>
+                            <div class="form_control">
+                                <input required name="hoten" type="text" />
+                                <label>Họ và tên</label>
+                            </div>
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>Email</label>
+                            </div>
 
-                                <div class="form_control">
-                                    @*@Html.TextBoxFor(model => model.Password)*@
-                                    <input required name="password" type="password" />
-                                    <div class="input-group-append cursor-pointer">
-                                        @*<span class="input-group-text">
-                                                <i class="fa fa-eye"></i>
-                                            </span>*@
-                                    </div>
-                                    <label>Password</label>
+                            <div class="form_control">
+                                <input required name="password" type="password" />
+                                <label>Password</label>
+                            </div>
+                            <div class="form_control">
+                                <input required name="confirmpassword" type="password" />
+                                <label>Confirm Password</label>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <button class="btn btn-primary btn-block">
+                                        Register
+                                    </button>
                                 </div>
-                                <div class="row mt-10">
-                                    <div class="col-6">
-                                        <button type="submit" class="btn btn-primary btn-block">Login</button>
-                                    </div>
-                                    <div class="col-6 d-flex align-items-center justify-content-end">
-                                        <a href="07_reset.html">Forgot password?</a>
-                                    </div>
-                                </div>
-                            }
-                        </div>
+                            </div>
+                        </form>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

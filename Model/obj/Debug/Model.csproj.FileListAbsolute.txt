@@ -10,3 +10,14 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.cspr
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.pdb
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Project\React\PetStore\Model\bin\Debug\Model.dll.config
+D:\Project\React\PetStore\Model\bin\Debug\Model.dll
+D:\Project\React\PetStore\Model\bin\Debug\Model.pdb
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.dll
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.xml
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Project\React\PetStore\Model\obj\Debug\Model.dll
+D:\Project\React\PetStore\Model\obj\Debug\Model.pdb

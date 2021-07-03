@@ -70,14 +70,10 @@ namespace PetStore.Controllers
             return Redirect("/");
         }
         //Register
-        [HttpPost]
-        public ActionResult Register(string username, string email, string pass, string confpass)
-        {
-            if(pass != confpass)
-            {
-                ModelState.AddModelError("", "Mật khẩu không trung khớp!");
-            }
-            return View("Index");
+    
+        public ActionResult Register()
+        {    
+            return View();
         }
     }
 }
