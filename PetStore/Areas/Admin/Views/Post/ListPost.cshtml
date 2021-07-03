@@ -1,82 +1,44 @@
-﻿
+﻿@model List<Model.EF.Post>
+@using Model.EF
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "ListPost";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-
-<div class="row">
-    <div class="col-3 col-md-6 col-sm-12">
-        <div class="box box-hover">
-            <!-- COUNTER -->
-            <div class="counter">
-                <div class="counter-title">total order</div>
-                <div class="counter-info">
-                    <div class="counter-count">6578</div>
-                    <i class="bx bx-shopping-bag"></i>
-                </div>
-            </div>
-            <!-- END COUNTER -->
-        </div>
-    </div>
-    <div class="col-3 col-md-6 col-sm-12">
-        <div class="box box-hover">
-            <!-- COUNTER -->
-            <div class="counter">
-                <div class="counter-title">conversion rate</div>
-                <div class="counter-info">
-                    <div class="counter-count">30.5%</div>
-                    <i class="bx bx-chat"></i>
-                </div>
-            </div>
-            <!-- END COUNTER -->
-        </div>
-    </div>
-    <div class="col-3 col-md-6 col-sm-12">
-        <div class="box box-hover">
-            <!-- COUNTER -->
-            <div class="counter">
-                <div class="counter-title">total profit</div>
-                <div class="counter-info">
-                    <div class="counter-count">$9,780</div>
-                    <i class="bx bx-line-chart"></i>
-                </div>
-            </div>
-            <!-- END COUNTER -->
-        </div>
-    </div>
-    <div class="col-3 col-md-6 col-sm-12">
-        <div class="box box-hover">
-            <!-- COUNTER -->
-            <div class="counter">
-                <div class="counter-title">daily visitors</div>
-                <div class="counter-info">
-                    <div class="counter-count">690</div>
-                    <i class="bx bx-user"></i>
-                </div>
-            </div>
-            <!-- END COUNTER -->
-        </div>
-    </div>
-</div>
-
+<br>
+<br>
 <div class="row">
     <div class="col-12">
-        <!-- ORDERS TABLE -->
+        <!-- Post TABLE -->
         <div class="box">
-            <div class="box-header">Recent orders</div>
+            <div class="box-header"><h3>Danh sách các bài viết:</h3></div>
             <div class="box-body overflow-scroll">
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Customer</th>
-                            <th>Date</th>
-                            <th>Order status</th>
-                            <th>Payment status</th>
-                            <th>Total</th>
+                            <th>
+                                Sửa
+                            <th>
+                            <th>Tên bài viết</th>
+                            <th>Loại bài viết</th>
+                            <th>Nội dung</th>
+                            <th>Ngày viết</th>
+
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@Html.ActionLink("Sửa","EditPost", new { Post_ID = item.Id })<td>
+                            <td>@item.Title</td>
+                            <td></td>
+                            <td>@item.Content</td>
+                            <td>@item.CreatedAt</td>
+
+                        </tr>
+                        }
+                    </tbody>
+                    @*<tbody>
                         <tr>
                             <td>#2345</td>
                             <td>
@@ -185,10 +147,11 @@
                             </td>
                             <td>$123.45</td>
                         </tr>
-                    </tbody>
+                    </tbody>*@
                 </table>
             </div>
         </div>
         <!-- END ORDERS TABLE -->
     </div>
 </div>
+

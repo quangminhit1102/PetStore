@@ -130,6 +130,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -423,10 +424,14 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Content\Admin\css\login.css.map" />
-    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68027a-400x400.jpg.webp" />
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68031b-400x400.jpg.webp" />
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68036a-400x400.jpg.webp" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\ListPost.cshtml" />
+    <Content Include="Areas\Admin\Views\AdminHome\Calendar.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\EditPost.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -453,7 +458,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Content\Client\" />
   </ItemGroup>
   <ItemGroup>

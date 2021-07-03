@@ -9,3 +9,4 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.cspr
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.pdb
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache

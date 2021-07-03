@@ -13,5 +13,9 @@ namespace PetStore.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult Calendar()
+        {
+            return View();
+        }
     }
 }
