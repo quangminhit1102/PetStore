@@ -1,4 +1,5 @@
 ﻿using Model.EF;
+using Model.DAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,13 +12,14 @@ namespace PetStore.Areas.Admin.Controllers
     {
         // GET: Admin/Post
         PetStoreDbContext db = null;
-        public ActionResult ListPost()
+        public ActionResult ListPost(int page = 1, int pageSize = 5)
         {
-            db = new PetStoreDbContext();
-            List<Post> listPost = db.Posts.OrderByDescending(x => x.CreatedAt).ToList();
-            return View(listPost);
+            PostDao dao = new PostDao();
+            var model = dao.listAllPaging(page, pageSize);
+            return View(model);
         }
         //Edit Post
+        [HttpGet]
         public ActionResult EditPost(int? Post_ID)
         {
             db = new PetStoreDbContext();
@@ -35,10 +37,9 @@ namespace PetStore.Areas.Admin.Controllers
             return View("ListPost");
         }
         //Create Post
-        public ActionResult CreatePost(int? Post_ID)
+        public ActionResult CreatePost()
         {
-            var post = db.Posts.SingleOrDefault(x => x.Id == Post_ID);
-            return View(post);
+            return View();
         }
     }
 }

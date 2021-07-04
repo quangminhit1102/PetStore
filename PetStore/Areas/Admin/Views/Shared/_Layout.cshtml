@@ -26,6 +26,7 @@
     <!-- APP CSS -->
     <link rel="stylesheet" href="~/Content/Admin/css/grid.css" />
     <link rel="stylesheet" href="~/Content/Admin/css/app.css" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -337,28 +338,16 @@
                         <a href="/admin/post/listpost">Danh sách bài viết</a>
                     </li>
                     <li>
-                        <a href="#">Thêm bài viết</a>
+                        <a href="/admin/post/createpost">Thêm bài viết</a>
                     </li>
                 </ul>
             </li>
             @* Quản lý tài khoản *@
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
+            <li>
+                <a href="/admin/account/listaccount">
                     <i class="bx bx-user-circle"></i>
                     <span>Quản lý tài khoản</span>
-                    @*<div class="dropdown-icon"></div>*@
                 </a>
-                @*<ul class="sidebar-menu sidebar-menu-dropdown-content">
-                        <li>
-                            <a href="#"> edit profile </a>
-                        </li>
-                        <li>
-                            <a href="#"> account settings </a>
-                        </li>
-                        <li>
-                            <a href="#"> billing </a>
-                        </li>
-                    </ul>*@
             </li>
             @* Thống kê *@
             <li>

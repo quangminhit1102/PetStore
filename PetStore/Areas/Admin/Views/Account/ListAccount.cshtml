@@ -1,0 +1,161 @@
+﻿@model List<Model.EF.User>
+@{
+    ViewBag.Title = "ListAccount";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-12">
+        <!-- Post TABLE -->
+        <div class="box">
+            <div class="box-header"><h3>Danh sách tài khoản khách hàng</h3></div>
+            <div class="box-body overflow-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Họ Tên</th>
+                            <th>Giới tính</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.Role == 4)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="order-owner">
+                                            <img src="/Content/Admin/img/user-image-2.png" alt="userimg">
+                                        </div>
+                                        @item.FullName
+                                    </td>
+                                    @if (item.Gender == null)
+                                    {
+                                        <td>Chưa cập nhật</td>
+                                    }
+                                    @if (item.Gender == true)
+                                    {
+                                        <td>Nam</td>
+                                    }
+                                    @if (item.Gender == false)
+                                    {
+                                        <td>Nữ</td>
+                                    }
+                                    <td>@item.Email</td>
+                                    @if (item.Address == null)
+                                    {
+                                        <td>Chưa cập nhật</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Address</td>
+                                    }
+
+                                    @if (item.Status == true)
+                                    {
+
+
+                                        <td>
+                                            <div class="payment-status payment-paid">
+                                                <div class="dot"></div>
+                                                <span>Active</span>
+                                            </div>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <div class="payment-status payment-pending">
+                                                <div class="dot"></div>
+                                                <span>Inactive</span>
+                                            </div>
+                                        </td>
+                                    }
+
+                                </tr>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END TABLE -->
+    </div>
+</div>
+@* ========================================================================================= *@
+<h1>Add a button here</h1>
+<div class="row">
+    <div class="col-12">
+        <!-- TABLE -->
+        <div class="box">
+            <div class="box-header"><h3>Danh sách tài khoản nhân viên</h3></div>
+            <div class="box-body overflow-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Họ Tên</th>
+                            <th>Chức vụ</th>
+                            <th>Giới tính</th>
+                            <th>Email</th>
+                            <th>Ngày sinh</th>
+                            <th>Địa chỉ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            if (item.Role != 4)
+                            {
+                                <tr>
+                                    <td>@item.FullName</td>
+
+                                    <td>@item.Role1.Name</td>
+
+                                    @if (item.Gender == null)
+                                    {
+                                        <td>Chưa cập nhật</td>
+                                    }
+                                    @if (item.Gender == true)
+                                    {
+                                        <td>Nam</td>
+                                    }
+                                    @if (item.Gender == false)
+                                    {
+                                        <td>Nữ</td>
+                                    }
+                                    <td>@item.Email</td>
+                                    @if (item.Birthday == null)
+                                    {
+                                        <td>Chưa cập nhật</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Birthday.Value.ToString("dd-MM-yyyy")</td>
+                                    }
+
+
+                                    @if (item.Address == null)
+                                    {
+                                        <td>Chưa cập nhật</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.Address</td>
+                                    }
+                                </tr>
+                            }
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END ORDERS TABLE -->
+    </div>
+</div>
+
+
+
