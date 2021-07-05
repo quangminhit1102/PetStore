@@ -21,3 +21,15 @@ D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Project\React\PetStore\Model\obj\Debug\Model.dll
 D:\Project\React\PetStore\Model\obj\Debug\Model.pdb
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\Model.dll.config
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\Model.dll
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\Model.pdb
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\EntityFramework.dll
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\EntityFramework.xml
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.dll
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.pdb
