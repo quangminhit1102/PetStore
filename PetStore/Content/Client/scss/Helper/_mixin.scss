@@ -1,0 +1,61 @@
+@mixin Text($fontSize, $color, $fontWeight, $letter-spacing) {
+    font-size: $fontSize;
+    color: $color;
+    font-weight: $fontWeight;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin Btn($bg, $color, $fontSize, $padding, $border) {
+    background-color: $bg;
+    color: $color;
+    font-size: $fontSize;
+    padding: $padding;
+    border-radius: $border;
+}
+
+@mixin Dislay-Flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin PositionTop($positon, $top, $left) {
+    position: $positon;
+    top: $top;
+    left: $left;
+}
+
+@mixin Boder-radius($value) {
+    border-radius: $value;
+}
+
+@mixin Border-Right($value) {
+    border-right: $value;
+}
+
+@mixin Deconration {
+    text-decoration: none;
+}
+
+@mixin Mediaquery($type) {
+    @if $type==$xs {
+        @media screen and(max-width: $xs) {
+            @content;
+        }
+    }
+    @else if $type==$sm {
+        @media screen and(max-width: $sm) {
+            @content;
+        }
+    }
+    @else if $type==$md {
+        @media screen and(max-width: $md) {
+            @content;
+        }
+    }
+    @else if $type==$lg {
+        @media screen and(max-width: $lg) {
+            @content;
+        }
+    }
+}

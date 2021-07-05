@@ -1,0 +1,17 @@
+@function spacing($num) {
+    @return $num*$default-spacing;
+}
+
+@function getColor($name) {
+    @if map-has-key($map: $colors, $key: $name) {
+        @return map-get($map: $colors, $key: $name);
+    }
+    @return "";
+}
+
+@function getFont($font) {
+    @if map-has-key($map: $fontSize, $key: $font) {
+        @return map-get($map: $fontSize, $key: $font);
+    }
+    @return "";
+}

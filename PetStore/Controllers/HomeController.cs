@@ -12,9 +12,7 @@ namespace PetStore.Controllers
     {
         public ActionResult Index()
         {
-            PetStoreDbContext db = new PetStoreDbContext();
-            var listBrand = db.Categories.ToList();
-            return View(listBrand);
+            return View();
         }
     }
 }
