@@ -9,7 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Store - Quản Trị</title>
-    <link rel="shortcut icon" href="~/Content/Admin/img/logo-mb.png" type="image/png" />
+    <link rel="icon" href="~/Areas/Admin/logo-mb.png"
+          type="image/x-icon">
+    @*<link rel="shortcut icon" href="~/Content/Admin/img/logo-mb.png"/>*@
     <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -26,8 +28,6 @@
     <link rel="stylesheet" href="~/Content/Admin/css/grid.css" />
     <link rel="stylesheet" href="~/Content/Admin/css/app.css" />
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
-    <!-- Profile -->
-    @RenderSection("profile",required:false)
 </head>
 
 <body>
@@ -245,8 +245,12 @@
                          class="dropdown-toggle"
                          data-toggle="user-menu" />
                     <ul id="user-menu" class="dropdown-menu">
-                        <li class="dropdown-menu-link" style="display:inline-block;text-align:center;padding-top:20px">
-                            <span>Xin chào @username</span>
+
+                        <li class="dropdown-menu-item profile">
+                            <a href="#" class="dropdown-menu-link">
+                                <img src="~/Content/Admin/img/user-image.jpg" alt="User image" />
+                                <p>@username</p>
+                            </a>
                         </li>
                         <li class="dropdown-menu-item">
                             <a href="/admin/account/profile" class="dropdown-menu-link">
@@ -295,7 +299,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="/admin/order/listorder">
                     <i class="bx bx-shopping-bag"></i>
                     <span>Quản lý đơn đặt hàng</span>
                 </a>

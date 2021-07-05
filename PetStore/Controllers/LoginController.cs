@@ -66,7 +66,7 @@ namespace PetStore.Controllers
         //LOGOUT==============================================================
         public ActionResult Logout()
         {
-            Session[ConmmonConstants.USER_SESSION] = null;
+            Session["USERID"] = null;
             return Redirect("/");
         }
         //REGISTER==============================================================
