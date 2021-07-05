@@ -137,6 +137,7 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -444,6 +445,7 @@
     <Content Include="Areas\Admin\Views\Post\CreatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\ListOrder.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
