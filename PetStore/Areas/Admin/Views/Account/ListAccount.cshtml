@@ -12,23 +12,26 @@
                 <table>
                     <thead>
                         <tr>
+                            <th width="50px">STT</th>
                             <th>Họ Tên</th>
-                            <th>Giới tính</th>
-                            <th>Email</th>
+                            <th width="100px">Giới tính</th>
+                            <th width="250px">Email</th>
                             <th>Địa chỉ</th>
                             <th>Trạng thái</th>
+                            <th>Tác vụ</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @{ int count = 1;}
                         @foreach (var item in Model)
                         {
                             if (item.Role == 4)
                             {
                                 <tr>
-                                    <td>
-                                        <div class="order-owner">
-                                            <img src="/Content/Admin/img/user-image-2.png" alt="userimg">
-                                        </div>
+                                    <td>@count</td>
+                                    @{count++;}
+
+                                    <td width="200px">
                                         @item.FullName
                                     </td>
                                     @if (item.Gender == null)
@@ -46,11 +49,11 @@
                                     <td>@item.Email</td>
                                     @if (item.Address == null)
                                     {
-                                        <td>Chưa cập nhật</td>
+                                        <td width="250px" style="padding-right:50px">Chưa cập nhật</td>
                                     }
                                     else
                                     {
-                                        <td>@item.Address</td>
+                                        <td width="250px" style="padding-right:50px">@item.Address</td>
                                     }
 
                                     @if (item.Status == true)
@@ -96,20 +99,24 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Họ Tên</th>
-                            <th>Chức vụ</th>
-                            <th>Giới tính</th>
-                            <th>Email</th>
-                            <th>Ngày sinh</th>
+                            <th width="50px">STT</th>
+                            <th width="180px">Họ Tên</th>
+                            <th width="100px">Chức vụ</th>
+                            <th width="80px">Giới tính</th>
+                            <th width="220px">Email</th>
+                            <th width="100px">Ngày sinh</th>
                             <th>Địa chỉ</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @{int count2 = 1;}
                         @foreach (var item in Model)
                         {
                             if (item.Role != 4)
                             {
                                 <tr>
+                                    <td>@count2</td>
+                                    @{count2++;}
                                     <td>@item.FullName</td>
 
                                     <td>@item.Role1.Name</td>
@@ -146,10 +153,10 @@
                                         <td>@item.Address</td>
                                     }
                                 </tr>
-                            }
+                                }
 
-                        }
-                    </tbody>
+                                }
+                            </tbody>
                 </table>
             </div>
         </div>

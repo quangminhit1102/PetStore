@@ -20,10 +20,10 @@ namespace PetStore.Areas.Admin.Controllers
         }
         //Edit Post
         [HttpGet]
-        public ActionResult EditPost(int? Post_ID)
+        public ActionResult EditPost(int? id)
         {
             db = new PetStoreDbContext();
-            Post post = db.Posts.SingleOrDefault(x => x.Id == Post_ID);
+            Post post = db.Posts.SingleOrDefault(x => x.Id == id);
             if (post == null)
             {
                 return HttpNotFound();
