@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -10,7 +11,7 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
           crossorigin="anonymous" />
-    <link rel="icon" href="img/logo-mb.png" />
+    <link rel="icon" href="~/Content/Client/img/logo-mb.png" />
 
     <!-- boxicons -->
     <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
@@ -20,7 +21,8 @@
           type="text/css"
           href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="~/Content/Client/css/index.css" />
+    <!-- Start Header -->
 </head>
 <body>
     <header class="container-fluid header desktop">
@@ -29,9 +31,10 @@
                 <a>
                     <img width="210px"
                          class="logo-with-name"
-                         src="img/logo-lg.png"
+                         src="~/Content/Client/img/logo-lg.png"
                          alt="petStore" />
                 </a>
+                @*Start Menu *@
                 <div class="header-category mx-3">
                     <i class="bx bx-category"></i>
                     <div class="wrap">
@@ -55,7 +58,7 @@
                                             <div>
                                                 <div class="my-2 remove-padding wrapper">
                                                     <div class="image-wrapper w-25">
-                                                        <img src="img/dog.8d179361.gif"
+                                                        <img src="~/Content/Client/img/dog.8d179361.gif"
                                                              loading="lazy"
                                                              class="lazy-image pets-image" />
                                                     </div>
@@ -124,7 +127,7 @@
                                             <div>
                                                 <div class="my-2 container remove-padding wrapper">
                                                     <div class="image-wrapper w-25">
-                                                        <img src="img/cat.862fddc4.gif"
+                                                        <img src="~/Content/Client/img/cat.862fddc4.gif"
                                                              loading="lazy"
                                                              class="lazy-image pets-image" />
                                                     </div>
@@ -187,7 +190,7 @@
                                             <div>
                                                 <div class="my-2 container remove-padding wrapper">
                                                     <div class="image-wrapper w-25">
-                                                        <img src="img/bird.01a45ffa.gif"
+                                                        <img src="~/Content/Client/img/bird.01a45ffa.gif"
                                                              loading="lazy"
                                                              class="lazy-image pets-image" />
                                                     </div>
@@ -226,7 +229,7 @@
                                             <div>
                                                 <div class="my-2 container remove-padding wrapper">
                                                     <div class="image-wrapper w-25">
-                                                        <img src="img/fish.6c4bafb9.gif"
+                                                        <img src="~/Content/Client/img/fish.6c4bafb9.gif"
                                                              loading="lazy"
                                                              class="lazy-image pets-image" />
                                                     </div>
@@ -264,7 +267,7 @@
                                             <div>
                                                 <div class="my-2 container remove-padding wrapper">
                                                     <div class="image-wrapper w-25">
-                                                        <img src="img/rabbit.46db3c99.gif"
+                                                        <img src="~/Content/Client/img/rabbit.46db3c99.gif"
                                                              loading="lazy"
                                                              class="lazy-image pets-image" />
                                                     </div>
@@ -287,17 +290,317 @@
                                                                 <a class="name"
                                                                    href="/mua-ban-loai-thu-cung-khac">Thú cưng khác</a>
                                                             </li>
+                                                            <li class="py-3 nav-categories">
+                                                                <div class="py-6 category-item">
+                                                                    <span class="category-name p-6 false">Chó</span>
+                                                                </div>
+                                                                <svg viewBox="0 0 50 50" class="image">
+                                                                    <path d="M49.08,15.49,27.73,39.27c-.1.1-.2.3-.4.3a2.09,2.09,0,0,1-1,.61,3.05,3.05,0,0,1-2.64,0,2.09,2.09,0,0,1-1-.61c-.2,0-.3-.2-.4-.3L.92,15.49a3.54,3.54,0,0,1,.3-5.06,3.62,3.62,0,0,1,2.43-.91,3.85,3.85,0,0,1,2.63,1.11L25,31.58,43.72,10.63a3.85,3.85,0,0,1,2.63-1.11,3.62,3.62,0,0,1,2.43.91A3.54,3.54,0,0,1,49.08,15.49Z"></path>
+                                                                    <path class="d-none"
+                                                                          d="M1.13,34.14,22.29,10.57c.1-.1.2-.3.4-.3a2,2,0,0,1,1-.61,3,3,0,0,1,2.6,0,2,2,0,0,1,1,.61c.2,0,.3.2.4.3L48.87,34.14a3.52,3.52,0,0,1-.3,5,3.59,3.59,0,0,1-2.41.9,3.81,3.81,0,0,1-2.6-1.1L25,18.19,6.45,39a3.85,3.85,0,0,1-2.61,1.1,3.59,3.59,0,0,1-2.41-.9A3.52,3.52,0,0,1,1.13,34.14Z"></path>
+                                                                </svg>
+                                                                <nav class="remove-padding sub-navbar active">
+                                                                    <div>
+                                                                        <div class="my-2 remove-padding wrapper">
+                                                                            <div class="image-wrapper w-25">
+                                                                                <img src="~/Content/Client/img/dog.8d179361.gif"
+                                                                                     loading="lazy"
+                                                                                     class="lazy-image pets-image" />
+                                                                            </div>
+                                                                            <div class="w-75">
+                                                                                <div class="sub-navbar-title">
+                                                                                    <a class="name" href="/mua-ban-cho">Thương Hiệu</a>
+                                                                                </div>
+                                                                                <ul class="sub-list">
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-pug">Chó Pug</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-poodle">Chó Poodle</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-husky-alaska-samoyed">Chó Husky - Alaska - Samoyed</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-golden-labrador">Chó Golden - Labrador</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-chihuahua-phoc">Chó Chihuahua - Phốc</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-bull">Chó Bull</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-phu-quoc---bac-ha---hmong-coc">Chó Phú Quốc - Bắc Hà - H'Mông Cộc</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-corgi">Chó Corgi</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-shiba-akita">Chó Shiba - Akita</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-becgie-rottweiler-malinois">Chó Becgie - Rottweiler - Malinois</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-dom-border-collie">Chó Đốm - Border Collie</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-dong-cho-khac">Dòng chó khác</a>
+                                                                                    </li>
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </nav>
+                                                            </li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </nav>
                                     </li>
+                                    <li class="py-3 nav-categories">
+                                        <div class="py-6 category-item">
+                                            <span class="category-name p-6 false">Thương Hiệu</span>
+                                        </div>
+                                        <svg viewBox="0 0 50 50" class="image">
+                                            <path d="M49.08,15.49,27.73,39.27c-.1.1-.2.3-.4.3a2.09,2.09,0,0,1-1,.61,3.05,3.05,0,0,1-2.64,0,2.09,2.09,0,0,1-1-.61c-.2,0-.3-.2-.4-.3L.92,15.49a3.54,3.54,0,0,1,.3-5.06,3.62,3.62,0,0,1,2.43-.91,3.85,3.85,0,0,1,2.63,1.11L25,31.58,43.72,10.63a3.85,3.85,0,0,1,2.63-1.11,3.62,3.62,0,0,1,2.43.91A3.54,3.54,0,0,1,49.08,15.49Z"></path>
+                                        </svg>
+                                        <nav class="remove-padding sub-navbar">
+                                            <div>
+                                                <div class="my-2 container remove-padding wrapper">
+                                                    <div class="image-wrapper w-25">
+                                                        <img src="~/Content/Client/img/rabbit.46db3c99.gif"
+                                                             loading="lazy"
+                                                             class="lazy-image pets-image" />
+                                                    </div>
+                                                    <div class="w-75">
+                                                        <div class="sub-navbar-title">
+                                                            <a class="name" href="/mua-ban-thu-cung-khac">Thú cưng khác</a>
+                                                        </div>
+                                                        <ul class="sub-list">
+                                                            <li class="item">
+                                                                <a class="name" href="/mua-ban-bo-sat">Bò sát</a>
+                                                            </li>
+                                                            <li class="item">
+                                                                <a class="name"
+                                                                   href="/mua-ban-hamster---nhim---bo-u">Hamster - Nhím - Bọ Ú</a>
+                                                            </li>
+                                                            <li class="item">
+                                                                <a class="name" href="/mua-ban-tho-canh">Thỏ cảnh</a>
+                                                            </li>
+                                                            <li class="item">
+                                                                <a class="name"
+                                                                   href="/mua-ban-loai-thu-cung-khac">Thú cưng khác</a>
+                                                            </li>
+                                                            <li class="py-3 nav-categories">
+                                                                <div class="py-6 category-item">
+                                                                    <span class="category-name p-6 false">Chó</span>
+                                                                </div>
+                                                                <svg viewBox="0 0 50 50" class="image">
+                                                                    <path d="M49.08,15.49,27.73,39.27c-.1.1-.2.3-.4.3a2.09,2.09,0,0,1-1,.61,3.05,3.05,0,0,1-2.64,0,2.09,2.09,0,0,1-1-.61c-.2,0-.3-.2-.4-.3L.92,15.49a3.54,3.54,0,0,1,.3-5.06,3.62,3.62,0,0,1,2.43-.91,3.85,3.85,0,0,1,2.63,1.11L25,31.58,43.72,10.63a3.85,3.85,0,0,1,2.63-1.11,3.62,3.62,0,0,1,2.43.91A3.54,3.54,0,0,1,49.08,15.49Z"></path>
+                                                                    <path class="d-none"
+                                                                          d="M1.13,34.14,22.29,10.57c.1-.1.2-.3.4-.3a2,2,0,0,1,1-.61,3,3,0,0,1,2.6,0,2,2,0,0,1,1,.61c.2,0,.3.2.4.3L48.87,34.14a3.52,3.52,0,0,1-.3,5,3.59,3.59,0,0,1-2.41.9,3.81,3.81,0,0,1-2.6-1.1L25,18.19,6.45,39a3.85,3.85,0,0,1-2.61,1.1,3.59,3.59,0,0,1-2.41-.9A3.52,3.52,0,0,1,1.13,34.14Z"></path>
+                                                                </svg>
+                                                                <nav class="remove-padding sub-navbar active">
+                                                                    <div>
+                                                                        <div class="my-2 remove-padding wrapper">
+                                                                            <div class="image-wrapper w-25">
+                                                                                <img src="~/Content/Client/img/dog.8d179361.gif"
+                                                                                     loading="lazy"
+                                                                                     class="lazy-image pets-image" />
+                                                                            </div>
+                                                                            <div class="w-75">
+                                                                                <div class="sub-navbar-title">
+                                                                                    <a class="name" href="/mua-ban-cho">Thương Hiệu</a>
+                                                                                </div>
+                                                                                <ul class="sub-list">
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-pug">Chó Pug</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-poodle">Chó Poodle</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-husky-alaska-samoyed">Chó Husky - Alaska - Samoyed</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-golden-labrador">Chó Golden - Labrador</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-chihuahua-phoc">Chó Chihuahua - Phốc</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-bull">Chó Bull</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-phu-quoc---bac-ha---hmong-coc">Chó Phú Quốc - Bắc Hà - H'Mông Cộc</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-corgi">Chó Corgi</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-shiba-akita">Chó Shiba - Akita</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-becgie-rottweiler-malinois">Chó Becgie - Rottweiler - Malinois</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-dom-border-collie">Chó Đốm - Border Collie</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-dong-cho-khac">Dòng chó khác</a>
+                                                                                    </li>
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </nav>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </li>
+                                    <li class="py-3 nav-categories">
+                                        <div class="py-6 category-item">
+                                            <span class="category-name p-6 false">Bài Viết</span>
+                                        </div>
+                                        <svg viewBox="0 0 50 50" class="image">
+                                            <path d="M49.08,15.49,27.73,39.27c-.1.1-.2.3-.4.3a2.09,2.09,0,0,1-1,.61,3.05,3.05,0,0,1-2.64,0,2.09,2.09,0,0,1-1-.61c-.2,0-.3-.2-.4-.3L.92,15.49a3.54,3.54,0,0,1,.3-5.06,3.62,3.62,0,0,1,2.43-.91,3.85,3.85,0,0,1,2.63,1.11L25,31.58,43.72,10.63a3.85,3.85,0,0,1,2.63-1.11,3.62,3.62,0,0,1,2.43.91A3.54,3.54,0,0,1,49.08,15.49Z"></path>
+                                        </svg>
+                                        <nav class="remove-padding sub-navbar">
+                                            <div>
+                                                <div class="my-2 container remove-padding wrapper">
+                                                    <div class="image-wrapper w-25">
+                                                        <img src="~/Content/Client/img/rabbit.46db3c99.gif"
+                                                             loading="lazy"
+                                                             class="lazy-image pets-image" />
+                                                    </div>
+                                                    <div class="w-75">
+                                                        <div class="sub-navbar-title">
+                                                            <a class="name" href="/mua-ban-thu-cung-khac">Bài Viết</a>
+                                                        </div>
+                                                        <ul class="sub-list">
+                                                            <li class="item">
+                                                                <a class="name" href="/mua-ban-bo-sat">Bò sát</a>
+                                                            </li>
+                                                            <li class="item">
+                                                                <a class="name"
+                                                                   href="/mua-ban-hamster---nhim---bo-u">Hamster - Nhím - Bọ Ú</a>
+                                                            </li>
+                                                            <li class="item">
+                                                                <a class="name" href="/mua-ban-tho-canh">Thỏ cảnh</a>
+                                                            </li>
+                                                            <li class="item">
+                                                                <a class="name"
+                                                                   href="/mua-ban-loai-thu-cung-khac">Thú cưng khác</a>
+                                                            </li>
+                                                            <li class="py-3 nav-categories">
+                                                                <div class="py-6 category-item">
+                                                                    <span class="category-name p-6 false">Chó</span>
+                                                                </div>
+                                                                <svg viewBox="0 0 50 50" class="image">
+                                                                    <path d="M49.08,15.49,27.73,39.27c-.1.1-.2.3-.4.3a2.09,2.09,0,0,1-1,.61,3.05,3.05,0,0,1-2.64,0,2.09,2.09,0,0,1-1-.61c-.2,0-.3-.2-.4-.3L.92,15.49a3.54,3.54,0,0,1,.3-5.06,3.62,3.62,0,0,1,2.43-.91,3.85,3.85,0,0,1,2.63,1.11L25,31.58,43.72,10.63a3.85,3.85,0,0,1,2.63-1.11,3.62,3.62,0,0,1,2.43.91A3.54,3.54,0,0,1,49.08,15.49Z"></path>
+                                                                    <path class="d-none"
+                                                                          d="M1.13,34.14,22.29,10.57c.1-.1.2-.3.4-.3a2,2,0,0,1,1-.61,3,3,0,0,1,2.6,0,2,2,0,0,1,1,.61c.2,0,.3.2.4.3L48.87,34.14a3.52,3.52,0,0,1-.3,5,3.59,3.59,0,0,1-2.41.9,3.81,3.81,0,0,1-2.6-1.1L25,18.19,6.45,39a3.85,3.85,0,0,1-2.61,1.1,3.59,3.59,0,0,1-2.41-.9A3.52,3.52,0,0,1,1.13,34.14Z"></path>
+                                                                </svg>
+                                                                <nav class="remove-padding sub-navbar active">
+                                                                    <div>
+                                                                        <div class="my-2 remove-padding wrapper">
+                                                                            <div class="image-wrapper w-25">
+                                                                                <img src="~/Content/Client/img/dog.8d179361.gif"
+                                                                                     loading="lazy"
+                                                                                     class="lazy-image pets-image" />
+                                                                            </div>
+                                                                            <div class="w-75">
+                                                                                <div class="sub-navbar-title">
+                                                                                    <a class="name" href="/mua-ban-cho">Thương Hiệu</a>
+                                                                                </div>
+                                                                                <ul class="sub-list">
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-pug">Chó Pug</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-poodle">Chó Poodle</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-husky-alaska-samoyed">Chó Husky - Alaska - Samoyed</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-golden-labrador">Chó Golden - Labrador</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-chihuahua-phoc">Chó Chihuahua - Phốc</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-bull">Chó Bull</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-phu-quoc---bac-ha---hmong-coc">Chó Phú Quốc - Bắc Hà - H'Mông Cộc</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-cho-corgi">Chó Corgi</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-shiba-akita">Chó Shiba - Akita</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-becgie-rottweiler-malinois">Chó Becgie - Rottweiler - Malinois</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name"
+                                                                                           href="/mua-ban-cho-dom-border-collie">Chó Đốm - Border Collie</a>
+                                                                                    </li>
+                                                                                    <li class="item">
+                                                                                        <a class="name" href="/mua-ban-dong-cho-khac">Dòng chó khác</a>
+                                                                                    </li>
+
+                                                                                </ul>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </nav>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </nav>
+                                    </li>
+
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                @* End Start Menu *@
+
+                @* Search Bar *@
                 <div class="header-search-bar ml-3">
                     <input placeholder="Tìm kiếm trên Chợ Pet"
                            maxlength="50"
@@ -331,6 +634,7 @@
             </div>
         </div>
     </header>
+    <!-- END HEADER -->
     <!-- BEGIN MAIN-CONTENT  -->
     <div class="main-content">
         <div id="carouselExampleIndicators" class="carousel slide">
@@ -341,18 +645,303 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             </ol>
+            @* Slider *@
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/Slider-22.jpg" class="d-block w-100" alt="..." />
+                    <img src="~/Content/Client/img/Slider-22.jpg" class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="img/Slider-23.jpg" class="d-block w-100" alt="..." />
+                    <img src="~/Content/Client/img/Slider-23.jpg" class="d-block w-100" alt="..." />
                 </div>
                 <div class="carousel-item">
-                    <img src="img/Slider-24.jpg" class="d-block w-100" alt="..." />
+                    <img src="~/Content/Client/img/Slider-24.jpg" class="d-block w-100" alt="..." />
                 </div>
             </div>
         </div>
+        @* Best Seller *@
+        <section id="bestSeller">
+            <div class="container">
+                </br>
+                <div class="bestSeller-title w-100">
+                    <h2>Sản phẩm bán chạy</h2>
+                </div>
+                <div class="bestSeller-content w-100">
+                    <div class="bestSeller-nav">
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-1-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">145.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-2-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">175.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-6-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bx-star"></i>
+                                <span>(2)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">45.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-3-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a><a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a><a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a><a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a></a><a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a></a><a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a><a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-4-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a>
+
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-5-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <span>(0)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-6-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">15.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-5-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <i class="bx bx-star"></i>
+                                <span>(0)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">165.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-6-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">15.000 đ</span>
+                        </a>
+                        <a href="#" class="col-12 bestSeller-product">
+                            <img class="img-fluid"
+                                 src="~/Content/Client/img/product-6-450x450.jpg"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star-half"></i>
+                                <span>(1)</span>
+                            </div>
+                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                            <span class="price">15.000 đ</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @* Ads *@
+        <section id="pick-shiroupet">
+            <div class="container">
+                <div class="pick-content">
+                    <div class="pick-context w-75 h-100">
+                        <div class="pick-item w-100">
+                            <h3>Take your pick of the litter</h3>
+                        </div>
+                        <div class="pick-item w-100">
+                            <p>An odor-free home starts with Arm &amp; Hammer.</p>
+                        </div>
+                        <div class="pick-item w-100">
+                            <a href="#" class="btn">shop now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @* Brand *@
         <section id="brands">
             <div class="container">
                 <div class="brand-title w-100">
@@ -398,201 +987,15 @@
                 </div>
             </div>
         </section>
-        <section id="pick-shiroupet">
-            <div class="container">
-                <div class="pick-content">
-                    <div class="pick-context w-75 h-100">
-                        <div class="pick-item w-100">
-                            <h3>Take your pick of the litter</h3>
-                        </div>
-                        <div class="pick-item w-100">
-                            <p>An odor-free home starts with Arm &amp; Hammer.</p>
-                        </div>
-                        <div class="pick-item w-100">
-                            <a href="#" class="btn">shop now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="bestSeller">
-            <div class="container">
-                <div class="bestSeller-title w-100">
-                    <h2>Sản phẩm bán chạy</h2>
-                </div>
-                <div class="bestSeller-content w-100">
-                    <div class="bestSeller-nav">
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-1-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">145.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-2-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star-half"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">175.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-6-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bx-star"></i>
-                                <span>(2)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">45.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-3-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star-half"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">165.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-4-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star-half"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">165.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-5-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <span>(0)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">165.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-6-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star-half"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">15.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-5-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <i class="bx bx-star"></i>
-                                <span>(0)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">165.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-6-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star-half"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">15.000 đ</span>
-                        </a>
-                        <a href="#" class="col-12 bestSeller-product">
-                            <img class="img-fluid"
-                                 src="img/product-6-450x450.jpg"
-                                 alt=""
-                                 srcset="" />
-                            <div class="products__rating">
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star"></i>
-                                <i class="bx bxs-star-half"></i>
-                                <span>(1)</span>
-                            </div>
-                            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                            <span class="price">15.000 đ</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+
+        @* Hot Deal *@
         <section id="hotDeal">
             <div class="container">
                 <div class="hotDeal-content w-100">
                     <div class="row">
                         <div class="col-12 col-md-6 hotDeal-item">
                             <div class="hotDeal-item-img w-100">
-                                <img class="img-fluid" src="img/banner-12.jpg" alt="" />
+                                <img class="img-fluid" src="~/Content/Client/img/banner-12.jpg" alt="" />
                             </div>
                             <div class="hotDeal-item-content w-75">
                                 <p>20% off all items</p>
@@ -602,7 +1005,7 @@
                         </div>
                         <div class="col-12 col-md-6 hotDeal-item">
                             <div class="hotDeal-item-img w-100">
-                                <img class="img-fluid" src="img/banner-13.jpg" alt="" />
+                                <img class="img-fluid" src="~/Content/Client/img/banner-13.jpg" alt="" />
                             </div>
                             <div class="hotDeal-item-content w-75">
                                 <p>TOYS, TREATS & LEASHES</p>
@@ -615,203 +1018,204 @@
             </div>
         </section>
         <!-- <section id="newArrivals">
-          <div class="container">
-            <div class="newArrivals-title w-100">
-              <h2>Sản phẩm mới</h2>
-            </div>
-            <div class="newArrivals-content w-100">
-              <div class="newArrivals-nav">
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-1-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">145.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-2-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">175.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-6-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bx-star"></i>
-                    <span>(2)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">45.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-3-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">165.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-4-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">165.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-5-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <span>(0)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">165.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-6-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">15.000 đ</span>
-                </a>
-                <a href="#" class="col-12 bestSeller-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-5-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <i class="bx bx-star"></i>
-                    <span>(0)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">165.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-6-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">15.000 đ</span>
-                </a>
-                <a href="#" class="col-12 newArrivals-product">
-                  <img
-                    class="img-fluid"
-                    src="img/product-6-450x450.jpg"
-                    alt=""
-                    srcset=""
-                  />
-                  <div class="products__rating">
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star"></i>
-                    <i class="bx bxs-star-half"></i>
-                    <span>(1)</span>
-                  </div>
-                  <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
-                  <span class="price">15.000 đ</span>
-                </a>
+      <div class="container">
+        <div class="newArrivals-title w-100">
+          <h2>Sản phẩm mới</h2>
+        </div>
+        <div class="newArrivals-content w-100">
+          <div class="newArrivals-nav">
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-1-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <span>(1)</span>
               </div>
-            </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">145.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-2-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">175.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-6-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bx-star"></i>
+                <span>(2)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">45.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-3-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">165.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-4-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">165.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-5-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <span>(0)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">165.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-6-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">15.000 đ</span>
+            </a>
+            <a href="#" class="col-12 bestSeller-product">
+              <img
+                class="img-fluid"
+                src="img/product-5-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <span>(0)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">165.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-6-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">15.000 đ</span>
+            </a>
+            <a href="#" class="col-12 newArrivals-product">
+              <img
+                class="img-fluid"
+                src="img/product-6-450x450.jpg"
+                alt=""
+                srcset=""
+              />
+              <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+              </div>
+              <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+              <span class="price">15.000 đ</span>
+            </a>
           </div>
-        </section> -->
+        </div>
+      </div>
+    </section> -->
+        @* Blog *@
         <section id="blog">
             <div class="container">
                 <div class="blog-content w-100">
                     <div class="row">
                         <div class="col-12 blog-item">
                             <div class="blog-item-img w-100">
-                                <img class="img-fluid" src="img/Slider-19.jpg" alt="" />
+                                <img class="img-fluid" src="~/Content/Client/img/Slider-19.jpg" alt="" />
                             </div>
                             <div class="blog-item-content w-75">
                                 <h3>
@@ -826,17 +1230,18 @@
                 </div>
             </div>
         </section>
+        @* popular posts *@
         <section id="featuredPost">
             <div class="container">
                 <div class="featuredPost-title w-100">
-                    <h2>bài viết nổi bật</h2>
+                    <h2>Popular Posts</h2>
                 </div>
                 <div class="featuredPost-content w-100">
                     <div class="featuredPost-nav">
                         <div class="col-12 featuredPost-item">
                             <div class="featuredPost-item-img">
                                 <img class="img-fluid"
-                                     src="img/blog-1-720x484.jpg"
+                                     src="~/Content/Client/img/blog-1-720x484.jpg"
                                      alt=""
                                      srcset="" />
                             </div>
@@ -858,7 +1263,7 @@
                         <div class="col-12 featuredPost-item">
                             <div class="featuredPost-item-img">
                                 <img class="img-fluid"
-                                     src="img/blog-2-720x484.jpg"
+                                     src="~/Content/Client/img/blog-2-720x484.jpg"
                                      alt=""
                                      srcset="" />
                             </div>
@@ -880,7 +1285,7 @@
                         <div class="col-12 featuredPost-item">
                             <div class="featuredPost-item-img">
                                 <img class="img-fluid"
-                                     src="img/blog-3-720x484.jpg"
+                                     src="~/Content/Client/img/blog-3-720x484.jpg"
                                      alt=""
                                      srcset="" />
                             </div>
@@ -902,7 +1307,7 @@
                         <div class="col-12 featuredPost-item">
                             <div class="featuredPost-item-img">
                                 <img class="img-fluid"
-                                     src="img/blog-3-720x484.jpg"
+                                     src="~/Content/Client/img/blog-3-720x484.jpg"
                                      alt=""
                                      srcset="" />
                             </div>
@@ -932,7 +1337,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-3 footer-contact">
-                        <img class="w-75 mb-3" src="img/logo-lg.png" alt="" />
+                        <img class="w-75 mb-3" src="~/Content/Client/img/logo-lg.png" alt="" />
                         <p>
                             Nếu bạn có bất kì câu hỏi nào, hãy liên hệ với chúng tôi quá địa
                             chỉ <span class="footer-email">support@example.</span>
@@ -958,7 +1363,7 @@
                     </div>
                     <div class="col-3 footer-item">
                         <h4>HỖ TRỢ KHÁCH HÀNG</h4>
-                        <p>Liên hệ hỡ trợ</p>
+                        <p>Liên hệ hỗ trợ</p>
                         <p>Những câu hỏi thường gặp</p>
                         <p>Chính sách bảo mật thông tin</p>
                         <p></p>
@@ -1003,52 +1408,52 @@
     <script type="text/javascript"
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-      $(".bestSeller-nav").slick({
-        rows: 2,
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        prevArrow: '<i class="bx bx-left-arrow arrowPrev" ></i>',
-        nextArrow: '<i class="bx bx-right-arrow arrowNext" ></i>',
-      });
-      // $(".newArrivals-nav").slick({
-      //   rows: 1,
-      //   slidesToShow: 4,
-      //   slidesToScroll: 2,
-      //   prevArrow: '<i class="bx bx-left-arrow arrowPrev" ></i>',
-      //   nextArrow: '<i class="bx bx-right-arrow arrowNext" ></i>',
-      // });
-      $(".featuredPost-nav").slick({
-        rows: 1,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: false,
-        nextArrow: false,
-      });
+        $(".bestSeller-nav").slick({
+            rows: 4,
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            prevArrow: '<i class="bx bx-left-arrow arrowPrev" ></i>',
+            nextArrow: '<i class="bx bx-right-arrow arrowNext" ></i>',
+        });
+        // $(".newArrivals-nav").slick({
+        //   rows: 1,
+        //   slidesToShow: 4,
+        //   slidesToScroll: 2,
+        //   prevArrow: '<i class="bx bx-left-arrow arrowPrev" ></i>',
+        //   nextArrow: '<i class="bx bx-right-arrow arrowNext" ></i>',
+        // });
+        $(".featuredPost-nav").slick({
+            rows: 1,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            prevArrow: false,
+            nextArrow: false,
+        });
     </script>
     <script>
-      const nav_categories = document.querySelectorAll(".nav-categories");
-      const header_category = document.querySelector(".header-category");
-      const header_category_content = document.querySelector(
-        ".header-category-content"
-      );
-      header_category.addEventListener("mouseenter", () => {
-        header_category_content.classList.add("active");
-      });
-      header_category.addEventListener("mouseleave", () => {
-        header_category_content.classList.remove("active");
-      });
-      nav_categories.forEach((e) => {
-        e.addEventListener("mouseenter", () => {
-          e.querySelector(".category-name").classList.remove("false");
-          e.querySelector(".category-name").classList.add("active");
-          e.querySelector(".sub-navbar").classList.add("active");
+        const nav_categories = document.querySelectorAll(".nav-categories");
+        const header_category = document.querySelector(".header-category");
+        const header_category_content = document.querySelector(
+            ".header-category-content"
+        );
+        header_category.addEventListener("mouseenter", () => {
+            header_category_content.classList.add("active");
         });
-        e.addEventListener("mouseleave", () => {
-          e.querySelector(".category-name").classList.add("false");
-          e.querySelector(".category-name").classList.remove("active");
-          e.querySelector(".sub-navbar").classList.remove("active");
+        header_category.addEventListener("mouseleave", () => {
+            header_category_content.classList.remove("active");
         });
-      });
+        nav_categories.forEach((e) => {
+            e.addEventListener("mouseenter", () => {
+                e.querySelector(".category-name").classList.remove("false");
+                e.querySelector(".category-name").classList.add("active");
+                e.querySelector(".sub-navbar").classList.add("active");
+            });
+            e.addEventListener("mouseleave", () => {
+                e.querySelector(".category-name").classList.add("false");
+                e.querySelector(".category-name").classList.remove("active");
+                e.querySelector(".sub-navbar").classList.remove("active");
+            });
+        });
     </script>
 </body>
 </html>
