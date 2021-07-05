@@ -27,10 +27,6 @@ namespace Model.DAO
         {
             return db.Users.SingleOrDefault(x => x.Username == username);
         }
-        public User getUserById(int id)
-        {
-            return db.Users.Find(id);
-        }
         //Update
         public int Update(User entity)
         {
