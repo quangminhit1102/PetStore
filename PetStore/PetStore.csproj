@@ -433,7 +433,6 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
-    <Content Include="Content\Admin\css\login.css.map" />
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68027a-400x400.jpg.webp" />
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68031b-400x400.jpg.webp" />
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68036a-400x400.jpg.webp" />
@@ -446,6 +445,7 @@
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
     <Content Include="Areas\Admin\Views\Order\ListOrder.cshtml" />
+    <Content Include="Content\Admin\css\login.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -397,7 +397,6 @@ li.dropdown-menu-item:hover {
   border: none;
   outline: none;
   display: grid;
-  place-items: center;
   cursor: pointer;
   color: var(--main-color);
   padding: 0.5rem;
@@ -954,7 +953,6 @@ table td {
   .mobile-toggle,
   .sidebar-close {
     display: grid;
-    place-items: center;
     font-size: 2rem;
     margin-right: 30px;
     cursor: pointer;
