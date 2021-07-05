@@ -443,6 +443,7 @@
     <Content Include="Areas\Admin\Views\Post\EditPost.cshtml" />
     <Content Include="Areas\Admin\Views\Post\CreatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

@@ -17,5 +17,9 @@ namespace PetStore.Areas.Admin.Controllers
             List<User> listUser = db.Users.ToList();
             return View(listUser);
         }
+        public ActionResult Profile()
+        {
+            return View();
+        }
     }
 }

@@ -30,17 +30,17 @@ namespace PetStore.Controllers
                 {
                     var user = dao.getByUserName(model.Username);
                     var userSession = new UserLogin();
-                    userSession.UserID = user.Id;
-                    userSession.UserName = user.Username;
-                    userSession.Role = user.Role;
-                    Session.Add(ConmmonConstants.USER_SESSION, userSession);
+                    userSession.UserID = user.Id;//
+                    userSession.UserName = user.Username;//
+                    userSession.Role = user.Role;//
+                    Session.Add("USERID", user.Id);
                     if (user.Role == 4)
                     {
                         return RedirectToAction("Index", "Home");
                     }
                     else
                     {
-                        return RedirectToAction("Index", "AdminHome", new { area = "Admin" });
+                        return Redirect("/admin/adminhome/index");
                     }
                 }
                 else if (result == 0)
