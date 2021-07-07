@@ -1,11 +1,10 @@
-﻿@model List<Model.EF.Post>
-@using Model.EF
+﻿@model PagedList.IPagedList<Model.EF.Post>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "ListPost";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
-<br>
-<br>
+
 <div class="row">
     <div class="col-12">
         <!-- Post TABLE -->
@@ -15,143 +14,49 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>
-                                Sửa
-                            <th>
-                            <th>Tên bài viết</th>
-                            <th>Loại bài viết</th>
-                            <th>Nội dung</th>
-                            <th>Ngày viết</th>
-
+                            <th width="50px">STT</th>
+                            <th width="500px">Tên bài viết</th>
+                            <th width="150px">Loại bài viết</th>
+                            <th width="150px">Ảnh bìa</th>
+                            <th width="100px">Ngày viết</th>
+                            <th width="100px">Tác Vụ</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @{ int count = 1;} 
                         @foreach (var item in Model)
                         {
                         <tr>
-                            <td>@Html.ActionLink("Sửa","EditPost", new { Post_ID = item.Id })<td>
+                            <td>@count</td>
+                            @{
+                                count++;
+                            }
+
                             <td>@item.Title</td>
-                            <td></td>
-                            <td>@item.Content</td>
+
+                            <td>@item.Catalog.Title</td>
+
+                            <td><img src=" @item.Image" width="80px"</td>
+
                             <td>@item.CreatedAt</td>
 
+                            <td>
+                                <a href="/admin/post/editpost/@item.Id" style="padding-right:20px">
+                                    <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fas fa-trash-alt" style="color:red"></i>
+                                </a>
+                            </td>
                         </tr>
-                        }
+                                }
                     </tbody>
-                    @*<tbody>
-                        <tr>
-                            <td>#2345</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image.jpg" alt="user image" />
-                                    <span>Trương Văn Biên</span>
-                                </div>
-                            </td>
-                            <td>2021-05-09</td>
-                            <td>
-                                <span class="order-status order-ready"> Ready </span>
-                            </td>
-                            <td>
-                                <div class="payment-status payment-pending">
-                                    <div class="dot"></div>
-                                    <span>Pending</span>
-                                </div>
-                            </td>
-                            <td>$123.45</td>
-                        </tr>
-                        <tr>
-                            <td>#2345</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
-                                    <span>John doe</span>
-                                </div>
-                            </td>
-                            <td>2021-05-09</td>
-                            <td>
-                                <span class="order-status order-shipped">
-                                    Shipped
-                                </span>
-                            </td>
-                            <td>
-                                <div class="payment-status payment-paid">
-                                    <div class="dot"></div>
-                                    <span>Paid</span>
-                                </div>
-                            </td>
-                            <td>$123.45</td>
-                        </tr>
-                        <tr>
-                            <td>#2345</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image-3.png" alt="user image" />
-                                    <span>evelyn</span>
-                                </div>
-                            </td>
-                            <td>2021-05-09</td>
-                            <td>
-                                <span class="order-status order-shipped">
-                                    Shipped
-                                </span>
-                            </td>
-                            <td>
-                                <div class="payment-status payment-paid">
-                                    <div class="dot"></div>
-                                    <span>Paid</span>
-                                </div>
-                            </td>
-                            <td>$123.45</td>
-                        </tr>
-                        <tr>
-                            <td>#2345</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
-                                    <span>John doe</span>
-                                </div>
-                            </td>
-                            <td>2021-05-09</td>
-                            <td>
-                                <span class="order-status order-shipped">
-                                    Shipped
-                                </span>
-                            </td>
-                            <td>
-                                <div class="payment-status payment-paid">
-                                    <div class="dot"></div>
-                                    <span>Paid</span>
-                                </div>
-                            </td>
-                            <td>$123.45</td>
-                        </tr>
-                        <tr>
-                            <td>#2345</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image-3.png" alt="user image" />
-                                    <span>evelyn</span>
-                                </div>
-                            </td>
-                            <td>2021-05-09</td>
-                            <td>
-                                <span class="order-status order-shipped">
-                                    Shipped
-                                </span>
-                            </td>
-                            <td>
-                                <div class="payment-status payment-paid">
-                                    <div class="dot"></div>
-                                    <span>Paid</span>
-                                </div>
-                            </td>
-                            <td>$123.45</td>
-                        </tr>
-                    </tbody>*@
                 </table>
+                @Html.PagedListPager(Model, page => Url.Action("ListPost", new { page }))
             </div>
         </div>
-        <!-- END ORDERS TABLE -->
     </div>
+    <!-- END ORDERS TABLE -->
+</div>
 </div>
 

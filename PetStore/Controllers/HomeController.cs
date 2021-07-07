@@ -10,9 +10,13 @@ namespace PetStore.Controllers
     
     public class HomeController : Controller
     {
+        PetStoreDbContext db = null;
         public ActionResult Index()
         {
-            return View();
+            db = new PetStoreDbContext();
+           var listProduct =db.Products.Take(32).ToList();
+            return View(listProduct);
         }
+
     }
 }
