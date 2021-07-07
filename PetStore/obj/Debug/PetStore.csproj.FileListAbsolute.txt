@@ -174,3 +174,7 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\obj\Debug\PetStor
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\obj\Debug\PetStore.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\PetStore\obj\Debug\PetStore.pdb
+D:\Project\React\PetStore\PetStore\bin\PagedList.dll
+D:\Project\React\PetStore\PetStore\bin\PagedList.Mvc.dll
+D:\Project\React\PetStore\PetStore\bin\PagedList.xml
+D:\Project\React\PetStore\PetStore\bin\PagedList.Mvc.xml
