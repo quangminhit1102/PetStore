@@ -1,4 +1,4 @@
-﻿
+﻿@model Model.EF.User
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -8,11 +8,25 @@
         <div class="col-3 col-sm-12 user-avatar">
             <!--left col-->
 
-            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            <img src="~/Content/Admin/img/user-image-2.png"
                  class="avatar"
-                 alt="avatar" />
+                 alt="avatar" width="200px" />
 
-            <h2>Trương Biên</h2>
+            <h2>Xin chào @Model.Username</h2>
+            @if (Model.Role == 1)
+            {
+
+
+                <h4>Quản trị viên</h4>
+            }
+            else if (Model.Role == 2)
+            {
+                <h4>Nhân viên Sale</h4>
+            }
+            else
+            {
+                <h4>Nhân viên Marketing</h4>
+            }
         </div>
         <!--/col-3-->
         <div class="col-9 col-sm-12">
@@ -45,7 +59,19 @@
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
+                                    <label>Họ và Tên</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>Địa chỉ</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>Giới tính</label>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-12">
@@ -57,7 +83,7 @@
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
+                                    <label>Email</label>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-12">
@@ -69,19 +95,7 @@
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12">
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>User Name</label>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12">
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>User Name</label>
+                                    <label>Ngày sinh</label>
                                 </div>
                             </div>
                         </div>
@@ -96,10 +110,47 @@
                         </div>
                     </form>
                 </div>
+                <!--/tab-pane-->
             </div>
-            <!--/tab-pane-->
+            <!--/tab-content-->
+            <div class="tab-content">
+                <div class="tab-pane fade show active"
+                     role="tabpanel"
+                     id="doimatkhau">
+                    <form>
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>Họ và Tên</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>Địa chỉ</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>Giới tính</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <button class="btn">Lưu lại</button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-reset">reset</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--/tab-pane-->
+            </div>
+            <!--/tab-content-->
         </div>
-        <!--/tab-content-->
+        <!--/col-9-->
     </div>
-    <!--/col-9-->
-</div>

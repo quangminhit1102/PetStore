@@ -137,8 +137,10 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
     <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -218,6 +220,7 @@
     <Content Include="Content\Images\Brands\brand-54.png" />
     <Content Include="Content\Images\Brands\brand-55.jpg" />
     <Content Include="Content\Images\Brands\brand-56.png" />
+    <Content Include="Content\Images\Brands\brand-57.jpg" />
     <Content Include="Content\Images\Brands\brand-58.png" />
     <Content Include="Content\Images\Brands\brand-59.png" />
     <Content Include="Content\Images\Brands\brand-6.jpg" />
@@ -443,9 +446,10 @@
     <Content Include="Areas\Admin\Views\Post\EditPost.cshtml" />
     <Content Include="Areas\Admin\Views\Post\CreatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
-    <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
     <Content Include="Areas\Admin\Views\Order\ListOrder.cshtml" />
     <Content Include="Content\Admin\css\login.css.map" />
+    <Content Include="Areas\Admin\Views\AdminHome\Profile.cshtml" />
+    <Content Include="Areas\Admin\Views\Brand\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -473,6 +477,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Product\" />
     <Folder Include="Content\Client\" />
   </ItemGroup>
   <ItemGroup>

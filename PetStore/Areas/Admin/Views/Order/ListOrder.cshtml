@@ -68,7 +68,10 @@
 
                                 }
                             }
-                            <td>@item.Total</td>
+                            @{
+                                var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+                            }
+                            <td>@string.Format(info, "{0:0,0}", item.Total)đ</td>
                             <td>
                                 <a href="#" style="padding-left:15px">
                                     <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>

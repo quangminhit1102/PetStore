@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pet Store - Quản Trị</title>
-    <link rel="icon" href="~/Areas/Admin/logo-mb.png"
+    <link rel="icon" href="~/Content/Admin/img/logo-mb.png"
           type="image/x-icon">
     @*<link rel="shortcut icon" href="~/Content/Admin/img/logo-mb.png"/>*@
     <!-- GOOGLE FONT -->
@@ -72,7 +72,7 @@
         <!-- nav right -->
         <ul class="navbar-nav nav-right">
             <li class="nav-item mode">
-                <a class="nav-link" href="#" onclick="switchTheme()">
+                <a class="nav-link" onclick="switchTheme()">
                     <i class="fas fa-moon dark-icon"></i>
                     <i class="fas fa-sun light-icon"></i>
                 </a>
@@ -85,18 +85,18 @@
                 </a>
                 <ul id="notification-menu" class="dropdown-menu notification-menu">
                     <div class="dropdown-menu-header">
-                        <span> Notifications </span>
+                        <span> Thông báo </span>
                     </div>
                     <div class="dropdown-menu-content overlay-scrollbar scrollbar-hover">
                         <li class="dropdown-menu-item">
                             <a href="#" class="dropdown-menu-link">
                                 <div>
-                                    <i class="fas fa-gift"></i>
+                                    <i class="fas fa-tasks"></i>
                                 </div>
                                 <span>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Phạm Đăng Khoa đã đặt đơn hàng mới
                                     <br />
-                                    <span> 15/07/2020 </span>
+                                    <span> 30/06/2021 </span>
                                 </span>
                             </a>
                         </li>
@@ -106,21 +106,9 @@
                                     <i class="fas fa-tasks"></i>
                                 </div>
                                 <span>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Trần Quốc Bảo đã đặt đơn hàng mới
                                     <br />
-                                    <span> 15/07/2020 </span>
-                                </span>
-                            </a>
-                        </li>
-                        <li class="dropdown-menu-item">
-                            <a href="#" class="dropdown-menu-link">
-                                <div>
-                                    <i class="fas fa-gift"></i>
-                                </div>
-                                <span>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                    <br />
-                                    <span> 15/07/2020 </span>
+                                    <span> 25/06/2021 </span>
                                 </span>
                             </a>
                         </li>
@@ -130,21 +118,33 @@
                                     <i class="fas fa-tasks"></i>
                                 </div>
                                 <span>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Nguyễn Huy Hoàng đã đặt đơn hàng mới
                                     <br />
-                                    <span> 15/07/2020 </span>
+                                    <span> 28/05/2021 </span>
                                 </span>
                             </a>
                         </li>
                         <li class="dropdown-menu-item">
                             <a href="#" class="dropdown-menu-link">
                                 <div>
-                                    <i class="fas fa-gift"></i>
+                                    <i class="fas fa-tasks"></i>
                                 </div>
                                 <span>
-                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                    Trần Quốc Bảo đã đặt đơn hàng mới
                                     <br />
-                                    <span> 15/07/2020 </span>
+                                    <span> 22/05/2021 </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="dropdown-menu-item">
+                            <a href="#" class="dropdown-menu-link">
+                                <div>
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <span>
+                                    Nguyễn Thanh Tùng đã đặt đơn hàng mới
+                                    <br />
+                                    <span> 20/05/2021 </span>
                                 </span>
                             </a>
                         </li>
@@ -234,7 +234,7 @@
                         </li>
                     </div>
                     <div class="dropdown-menu-footer">
-                        <span> View all notifications </span>
+                        <span> Hiển thị tất cả thông báo </span>
                     </div>
                 </ul>
             </li>
@@ -248,12 +248,12 @@
 
                         <li class="dropdown-menu-item profile">
                             <a href="#" class="dropdown-menu-link">
-                                <img src="~/Content/Admin/img/user-image.jpg" alt="User image" />
+                                <img src="~/Content/Admin/img/user-image-2.png" alt="User image" />
                                 <p>@username</p>
                             </a>
                         </li>
                         <li class="dropdown-menu-item">
-                            <a href="/admin/account/profile" class="dropdown-menu-link">
+                            <a href="/admin/adminhome/profile" class="dropdown-menu-link">
                                 <div>
                                     <i class="fas fa-user-tie"></i>
                                 </div>
@@ -293,7 +293,7 @@
         <!-- SIDEBAR MENU -->
         <ul class="sidebar-menu">
             <li>
-                <a href="/admin/adminhome/index" class="active">
+                <a href="/admin/adminhome/index">
                     <i class="bx bx-home"></i>
                     <span>dashboard</span>
                 </a>
@@ -306,7 +306,7 @@
             </li>
             @* Quan ly san pham *@
             <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
+                <a href="#" class="sidebar-menu-dropdown" >
                     <i class="bx bx-category"></i>
                     <span>Quản lý sản phẩm</span>
                     <div class="dropdown-icon"></div>
@@ -322,7 +322,7 @@
                         <a href="#"> Thêm loại sản phẩm </a>
                     </li>
                     <li>
-                        <a href="#"> Quản lý thương hiệu </a>
+                        <a href="/admin/brand"> Quản lý thương hiệu </a>
                     </li>
                 </ul>
             </li>
