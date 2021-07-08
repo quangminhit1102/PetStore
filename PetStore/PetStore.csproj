@@ -147,6 +147,7 @@
     <Compile Include="Models\Common\ConmmonConstants.cs" />
     <Compile Include="Models\Common\MD5Encryptor.cs" />
     <Compile Include="Models\Common\UserLogin.cs" />
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
