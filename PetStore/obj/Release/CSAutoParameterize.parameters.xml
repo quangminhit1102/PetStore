@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="PetStore-Web.config Connection String" description="PetStore Connection String used in web.config by the application to access the database." defaultValue="data source=NITRO5;initial catalog=PetStore;persist security info=True;user id=sa;password=123456;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Nguyen\ Le\ QUan\\Documents\\GitHub\\PetStore\\PetStore\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PetStore']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,18 @@
+﻿@model List<Model.EF.Brand>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2> Các thương hiệu sản phẩm thú cưng</h2>
+<hr>
+@foreach (var item in Model)
+ {
+    <img src="@item.Image" />
+
+ }
+
+
+
+
+

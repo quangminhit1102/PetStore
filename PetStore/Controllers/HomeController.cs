@@ -14,8 +14,10 @@ namespace PetStore.Controllers
         public ActionResult Index()
         {
             db = new PetStoreDbContext();
-           var listProduct =db.Products.Take(32).ToList();
-            return View(listProduct);
+            //var listProduct =db.Products.Take(32).ToList();
+            // return View(listProduct);
+            var listCategory = db.Categories.ToList();
+            return View(listCategory);
         }
 
     }

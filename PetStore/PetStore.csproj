@@ -138,6 +138,7 @@
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -165,6 +166,45 @@
     <Content Include="Content\Admin\img\user-image-3.png" />
     <Content Include="Content\Admin\img\user-image.jpg" />
     <Content Include="Content\Admin\js\app.js" />
+    <Content Include="Content\Client\css\app.css" />
+    <Content Include="Content\Client\css\grid.css" />
+    <Content Include="Content\Client\css\index.css" />
+    <Content Include="Content\Client\css\login.css" />
+    <Content Include="Content\Client\img\backpack.jpg" />
+    <Content Include="Content\Client\img\banner-12.jpg" />
+    <Content Include="Content\Client\img\banner-13.jpg" />
+    <Content Include="Content\Client\img\banner-25.jpg" />
+    <Content Include="Content\Client\img\bg-07.svg" />
+    <Content Include="Content\Client\img\bird.01a45ffa.gif" />
+    <Content Include="Content\Client\img\blog-1-720x484.jpg" />
+    <Content Include="Content\Client\img\blog-2-720x484.jpg" />
+    <Content Include="Content\Client\img\blog-3-720x484.jpg" />
+    <Content Include="Content\Client\img\cat.862fddc4.gif" />
+    <Content Include="Content\Client\img\dog.8d179361.gif" />
+    <Content Include="Content\Client\img\fish.6c4bafb9.gif" />
+    <Content Include="Content\Client\img\headphone.jpg" />
+    <Content Include="Content\Client\img\logo-lg.png" />
+    <Content Include="Content\Client\img\logo-mb.png" />
+    <Content Include="Content\Client\img\product-1-450x450.jpg" />
+    <Content Include="Content\Client\img\product-2-450x450.jpg" />
+    <Content Include="Content\Client\img\product-3-450x450.jpg" />
+    <Content Include="Content\Client\img\product-4-450x450.jpg" />
+    <Content Include="Content\Client\img\product-5-450x450.jpg" />
+    <Content Include="Content\Client\img\product-6-450x450.jpg" />
+    <Content Include="Content\Client\img\rabbit.46db3c99.gif" />
+    <Content Include="Content\Client\img\Slider-1.jpg" />
+    <Content Include="Content\Client\img\Slider-19.jpg" />
+    <Content Include="Content\Client\img\Slider-2.jpg" />
+    <Content Include="Content\Client\img\Slider-22.jpg" />
+    <Content Include="Content\Client\img\Slider-23.jpg" />
+    <Content Include="Content\Client\img\Slider-24.jpg" />
+    <Content Include="Content\Client\img\Slider-3.jpg" />
+    <Content Include="Content\Client\img\sneaker.jpg" />
+    <Content Include="Content\Client\img\thumb-7.jpg" />
+    <Content Include="Content\Client\img\user-image-2.png" />
+    <Content Include="Content\Client\img\user-image-3.png" />
+    <Content Include="Content\Client\img\user-image.jpg" />
+    <Content Include="Content\Client\js\app.js" />
     <Content Include="Content\Images\Brands\brand-1.png" />
     <Content Include="Content\Images\Brands\brand-10.png" />
     <Content Include="Content\Images\Brands\brand-11.png" />
@@ -444,6 +484,16 @@
     <Content Include="Areas\Admin\Views\Post\CreatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
+    <Content Include="Content\Client\css\login.css.map" />
+    <Content Include="Content\Client\scss\Base\_reset.scss" />
+    <Content Include="Content\Client\scss\Helper\_function.scss" />
+    <Content Include="Content\Client\scss\Helper\_mixin.scss" />
+    <Content Include="Content\Client\scss\Helper\_variable.scss" />
+    <Content Include="Content\Client\scss\Layouts\_detail-content.scss" />
+    <Content Include="Content\Client\scss\Layouts\_Footer.scss" />
+    <Content Include="Content\Client\scss\Layouts\_header.scss" />
+    <Content Include="Content\Client\scss\Layouts\_login.scss" />
+    <Content Include="Content\Client\scss\Pages\login.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -468,11 +518,12 @@
     <Content Include="Views\Login\Register.cshtml" />
     <Content Include="Views\Shared\Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Brand\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
-    <Folder Include="Content\Client\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
