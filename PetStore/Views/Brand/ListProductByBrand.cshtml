@@ -245,7 +245,7 @@
                                 </h5>
                                 @if (@item.Price == null)
                                 {
-                                    <span class="price">@item. .FirstOrDefault().Image đ</span>
+                            <span class="price"> @string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price)đ</span>
                                 }
                                 else
                                 {
@@ -283,7 +283,14 @@
                                             @item.Name
                                         </h5>
 
-                                        <span class="price">@string.Format(info, "{0:0,0}", @item.Price)đ</span>
+                                        @if (@item.Price == null)
+                                        {
+                                            <span class="price"> @string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price)đ</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="price">@string.Format(info, "{0:0,0}", @item.Price)đ</span>
+                                        }
 
                                         <p>
                                             @item.Description
@@ -292,30 +299,7 @@
                                 </a>
                             }
 
-                            <a href="#" class="col-12 sort-list-product">
-                                <img class="img-fluid"
-                                     src="img/product-2-450x450.jpg"
-                                     alt=""
-                                     srcset="" />
-                                <div class="product-content">
-                                    <h5>
-                                        Donec Faucibus Odio Felis Nec Viverra Nisi
-                                        Sollicitudin
-                                    </h5>
-
-                                    <span class="price">145.000 đ</span>
-
-                                    <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                                        elit. Maiores fuga eveniet ipsum at dolores quae
-                                        maxime repellendus non? Architecto quam magni tenetur,
-                                        minima quia repellendus reprehenderit qui tempora
-                                        provident cumque nulla eveniet illum nisi perspiciatis
-                                        modi recusandae officiis assumenda debitis quod eum
-                                        saepe maxime optio natus eligendi. Iusto, autem ab.
-                                    </p>
-                                </div>
-                            </a>
+                          
                         </div>
                     </div>
                 </div>

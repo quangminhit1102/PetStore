@@ -8,14 +8,21 @@
 <div class="header-listproduct"
      style="background-image: url('/Content/Client/img/breadcumd.jpg')"></div>
 
-@foreach (var item in Model)
-{
-    <a href="/thuong-hieu/chi-tiet/@item.Id">
-        <img src="@item.Image" width="200px" , height="200px" />
-    </a>
+<div class="container">
+    <h2>Danh sách thương hiệu</h2>
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <a class="col-2 brand-item" href="/thuong-hieu/chi-tiet/@item.Id">
+                <img class="img-fluid" src="@item.Image" width="200px" , height="200px" />
+            </a>
 
 
-}
+        }
+    </div>
+</div>
+
 
 
 

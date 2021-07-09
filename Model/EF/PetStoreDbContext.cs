@@ -8,7 +8,7 @@ namespace Model.EF
     public partial class PetStoreDbContext : DbContext
     {
         public PetStoreDbContext()
-            : base("name=PetStore")
+            : base("name=PetStoreDbContext")
         {
         }
 
@@ -23,13 +23,13 @@ namespace Model.EF
         public virtual DbSet<Permission> Permissions { get; set; }
         public virtual DbSet<PostImage> PostImages { get; set; }
         public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<ProductAttribute> ProductAttributes { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<ProductLink> ProductLinks { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<ProductAttribute> ProductAttributes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -61,10 +61,6 @@ namespace Model.EF
             modelBuilder.Entity<ProductImage>()
                 .Property(e => e.Image)
                 .IsUnicode(false);
-
-            modelBuilder.Entity<Product>()
-                .HasOptional(e => e.ProductAttribute)
-                .WithRequired(e => e.Product);
 
             modelBuilder.Entity<Role>()
                 .HasMany(e => e.Users)
