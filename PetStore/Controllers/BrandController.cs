@@ -7,19 +7,26 @@ using System.Web.Mvc;
 
 namespace PetStore.Controllers
 {
-    [RoutePrefix("thuong-hieu")]
+
     public class BrandController : Controller
     {
         PetStoreDbContext db = null;
 
 
         // GET: Brand
-        [Route]
         public ActionResult Index()
         {
             db = new PetStoreDbContext();
             var listBrand = db.Brands.ToList();
             return View(listBrand);
+        }
+
+        public ActionResult ListProductByBrand(int Id)
+        {
+            db = new PetStoreDbContext();
+            var listProduct = db.Products.Where(x => x.BrandId == Id).ToList();
+            
+            return View(listProduct);
         }
     }
 }

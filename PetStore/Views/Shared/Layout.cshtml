@@ -1,4 +1,4 @@
-﻿@model PetStore.Models.HomeModel
+﻿
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,8 +34,11 @@
                          src="~/Content/Client/img/logo-lg.png"
                          alt="petStore" />
                 </a>
-                @*Start Menu *@
-                <div class="header-category mx-3">
+                @Html.Action("LoadMenu", "Home")
+
+                @*
+
+                <!--<div class="header-category mx-3">
                     <i class="bx bx-category"></i>
                     <div class="wrap">
                         <span>Danh mục</span>
@@ -61,20 +64,20 @@
                                                         <img src="~/Content/Client/img/dog.8d179361.gif"
                                                              loading="lazy"
                                                              class="lazy-image pets-image" />
-                                                    </div>
+                                                    </div>-->
                                                     @* Cho *@
-                                                    <div class="w-75">
+                                                    <!--<div class="w-75">
                                                         <div class="sub-navbar-title">
                                                             <a class="name" href="/mua-ban-cho">Chó</a>
                                                         </div>
                                                         <ul class="sub-list">
 
-                                                            @foreach (var item in Model.listCategory.Where(x => x.ParentId == 1))
+                                                            foreach (var item in Model.listCategory.Where(x => x.ParentId == 1))
                                                             {
                                                                 foreach (var item1 in Model.listCategory.Where(x => x.ParentId == item.Id))
                                                                 {
                                                                     <li class="item">
-                                                                        <a class="name" href="#">@item1.Name</a>
+                                                                        <a class="name" href="#">item1.Name</a>
                                                                     </li>
                                                                 }
                                                             }
@@ -83,9 +86,9 @@
                                                 </div>
                                             </div>
                                         </nav>
-                                    </li>
+                                    </li>-->
                                     @* Meo *@
-                                    <li class="py-3 nav-categories">
+                                    <!--<li class="py-3 nav-categories">
                                         <div class="py-6 category-item">
                                             <span class="category-name p-6 false">Mèo</span>
                                         </div>
@@ -106,12 +109,12 @@
                                                         </div>
                                                         <ul class="sub-list">
 
-                                                            @foreach (var item in Model.listCategory.Where(x => x.ParentId == 32))
+                                                            foreach (var item in Model.listCategory.Where(x => x.ParentId == 32))
                                                             {
                                                                 foreach (var item1 in Model.listCategory.Where(x => x.ParentId == item.Id))
                                                                 {
                                                                     <li class="item">
-                                                                        <a class="name" href="#">@item1.Name</a>
+                                                                        <a class="name" href="#">item1.Name</a>
                                                                     </li>
                                                                 }
                                                             }
@@ -142,10 +145,10 @@
                                                         </div>
                                                         <ul class="sub-list">
 
-                                                            @foreach (var item in Model.listCategory.Where(x => x.ParentId == 64))
+                                                            foreach (var item in Model.listCategory.Where(x => x.ParentId == 64))
                                                             {
                                                                 <li class="item">
-                                                                    <a class="name" href="#">@item.Name</a>
+                                                                    <a class="name" href="#">item.Name</a>
                                                                 </li>
                                                             }
                                                         </ul>
@@ -175,10 +178,10 @@
                                                         </div>
                                                         <ul class="sub-list">
 
-                                                            @foreach (var item in Model.listCategory.Where(x => x.ParentId == 59))
+                                                            foreach (var item in Model.listCategory.Where(x => x.ParentId == 59))
                                                             {
                                                                 <li class="item">
-                                                                    <a class="name" href="#">@item.Name</a>
+                                                                    <a class="name" href="#">item.Name</a>
                                                                 </li>
                                                             }
                                                         </ul>
@@ -208,10 +211,10 @@
                                                         </div>
                                                         <ul class="sub-list">
 
-                                                            @foreach (var item in Model.listCategory.Where(x => x.ParentId == 69))
+                                                            foreach (var item in Model.listCategory.Where(x => x.ParentId == 69))
                                                             {
                                                                 <li class="item">
-                                                                    <a class="name" href="#">@item.Name</a>
+                                                                    <a class="name" href="#">item.Name</a>
                                                                 </li>
                                                             }
                                                         </ul>
@@ -225,7 +228,7 @@
                                         </div>
                                         <svg viewBox="0 0 50 50" class="image">
                                             <path d="M49.08,15.49,27.73,39.27c-.1.1-.2.3-.4.3a2.09,2.09,0,0,1-1,.61,3.05,3.05,0,0,1-2.64,0,2.09,2.09,0,0,1-1-.61c-.2,0-.3-.2-.4-.3L.92,15.49a3.54,3.54,0,0,1,.3-5.06,3.62,3.62,0,0,1,2.43-.91,3.85,3.85,0,0,1,2.63,1.11L25,31.58,43.72,10.63a3.85,3.85,0,0,1,2.63-1.11,3.62,3.62,0,0,1,2.43.91A3.54,3.54,0,0,1,49.08,15.49Z"></path>
-                                        </svg>
+                                        </svg>-->
                                         @*<nav class="remove-padding sub-navbar">
                                                 <div>
                                                     <div class="my-2 container remove-padding wrapper">
@@ -258,7 +261,7 @@
                                                     </div>
                                                 </div>
                                             </nav>*@
-                                    </li>
+                                    <!--</li>
                                     <li class="py-3 nav-categories">
                                         <div class="py-6 category-item">
                                             <span class="category-name p-6 false">Bài Viết</span>
@@ -271,7 +274,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 @* End Start Menu *@
 
                 @* Search Bar *@
@@ -311,27 +314,7 @@
     <!-- END HEADER -->
     <!-- BEGIN MAIN-CONTENT  -->
     <div class="main-content">
-        <div id="carouselExampleIndicators" class="carousel slide">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators"
-                    data-slide-to="0"
-                    class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            @* Slider *@
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="~/Content/Client/img/Slider-22.jpg" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                    <img src="~/Content/Client/img/Slider-23.jpg" class="d-block w-100" alt="..." />
-                </div>
-                <div class="carousel-item">
-                    <img src="~/Content/Client/img/Slider-24.jpg" class="d-block w-100" alt="..." />
-                </div>
-            </div>
-        </div>
+       
         @RenderBody()
     </div>
 
@@ -414,7 +397,14 @@
     <script>
         $(".bestSeller-nav").slick({
             rows: 4,
-            slidesToShow: 4,
+            slidesToShow: 5,
+            slidesToScroll: 2,
+            prevArrow: false,
+            nextArrow: false,
+        });
+        $(".brand-nav").slick({
+            rows: 4,
+            slidesToShow: 5,
             slidesToScroll: 2,
             prevArrow: false,
             nextArrow: false,

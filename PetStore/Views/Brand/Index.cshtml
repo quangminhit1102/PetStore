@@ -4,13 +4,22 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<h2> Các thương hiệu sản phẩm thú cưng</h2>
-<hr>
+
+<div class="header-listproduct"
+     style="background-image: url('/Content/Client/img/breadcumd.jpg')"></div>
+
 @foreach (var item in Model)
 {
-    <img src="@item.Image" />
+    <a href="/thuong-hieu/chi-tiet/@item.Id">
+        <img src="@item.Image" width="200px" , height="200px" />
+    </a>
+
 
 }
+
+
+
+
 
 
 

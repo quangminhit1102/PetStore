@@ -24,13 +24,25 @@ namespace PetStore
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapMvcAttributeRoutes();
+            routes.MapRoute(
+                name: "Brands",
+                url: "{thuong-hieu}/{action}",
+                defaults: new { controller = "Brand", action = "Index", id = UrlParameter.Optional }
+               
+            );
 
-            //...
+            routes.MapRoute(
+                name: "Brand Details",
+                url: "{thuong-hieu}/{chi-tiet}/{Id}",
+                defaults: new { controller = "Brand", action = "ListProductByBrand", id = UrlParameter.Optional }
+
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                
             );
         }
 
