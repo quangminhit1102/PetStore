@@ -1,0 +1,204 @@
+﻿@model Model.EF.Product
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>ProductDetail</h2>
+
+<div class="main-content">
+    <div class="header-position"></div>
+    <section id="detail">
+        <div class="detail-info">
+            <div class="container">
+                <div class="row">
+                    @{
+                        var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+                    }
+                    <div class="col-12 col-sm-6">
+                        <div class="slide-for">
+                            <div class="slide-for-item">
+                                <img class="img-fluid"
+                                     src="@Model.ProductImages.FirstOrDefault().Image"
+                                     alt="" />
+                            </div>
+                            <div class="slide-for-item">
+                                <img class="img-fluid"
+                                     src="~/Content/Client/img/product-2-450x450.jpg"
+                                     alt="" />
+                            </div>
+                            <div class="slide-for-item">
+                                <img class="img-fluid"
+                                     src="~/Content/Client/img/product-3-450x450.jpg"
+                                     alt="" />
+                            </div>
+                            <div class="slide-for-item">
+                                <img class="img-fluid"
+                                     src="~/Content/Client/img/product-4-450x450.jpg"
+                                     alt="" />
+                            </div>
+                            <div class="slide-for-item">
+                                <img class="img-fluid"
+                                     src="~/Content/Client/img/product-5-450x450.jpg"
+                                     alt="" />
+                            </div>
+                        </div>
+                        <div class="bg_slide-nav">
+                            <div class="slide-nav">
+                                <div class="slide-nav-item">
+                                    <div class="slide-nav-item-img">
+                                        <img class="img-fluid"
+                                             src="~/Content/Client/img/product-1-450x450.jpg"
+                                             alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-nav-item">
+                                    <div class="slide-nav-item-img">
+                                        <img class="img-fluid"
+                                             src="~/Content/Client/img/product-2-450x450.jpg"
+                                             alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-nav-item">
+                                    <div class="slide-nav-item-img">
+                                        <img class="img-fluid"
+                                             src="~/Content/Client/img/product-3-450x450.jpg"
+                                             alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-nav-item">
+                                    <div class="slide-nav-item-img">
+                                        <img class="img-fluid"
+                                             src="~/Content/Client/img/product-4-450x450.jpg"
+                                             alt="" />
+                                    </div>
+                                </div>
+                                <div class="slide-nav-item">
+                                    <div class="slide-nav-item-img">
+                                        <img class="img-fluid"
+                                             src="~/Content/Client/img/product-5-450x450.jpg"
+                                             alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 pt-5 pl-5">
+                        <div class="summary entry-summary">
+                            <div class="breadcrumb-noheading">
+                                <div class="breadcrumb">
+                                    <a href="/">Trang Chủ</a><i class="bx bxs-right-arrow"></i><a href="/thuong-hieu">@Model.Brand.Name</a><i class="bx bxs-right-arrow"></i><a href="#">@Model.Brand.Name</a><i class="bx bxs-right-arrow"></i><a href="#">@Model.Name</a>
+                                </div>
+                            </div>
+                            <div class="woocommerce-product-rating">
+                                <div class="products__rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bx-star"></i>
+                                    <span>(2)</span>
+                                </div>
+                            </div>
+                            <h1 itemprop="name" class="product_title entry-title">
+                                @Model.Name
+                            </h1>
+                            <div class="price-single">
+                                <div class="price">
+                                    <span>
+                                        @if (@Model.Price == null)
+                                        {
+                                            <span class="price"> @string.Format(info, "{0:0,0}", @Model.ProductAttributes.FirstOrDefault().Price) đ</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="price">@string.Format(info, "{0:0,0}", @Model.Price) đ</span>
+                                        }
+                                    </span>
+                                </div>
+                                <div class="product-lable"></div>
+                            </div>
+                            <div class="description">
+                                <p>
+                                    @Model.Description
+                                </p>
+                            </div>
+                            <form>
+                                <div class="row">
+                                    <div class="quantity">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                type="button"
+                                                class="plus">
+                                            +
+                                        </button>
+                                        <input type="number" value="1" min="1" max="" />
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                type="button"
+                                                class="minus">
+                                            -
+                                        </button>
+                                    </div>
+                                    <button class="btn add-cart" type="submit">
+                                        Add to cart
+                                    </button>
+
+                                    <button class="btn buy-cart">Buy Now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="detail-description">
+            <div class="container">
+                <nav>
+                    <div class="nav nav-pills" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active"
+                           id="nav-home-tab"
+                           data-toggle="tab"
+                           href="#nav-home"
+                           role="tab"
+                           aria-controls="nav-home"
+                           aria-selected="true">Mô tả</a>
+                        <a class="nav-item nav-link"
+                           id="nav-profile-tab"
+                           data-toggle="tab"
+                           href="#nav-profile"
+                           role="tab"
+                           aria-controls="nav-profile"
+                           aria-selected="false">Đánh giá</a>
+                        <a class="nav-item nav-link"
+                           id="nav-contact-tab"
+                           data-toggle="tab"
+                           href="#nav-contact"
+                           role="tab"
+                           aria-controls="nav-contact"
+                           aria-selected="false">Contact</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                    <div class="tab-pane fade show active"
+                         id="nav-home"
+                         role="tabpanel"
+                         aria-labelledby="nav-home-tab">
+                        @Model.Description
+                    </div>
+                    <div class="tab-pane fade"
+                         id="nav-profile"
+                         role="tabpanel"
+                         aria-labelledby="nav-profile-tab">
+                        Đánh giá?
+                    </div>
+                    <div class="tab-pane fade"
+                         id="nav-contact"
+                         role="tabpanel"
+                         aria-labelledby="nav-contact-tab">
+
+                        Liên Hệ
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

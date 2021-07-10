@@ -25,8 +25,16 @@ namespace PetStore
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Product Details",
+                url: "{san-pham}/{sitetile}/{ProId}",
+                defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
+
+            );
+
+
+            routes.MapRoute(
                 name: "Brands",
-                url: "{thuong-hieu}/{action}",
+                url: "{thuong-hieu}",
                 defaults: new { controller = "Brand", action = "Index", id = UrlParameter.Optional }
                
             );
@@ -38,6 +46,7 @@ namespace PetStore
 
             );
 
+            
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

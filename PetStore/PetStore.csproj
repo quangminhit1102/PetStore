@@ -525,12 +525,12 @@
     <Content Include="Views\Brand\Index.cshtml" />
     <Content Include="Views\Home\LoadMenu.cshtml" />
     <Content Include="Views\Brand\ListProductByBrand.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Properties\PublishProfiles\" />
-    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
