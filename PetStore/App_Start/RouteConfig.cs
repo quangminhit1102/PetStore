@@ -26,11 +26,17 @@ namespace PetStore
 
             routes.MapRoute(
                 name: "Product Details",
-                url: "{san-pham}/{sitetile}/{ProId}",
+                url: "{san-pham}/{sitetile}-{ProId}",
                 defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
 
             );
 
+            //routes.MapRoute(
+            //    name: "Categories",
+            //    url: "{danh-muc-san-pham}/{sitetile}/{CateId}",
+            //    defaults: new { controller = "Product", action = "ListProductByCate", id = UrlParameter.Optional }
+
+            //);
 
             routes.MapRoute(
                 name: "Brands",

@@ -40,7 +40,7 @@
 
                 @foreach (var item in Model.listProduct)
                 {
-                    <a href="#" class="col-12 bestSeller-product">
+                    <a href="/san-pham/@item.SiteTile-@item.Id" class="col-12 bestSeller-product">
                         <img class="img-fluid"
                              src="@item.ProductImages.FirstOrDefault().Image"
                              alt=""
