@@ -26,7 +26,6 @@ namespace Model.EF
         public bool? PaymentStatus { get; set; }
 
         public int? CreateBy { get; set; }
-        public int? Total { get; set; }
 
         public DateTime? CreateAt { get; set; }
 
