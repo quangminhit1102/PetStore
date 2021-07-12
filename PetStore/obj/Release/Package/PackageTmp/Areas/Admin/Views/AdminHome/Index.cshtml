@@ -1,0 +1,139 @@
+﻿@model List<Model.EF.Order>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<!-- nav left -->
+<div class="row">
+    <div class="col-3 col-md-6 col-sm-12">
+        <div class="box box-hover">
+            <!-- COUNTER -->
+            <div class="counter">
+                <div class="counter-title">Tổng Đơn hàng</div>
+                <div class="counter-info">
+                    <div class="counter-count">@ViewBag.countOrder</div>
+                    <i class="bx bx-shopping-bag"></i>
+                </div>
+            </div>
+            <!-- END COUNTER -->
+        </div>
+    </div>
+    <div class="col-3 col-md-6 col-sm-12">
+        <div class="box box-hover">
+            <!-- COUNTER -->
+            <div class="counter">
+                <div class="counter-title">conversion rate</div>
+                <div class="counter-info">
+                    <div class="counter-count">30.5%</div>
+                    <i class="bx bx-chat"></i>
+                </div>
+            </div>
+            <!-- END COUNTER -->
+        </div>
+    </div>
+    <div class="col-3 col-md-6 col-sm-12">
+        <div class="box box-hover">
+            <!-- COUNTER -->
+            @{
+                var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+            }
+            <div class="counter">
+                <div class="counter-title">Tổng doanh thu (VNĐ)</div>
+                <div class="counter-info">
+                    <div class="counter-count">@string.Format(info, "{0:0,0}", @ViewBag.Profit)</div>
+                    <i class="bx bx-line-chart"></i>
+                </div>
+            </div>
+            <!-- END COUNTER -->
+        </div>
+    </div>
+    <div class="col-3 col-md-6 col-sm-12">
+        <div class="box box-hover">
+            <!-- COUNTER -->
+            <div class="counter">
+                <div class="counter-title">Tổng lượt ghé thăm</div>
+                <div class="counter-info">
+                    <div class="counter-count">690</div>
+                    <i class="bx bx-user"></i>
+                </div>
+            </div>
+            <!-- END COUNTER -->
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <!-- ORDERS TABLE -->
+        <div class="box">
+            <div class="box-header">Đơn hàng gần đây</div>
+            <div class="box-body overflow-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Khách hàng</th>
+                            <th>Ngày đặt</th>
+                            <th>Tình trạng đặt</th>
+                            <th>Tình trạng thanh toán</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>
+                                    <div class="order-owner">
+                                        <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
+                                        <span>@item.User.FullName</span>
+                                    </div>
+                                </td>
+                                <td>@item.OrderDate</td>
+
+                                @{ if (item.OrderStatus == true)
+                                    {
+                                        <td>
+                                            <span class="order-status order-shipped"> Đang giao hàng </span>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <span class="order-status order-ready"> Sẵn sàng </span>
+                                        </td>
+
+                                    }
+                                }
+                                @{ if (item.PaymentStatus == true)
+                                    {
+                                        <td>
+                                            <div class="payment-status payment-paid">
+                                                <div class="dot"></div>
+                                                <span>Đã thanh toán</span>
+                                            </div>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <div class="payment-status payment-pending">
+                                                <div class="dot"></div>
+                                                <span>Chưa thanh toán</span>
+                                            </div>
+                                        </td>
+
+                                    }
+                                }
+                                <td>@item.Total</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END ORDERS TABLE -->
+    </div>
+</div>

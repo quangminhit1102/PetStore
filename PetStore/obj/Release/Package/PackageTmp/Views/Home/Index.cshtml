@@ -1,0 +1,692 @@
+﻿@model List<Model.EF.Product> 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@* Best Seller *@
+<section id="bestSeller">
+    <div class="container">
+        </br>
+        <div class="bestSeller-title w-100">
+            <h2>Sản phẩm bán chạy</h2>
+        </div>
+        <div class="bestSeller-content w-100">
+            <div class="bestSeller-nav">
+                @{
+                    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+                }
+          
+                @foreach (var item in Model)
+                {
+                    <a href="#" class="col-12 bestSeller-product">
+                        <img class="img-fluid"
+                             src="@item.ProductImages.FirstOrDefault().Image"
+                             alt=""
+                             srcset="" />
+                        <div class="products__rating">
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <i class="bx bxs-star"></i>
+                            <span>(1)</span>
+                        </div>
+                        <h5>@item.Name</h5>
+                        @if (item.Price == null)
+                        {
+                            <span class="price">Xem Chi Tiết</span>
+                        }
+                        else
+                        {
+                    <span class="price">@string.Format(info, "{0:0,0}",@item.Price)đ</span>
+                        }
+                    </a>
+                }
+
+                @*<a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-2-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">175.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-6-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bx-star"></i>
+                <span>(2)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">45.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-3-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a><a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a><a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a><a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a></a><a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a></a><a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a><a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-4-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a>
+
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-5-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <span>(0)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-6-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">15.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-5-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <i class="bx bx-star"></i>
+                <span>(0)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-6-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">15.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+            <img class="img-fluid"
+                 src="~/Content/Client/img/product-6-450x450.jpg"
+                 alt=""
+                 srcset="" />
+            <div class="products__rating">
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star"></i>
+                <i class="bx bxs-star-half"></i>
+                <span>(1)</span>
+            </div>
+            <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+            <span class="price">15.000 đ</span>
+        </a>*@
+            </div>
+        </div>
+    </div>
+</section>
+@* Ads *@
+<section id="pick-shiroupet">
+    <div class="container">
+        <div class="pick-content">
+            <div class="pick-context w-75 h-100">
+                <div class="pick-item w-100">
+                    <h3>Take your pick of the litter</h3>
+                </div>
+                <div class="pick-item w-100">
+                    <p>An odor-free home starts with Arm &amp; Hammer.</p>
+                </div>
+                <div class="pick-item w-100">
+                    <a href="#" class="btn">shop now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@* Brand *@
+<section id="brands">
+    <div class="container">
+        <div class="brand-title w-100">
+            <h2>Thương hiệu nổi tiếng</h2>
+        </div>
+        <div class="brand-content w-100">
+            <div>
+                <div class="row m-0">
+                    <div class="col-12 col-md-6 col-lg-3 item">
+                        <div class="item-image">
+                            <a href="#">
+                                <img src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-1.jpg"
+                                     alt="Brand 1" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 item">
+                        <div class="item-image">
+                            <a href="">
+                                <img src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-2.jpg"
+                                     alt="Brand 2" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 item">
+                        <div class="item-image">
+                            <a href="">
+                                <img src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-3.jpg"
+                                     alt="Brand 3" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 item">
+                        <div class="item-image">
+                            <a href="">
+                                <img src="https://wpbingosite.com/wordpress/petio/wp-content/uploads/2021/03/brand-4.jpg"
+                                     alt="Brand 4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@* Hot Deal *@
+<section id="hotDeal">
+    <div class="container">
+        <div class="hotDeal-content w-100">
+            <div class="row">
+                <div class="col-12 col-md-6 hotDeal-item">
+                    <div class="hotDeal-item-img w-100">
+                        <img class="img-fluid" src="~/Content/Client/img/banner-12.jpg" alt="" />
+                    </div>
+                    <div class="hotDeal-item-content w-75">
+                        <p>20% off all items</p>
+                        <h3>Hot Summer <br />Deals</h3>
+                        <a class="btn" href="#">shop now</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 hotDeal-item">
+                    <div class="hotDeal-item-img w-100">
+                        <img class="img-fluid" src="~/Content/Client/img/banner-13.jpg" alt="" />
+                    </div>
+                    <div class="hotDeal-item-content w-75">
+                        <p>TOYS, TREATS & LEASHES</p>
+                        <h3>Now <br />At Wilone</h3>
+                        <a class="btn" href="#">shop now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section id="newArrivals">
+  <div class="container">
+    <div class="newArrivals-title w-100">
+      <h2>Sản phẩm mới</h2>
+    </div>
+    <div class="newArrivals-content w-100">
+      <div class="newArrivals-nav">
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-1-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">145.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-2-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">175.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-6-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bx-star"></i>
+            <span>(2)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">45.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-3-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-4-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-5-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <span>(0)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-6-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">15.000 đ</span>
+        </a>
+        <a href="#" class="col-12 bestSeller-product">
+          <img
+            class="img-fluid"
+            src="img/product-5-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <i class="bx bx-star"></i>
+            <span>(0)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">165.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-6-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">15.000 đ</span>
+        </a>
+        <a href="#" class="col-12 newArrivals-product">
+          <img
+            class="img-fluid"
+            src="img/product-6-450x450.jpg"
+            alt=""
+            srcset=""
+          />
+          <div class="products__rating">
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star"></i>
+            <i class="bx bxs-star-half"></i>
+            <span>(1)</span>
+          </div>
+          <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+          <span class="price">15.000 đ</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section> -->
+@* Blog *@
+<section id="blog">
+    <div class="container">
+        <div class="blog-content w-100">
+            <div class="row">
+                <div class="col-12 blog-item">
+                    <div class="blog-item-img w-100">
+                        <img class="img-fluid" src="~/Content/Client/img/Slider-19.jpg" alt="" />
+                    </div>
+                    <div class="blog-item-content w-75">
+                        <h3>
+                            Blog <br />
+                            Chăm sóc thú cưng
+                        </h3>
+
+                        <a class="btn" href="#">Vào ngay nào!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@* popular posts *@
+<section id="featuredPost">
+    <div class="container">
+        <div class="featuredPost-title w-100">
+            <h2>Popular Posts</h2>
+        </div>
+        <div class="featuredPost-content w-100">
+            <div class="featuredPost-nav">
+                <div class="col-12 featuredPost-item">
+                    <div class="featuredPost-item-img">
+                        <img class="img-fluid"
+                             src="~/Content/Client/img/blog-1-720x484.jpg"
+                             alt=""
+                             srcset="" />
+                    </div>
+                    <div class="featuredPost-item-content">
+                        <h3>
+                            Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin
+                        </h3>
+                        <div class="featuredPost-create">
+                            <span class="entry-meta-link">
+                                By :
+                                <a href="#"
+                                   title="Posts by Wpbingo"
+                                   rel="author"
+                                   tabindex="0">Wpbingo</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 featuredPost-item">
+                    <div class="featuredPost-item-img">
+                        <img class="img-fluid"
+                             src="~/Content/Client/img/blog-2-720x484.jpg"
+                             alt=""
+                             srcset="" />
+                    </div>
+                    <div class="featuredPost-item-content">
+                        <h3>
+                            Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin
+                        </h3>
+                        <div class="featuredPost-create">
+                            <span class="entry-meta-link">
+                                By :
+                                <a href="#"
+                                   title="Posts by Wpbingo"
+                                   rel="author"
+                                   tabindex="0">Wpbingo</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 featuredPost-item">
+                    <div class="featuredPost-item-img">
+                        <img class="img-fluid"
+                             src="~/Content/Client/img/blog-3-720x484.jpg"
+                             alt=""
+                             srcset="" />
+                    </div>
+                    <div class="featuredPost-item-content">
+                        <h3>
+                            Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin
+                        </h3>
+                        <div class="featuredPost-create">
+                            <span class="entry-meta-link">
+                                By :
+                                <a href="#"
+                                   title="Posts by Wpbingo"
+                                   rel="author"
+                                   tabindex="0">Wpbingo</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 featuredPost-item">
+                    <div class="featuredPost-item-img">
+                        <img class="img-fluid"
+                             src="~/Content/Client/img/blog-3-720x484.jpg"
+                             alt=""
+                             srcset="" />
+                    </div>
+                    <div class="featuredPost-item-content">
+                        <h3>
+                            Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin
+                        </h3>
+                        <div class="featuredPost-create">
+                            <span class="entry-meta-link">
+                                By :
+                                <a href="#"
+                                   title="Posts by Wpbingo"
+                                   rel="author"
+                                   tabindex="0">Wpbingo</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    </div>

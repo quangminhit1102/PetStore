@@ -22,6 +22,7 @@ namespace Model.EF
         public string Username { get; set; }
 
         [Required]
+        [StringLength(150)]
         public string Password { get; set; }
 
         public int Role { get; set; }
