@@ -1,5 +1,4 @@
-﻿using Model.DAO;
-using Model.EF;
+﻿using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +7,16 @@ using System.Web.Mvc;
 
 namespace PetStore.Areas.Admin.Controllers
 {
-    public class AccountController : Controller
+    public class BrandController : Controller
     {
+        // GET: Admin/Brand
         PetStoreDbContext db = null;
-        // GET: Admin/Account
-        public ActionResult ListAccount()
+        [Route]
+        public ActionResult Index()
         {
             db = new PetStoreDbContext();
-            List<User> listUser = db.Users.ToList();
-            return View(listUser);
+            var listBrand = db.Brands.ToList();
+            return View(listBrand);
         }
     }
 }

@@ -8,7 +8,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Register</title>
+    <link rel="icon" href="~/Content/Admin/img/logo-mb.png"
+          type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
           rel="stylesheet" />
     <link rel="stylesheet"
@@ -71,7 +73,7 @@
                                     <label>Họ và tên</label>
                                 </div>
                                 <div class="form_control">
-                                    @Html.TextBoxFor(model => model.email, htmlAttributes: new { name = "email", type = "email", required = "required" })
+                                    @Html.TextBoxFor(model => model.email, htmlAttributes: new { name = "email", type = "text", required = "required" })
                                     @*<input required name="email" type="email" />*@
                                     <label>Email</label>
                                 </div>

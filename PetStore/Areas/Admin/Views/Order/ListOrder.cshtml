@@ -6,6 +6,9 @@
 <div class="row">
     <div class="col-12">
         <!-- ORDERS TABLE -->
+        <a href="#" class="btn btn-primary" data-toggle="model" data-target="#Model"></a>
+        <div class="model fade"></div>
+
         <div class="box">
             <div class="box-header">Đơn hàng gần đây</div>
             <div class="box-body overflow-scroll">
@@ -24,57 +27,60 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>@item.Id</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
-                                    <span>@item.User.FullName</span>
-                                </div>
-                            </td>
-                            <td>@item.OrderDate</td>
+                            <tr>
+                                <td>@item.Id</td>
+                                <td>
+                                    <div class="order-owner">
+                                        <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
+                                        <span>@item.User.FullName</span>
+                                    </div>
+                                </td>
+                                <td>@item.OrderDate</td>
 
-                            @{ if (item.OrderStatus == true)
-                                {
-                                    <td>
-                                        <span class="order-status order-shipped">  Đã giao hàng </span>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <span class="order-status order-ready"> Đang giao hàng </span>
-                                    </td>
+                                @{ if (item.OrderStatus == true)
+                                    {
+                                        <td>
+                                            <span class="order-status order-shipped">  Đã giao hàng </span>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <span class="order-status order-ready"> Đang giao hàng </span>
+                                        </td>
 
+                                    }
                                 }
-                            }
-                            @{ if (item.PaymentStatus == true)
-                                {
-                                    <td>
-                                        <div class="payment-status payment-paid">
-                                            <div class="dot"></div>
-                                            <span>Đã thanh toán</span>
-                                        </div>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <div class="payment-status payment-pending">
-                                            <div class="dot"></div>
-                                            <span>Chưa thanh toán</span>
-                                        </div>
-                                    </td>
+                                @{ if (item.PaymentStatus == true)
+                                    {
+                                        <td>
+                                            <div class="payment-status payment-paid">
+                                                <div class="dot"></div>
+                                                <span>Đã thanh toán</span>
+                                            </div>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <div class="payment-status payment-pending">
+                                                <div class="dot"></div>
+                                                <span>Chưa thanh toán</span>
+                                            </div>
+                                        </td>
 
+                                    }
                                 }
-                            }
-                            <td>@item.Total</td>
-                            <td>
-                                <a href="#" style="padding-left:15px">
-                                    <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
-                                </a>
-                            </td>
-                        </tr>
+                                @{
+                                    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+                                }
+                                <td>@string.Format(info, "{0:0,0}", item.Total)đ</td>
+                                <td>
+                                    <a onclick="popupOpen()" href="#" style="padding-left:15px">
+                                        <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
+                                    </a>
+                                </td>
+                            </tr>
                         }
 
                     </tbody>
@@ -82,6 +88,79 @@
             </div>
         </div>
         <!-- END ORDERS TABLE -->
+    </div>
+</div>
+<div class="popup" id="suathontindonhang">
+    <div class="popup-inner">
+        <input type="button"
+               name="Close"
+               class="s3-btn-close"
+               onclick="popupClose()"
+               value="×" />
+
+        <h2>Cập nhật sản phẩm</h2>
+
+
+        <div class="tab-content">
+            <div class="tab-pane">
+                <form>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form_control">
+                                <select required>
+                                    <option value="0">Nam</option>
+                                    <option value="1">Nữ</option>
+                                </select>
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form_control">
+                                <input required name="email" type="text" disabled />
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form_control">
+                                <input required name="email" type="text" />
+                                <label>User Name</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <button class="btn">Lưu lại</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
