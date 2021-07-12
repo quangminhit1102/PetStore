@@ -12,7 +12,6 @@ namespace Model.EF
         public Product()
         {
             OrderDetails = new HashSet<OrderDetail>();
-            ProductAttributes = new HashSet<ProductAttribute>();
             ProductImages = new HashSet<ProductImage>();
         }
 
@@ -62,9 +61,8 @@ namespace Model.EF
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductAttribute> ProductAttributes { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ProductImage> ProductImages { get; set; }
+
+        public virtual ProductAttribute ProductAttribute { get; set; }
     }
 }

@@ -70,7 +70,7 @@
     <Compile Include="EF\OrderDetail.cs" />
     <Compile Include="EF\Permission.cs" />
     <Compile Include="EF\PermissionRole.cs" />
-    <Compile Include="EF\PetStoreDbContext.cs" />
+    <Compile Include="EF\PetStore.cs" />
     <Compile Include="EF\Post.cs" />
     <Compile Include="EF\PostImage.cs" />
     <Compile Include="EF\Product.cs" />

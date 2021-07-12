@@ -8,13 +8,13 @@ namespace Model.EF
 
     public partial class ProductAttribute
     {
-        public int? ProductId { get; set; }
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int ProductId { get; set; }
 
         public int? AttributeValueId { get; set; }
 
         public int? Price { get; set; }
-
-        public int Id { get; set; }
 
         public virtual AttributeValue AttributeValue { get; set; }
 
