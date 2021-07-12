@@ -139,12 +139,14 @@
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Common\CartItem.cs" />
     <Compile Include="Models\Common\ConmmonConstants.cs" />
     <Compile Include="Models\Common\MD5Encryptor.cs" />
     <Compile Include="Models\Common\UserLogin.cs" />
@@ -565,6 +567,7 @@
     <Content Include="Views\Brand\ListProductByBrand.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListProductByCate.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

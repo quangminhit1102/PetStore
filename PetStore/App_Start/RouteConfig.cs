@@ -31,28 +31,29 @@ namespace PetStore
 
             );
 
-            //routes.MapRoute(
-            //    name: "Categories",
-            //    url: "{danh-muc-san-pham}/{sitetile}/{CateId}",
-            //    defaults: new { controller = "Product", action = "ListProductByCate", id = UrlParameter.Optional }
-
-            //);
 
             routes.MapRoute(
                 name: "Brands",
-                url: "{thuong-hieu}",
+                url: "thuong-hieu",
                 defaults: new { controller = "Brand", action = "Index", id = UrlParameter.Optional }
                
             );
 
             routes.MapRoute(
                 name: "Brand Details",
-                url: "{thuong-hieu}/{chi-tiet}/{Id}",
-                defaults: new { controller = "Brand", action = "ListProductByBrand", id = UrlParameter.Optional }
+                url: "thuong-hieu/{chi-tiet}/{BrandId}",
+                defaults: new { controller = "Brand", action = "ListProductByBrand", BrandId = UrlParameter.Optional }
 
             );
 
-            
+            routes.MapRoute(
+                name: "Categories",
+                url: "danh-muc-san-pham/{sitetile}/{CateId}",
+                defaults: new { controller = "Product", action = "ListProductByCate", CateId = UrlParameter.Optional }
+
+            );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

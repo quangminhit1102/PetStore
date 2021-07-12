@@ -21,11 +21,11 @@ namespace PetStore.Controllers
             return View(listBrand);
         }
 
-        public ActionResult ListProductByBrand(int Id)
+        public ActionResult ListProductByBrand(int BrandId)
         {
             db = new PetStoreDbContext();
-            var listProduct = db.Products.Where(x => x.BrandId == Id).ToList();
-            var brand = db.Brands.Where(x => x.Id == Id).FirstOrDefault();
+            var listProduct = db.Products.Where(x => x.BrandId == BrandId).ToList();
+            var brand = db.Brands.Where(x => x.Id == BrandId).FirstOrDefault();
             ViewBag.brand = brand.Name;
             return View(listProduct);
         }
