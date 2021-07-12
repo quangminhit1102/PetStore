@@ -180,7 +180,7 @@
             <div class="col-9">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="product-amount">
-                        <h1><span style="font-weight: bold; color: black">@Model.FirstOrDefault().Category.Name </span></h1>
+                        <h1><span style="font-weight: bold; color: black">@ViewBag.CateName</span></h1>
                         <p>Hiển thị tất cả @Model.Count kết quả</p>
                     </div>
                     <div class="products-sort">
@@ -228,7 +228,7 @@
                             }
                             @foreach (var item in Model)
                             {
-                                <a href="/danh-muc-san-pham/@item.SiteTile/@item.Id" class="col-4 sort-grid-product">
+                                <a href="/san-pham/@item.SiteTile/@item.Id" class="col-4 sort-grid-product">
                                     <img class="img-fluid"
                                          src="@item.ProductImages.FirstOrDefault().Image"
                                          alt=""
@@ -266,7 +266,7 @@
 
                             @foreach (var item in Model)
                             {
-                                <a href="/san-pham/@item.SiteTile-@item.Id" class="col-12 sort-list-product">
+                                <a href="/san-pham/@item.SiteTile/@item.Id" class="col-12 sort-list-product">
                                     <img class="img-fluid"
                                          src="@item.ProductImages.FirstOrDefault().Image"
                                          alt=""

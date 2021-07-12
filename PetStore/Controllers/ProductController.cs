@@ -15,6 +15,7 @@ namespace PetStore.Controllers
         public ActionResult ListProductByCate(int CateId)
         {
             db = new PetStoreDbContext();
+            ViewBag.CateName = db.Categories.Where(x => x.Id == CateId).FirstOrDefault().Name;
             var listProductbyCate = db.Products.Where(x => x.CateId == CateId).ToList();
             return View(listProductbyCate);
         }
