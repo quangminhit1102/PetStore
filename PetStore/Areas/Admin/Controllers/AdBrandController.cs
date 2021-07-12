@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace PetStore.Areas.Admin.Controllers
 {
-    public class BrandController : Controller
+    public class AdBrandController : Controller
     {
         // GET: Admin/Brand
         PetStoreDbContext db = null;

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using PagedList;
 namespace PetStore.Areas.Admin.Controllers
 {
-    public class ProductController : Controller
+    public class AdProductController : Controller
     {
         // GET: Admin/Product
         PetStoreDbContext db = null;

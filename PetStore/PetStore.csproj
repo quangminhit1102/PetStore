@@ -137,7 +137,10 @@
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminHomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
-    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdBrandController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdOrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdPostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdProductController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -522,10 +525,10 @@
     <Content Include="Content\Images\Products\diu-cho-meo-august-pet-p68036a-400x400.jpg.webp" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\ListPost.cshtml" />
+    <Content Include="Areas\Admin\Views\AdPost\ListPost.cshtml" />
     <Content Include="Areas\Admin\Views\AdminHome\Calendar.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\EditPost.cshtml" />
-    <Content Include="Areas\Admin\Views\Post\CreatePost.cshtml" />
+    <Content Include="Areas\Admin\Views\AdPost\EditPost.cshtml" />
+    <Content Include="Areas\Admin\Views\AdPost\CreatePost.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
     <Content Include="Content\Client\css\login.css.map" />
@@ -538,6 +541,9 @@
     <Content Include="Content\Client\scss\Layouts\_header.scss" />
     <Content Include="Content\Client\scss\Layouts\_login.scss" />
     <Content Include="Content\Client\scss\Pages\login.scss" />
+    <Content Include="Areas\Admin\Views\AdBrand\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdOrder\ListOrder.cshtml" />
+    <Content Include="Areas\Admin\Views\AdProduct\ListProduct.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
