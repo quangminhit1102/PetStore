@@ -20,7 +20,8 @@ namespace PetStore.Areas.Admin.Controllers
             int countOrder = 0;
             int? Profit = 0;
             List<OrderDetail> listOD = db.OrderDetails.ToList();//List Order detail
-            var listOrder = db.Orders.OrderByDescending(x=>x.OrderDate).Take(5).ToList();//Take 5 newest Order
+            var listOrder = db.Orders.OrderByDescending(x => x.OrderDate).Take(5).ToList();
+           // var listOrder = db.Orders.OrderByDescending(x=>x.OrderDate).Take(5).ToList();//Take 5 newest Order
             countOrder = listOrder.Count();//Count total Order
             foreach (OrderDetail item in listOD)
             {
@@ -36,6 +37,12 @@ namespace PetStore.Areas.Admin.Controllers
             return View(listOrder);
         }
         public ActionResult Profile()
+        {
+            UserDao dao = new UserDao();
+            var user = dao.getUserById((int)Session["USERID"]);
+            return View(user);
+        }
+        public ActionResult changePass()
         {
             UserDao dao = new UserDao();
             var user = dao.getUserById((int)Session["USERID"]);
