@@ -354,3 +354,7 @@ C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.cs
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.CopyComplete
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.dll
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.pdb
+D:\Project\React\PetStore\PetStore\bin\PagedList.dll
+D:\Project\React\PetStore\PetStore\bin\PagedList.Mvc.dll
+D:\Project\React\PetStore\PetStore\bin\PagedList.xml
+D:\Project\React\PetStore\PetStore\bin\PagedList.Mvc.xml
