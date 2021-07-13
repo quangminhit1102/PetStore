@@ -9,17 +9,6 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.cspr
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.pdb
-D:\Project\React\PetStore\Model\bin\Debug\Model.dll.config
-D:\Project\React\PetStore\Model\bin\Debug\Model.dll
-D:\Project\React\PetStore\Model\bin\Debug\Model.pdb
-D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.dll
-D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.SqlServer.dll
-D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.xml
-D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.SqlServer.xml
-D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
-D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
-D:\Project\React\PetStore\Model\obj\Debug\Model.dll
-D:\Project\React\PetStore\Model\obj\Debug\Model.pdb
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.Mvc.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.xml
@@ -56,8 +45,19 @@ C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.C
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.dll
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.pdb
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Project\React\PetStore\Model\bin\Debug\Model.dll.config
+D:\Project\React\PetStore\Model\bin\Debug\Model.dll
+D:\Project\React\PetStore\Model\bin\Debug\Model.pdb
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.dll
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.SqlServer.dll
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.dll
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.Mvc.dll
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.xml
+D:\Project\React\PetStore\Model\bin\Debug\EntityFramework.SqlServer.xml
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.xml
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.Mvc.xml
-C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Project\React\PetStore\Model\obj\Debug\Model.dll
+D:\Project\React\PetStore\Model\obj\Debug\Model.pdb
