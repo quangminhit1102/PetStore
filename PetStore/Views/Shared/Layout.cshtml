@@ -296,20 +296,40 @@
                     </div>
                 </div>
                 <div class="nav ml-3">
-                    <a class="link" href="/tin-tuc">
+                    <a href="/tin-tuc">
                         <div class="link">
                             <div class="icon-wrap">
                                 <i class="bx bx-cart-alt"></i>
                             </div>
+                            <div class="total-cart">
+                                <span>0</span>
+                            </div>
                         </div>
                     </a>
-                    <a class="link" href="/tin-tuc">
+                    <a class="link" href="/login">
                         <div class="link">
                             <div class="icon-wrap">
                                 <i class="bx bx-user"></i>
                             </div>
                         </div>
                     </a>
+                    @*Trường hợp đăng nhập xuất thông tin div phía dưới*@
+                    @*<div class="user-info pl-3">
+                        <div class="img-user">
+                            <img class="img-fluid" src="img/user-image.jpg" alt="" />
+                        </div>
+                        <div class="user_dropdown">
+                            <div class="my-2 p-0">
+                                <ul>
+                                    <li><a href="">Thông tin tài khoản</a></li>
+                                    <li>
+                                        <a href="">Đơn hàng</a>
+                                    </li>
+                                    <li><a href="">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>*@
                 </div>
             </div>
         </div>
@@ -457,12 +477,21 @@
         const header_category_content = document.querySelector(
             ".header-category-content"
         );
+        const user_info = document.querySelector(".user-info");
+        const user_dropdown = document.querySelector(".user_dropdown");
+        user_info.addEventListener("mouseenter", () => {
+            user_dropdown.classList.add("active");
+        });
+        user_info.addEventListener("mouseleave", () => {
+            user_dropdown.classList.remove("active");
+        });
         header_category.addEventListener("mouseenter", () => {
             header_category_content.classList.add("active");
         });
         header_category.addEventListener("mouseleave", () => {
             header_category_content.classList.remove("active");
         });
+
         nav_categories.forEach((e) => {
             e.addEventListener("mouseenter", (event) => {
                 event.preventDefault();

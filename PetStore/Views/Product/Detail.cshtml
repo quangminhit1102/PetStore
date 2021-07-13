@@ -13,7 +13,7 @@
                     var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 
 
-}
+                }
                 <div class="col-12 col-sm-6">
                     <div class="slide-for">
                         @foreach (var item in Model.ProductImages)
@@ -25,22 +25,22 @@
                             </div>
                         }
 
-                  
+
                     </div>
                     <div class="bg_slide-nav">
                         <div class="slide-nav">
                             @foreach (var item in Model.ProductImages)
                             {
-                            <div class="slide-nav-item">
-                                <div class="slide-nav-item-img">
-                                    <img class="img-fluid"
-                                         src="@item.Image"
-                                         alt="" />
+                                <div class="slide-nav-item">
+                                    <div class="slide-nav-item-img">
+                                        <img class="img-fluid"
+                                             src="@item.Image"
+                                             alt="" />
+                                    </div>
                                 </div>
-                            </div>
                             }
-                            
-                           
+
+
                         </div>
                     </div>
                 </div>
@@ -68,12 +68,12 @@
                         <h1 itemprop="name" class="product_title entry-title">
                             @Model.Name
                         </h1>
-                      
+
                         <div class="price-single">
                             <ul>
                                 <li class="btn btn-outline-secondary">6 gói - 2000000</li>
                                 <li class="btn btn-outline-secondary">12 gói - 20000</li>
-                      
+
                             </ul>
                             <div class="price">
                                 <span>
@@ -169,6 +169,81 @@
                     Liên Hệ
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section id="relatedProducts">
+    <div class="container">
+        <div class="relatedProducts-title w-100">
+            <h2>Sản phẩm liên quan</h2>
+        </div>
+        <div class="row">
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
+
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
+
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
         </div>
     </div>
 </section>

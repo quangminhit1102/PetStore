@@ -182,6 +182,7 @@
     <Content Include="Content\Client\img\banner-13.jpg" />
     <Content Include="Content\Client\img\banner-25.jpg" />
     <Content Include="Content\Client\img\bg-07.svg" />
+    <Content Include="Content\Client\img\bg-parchment.png" />
     <Content Include="Content\Client\img\bird.01a45ffa.gif" />
     <Content Include="Content\Client\img\blog-1-720x484.jpg" />
     <Content Include="Content\Client\img\blog-2-720x484.jpg" />
@@ -193,6 +194,7 @@
     <Content Include="Content\Client\img\headphone.jpg" />
     <Content Include="Content\Client\img\logo-lg.png" />
     <Content Include="Content\Client\img\logo-mb.png" />
+    <Content Include="Content\Client\img\matrix.png" />
     <Content Include="Content\Client\img\product-1-450x450.jpg" />
     <Content Include="Content\Client\img\product-2-450x450.jpg" />
     <Content Include="Content\Client\img\product-3-450x450.jpg" />
