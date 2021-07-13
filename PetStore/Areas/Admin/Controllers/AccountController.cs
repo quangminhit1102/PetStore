@@ -21,5 +21,9 @@ namespace PetStore.Areas.Admin.Controllers
         {
             return View();
         }
+        public ActionResult ChangePass()
+        {
+            return View();
+        }
     }
 }

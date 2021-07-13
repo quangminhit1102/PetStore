@@ -1,11 +1,10 @@
 ﻿
-@{
-    ViewBag.Title = "ListOrder";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "ListOrder";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 <div class="row">
     <div class="col-12">
         <!-- ORDERS TABLE -->
+        @{ var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN"); }
         <div class="box">
             <div class="box-header">Đơn hàng gần đây</div>
             <div class="box-body overflow-scroll">
@@ -24,58 +23,55 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                        <tr>
-                            <td>@item.Id</td>
-                            <td>
-                                <div class="order-owner">
-                                    <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
-                                    <span>@item.User.FullName</span>
-                                </div>
-                            </td>
-                            <td>@item.OrderDate</td>
+            <tr>
+                <td>@item.Id</td>
+                <td>
+                    <div class="order-owner">
+                        <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
+                        <span>@item.User.FullName</span>
+                    </div>
+                </td>
+                <td>@item.OrderDate</td>
 
-                            @{ if (item.OrderStatus == true)
-                                {
-                                    <td>
-                                        <span class="order-status order-shipped">  Đã giao hàng </span>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <span class="order-status order-ready"> Đang giao hàng </span>
-                                    </td>
+                @{ if (item.OrderStatus == true)
+                    {
+    <td>
+        <span class="order-status order-shipped">  Đã giao hàng </span>
+    </td>
+ }
+else
+{
+    <td>
+        <span class="order-status order-ready"> Đang giao hàng </span>
+    </td>
+ } }
+                @{ if (item.PaymentStatus == true)
+                    {
+    <td>
+        <div class="payment-status payment-paid">
+            <div class="dot"></div>
+            <span>Đã thanh toán</span>
+        </div>
+    </td>
+ }
+else
+{
+    <td>
+        <div class="payment-status payment-pending">
+            <div class="dot"></div>
+            <span>Chưa thanh toán</span>
+        </div>
+    </td>
+ } }
 
-                                }
-                            }
-                            @{ if (item.PaymentStatus == true)
-                                {
-                                    <td>
-                                        <div class="payment-status payment-paid">
-                                            <div class="dot"></div>
-                                            <span>Đã thanh toán</span>
-                                        </div>
-                                    </td>
-                                }
-                                else
-                                {
-                                    <td>
-                                        <div class="payment-status payment-pending">
-                                            <div class="dot"></div>
-                                            <span>Chưa thanh toán</span>
-                                        </div>
-                                    </td>
-
-                                }
-                            }
-                            <td>@item.Total</td>
-                            <td>
-                                <a href="#" style="padding-left:15px">
-                                    <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
-                                </a>
-                            </td>
-                        </tr>
-                        }
+                <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
+                <td>
+                    <a href="#" style="padding-left:15px">
+                        <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
+                    </a>
+                </td>
+            </tr>
+}
 
                     </tbody>
                 </table>
