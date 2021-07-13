@@ -24,7 +24,6 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.Mvc.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.xml
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.Mvc.xml
-C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache
 D:\CNTT\TH LTW\lab3\PetStore\Model\bin\Debug\Model.dll.config
 D:\CNTT\TH LTW\lab3\PetStore\Model\bin\Debug\Model.dll
 D:\CNTT\TH LTW\lab3\PetStore\Model\bin\Debug\Model.pdb

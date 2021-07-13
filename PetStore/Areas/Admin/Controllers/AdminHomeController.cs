@@ -23,6 +23,11 @@ namespace PetStore.Areas.Admin.Controllers
             {
                 Profit += item.Price * item.Quantity;
             }
+            //Profit each Order
+            foreach (var item in listOrder)
+            {
+                item.Total = listOD.Where(t => t.OrderId == item.Id).Sum(i => i.Price * i.Quantity);
+            }
             ViewBag.countOrder = countOrder;
             ViewBag.Profit = Profit;
             return View(listOrder);
