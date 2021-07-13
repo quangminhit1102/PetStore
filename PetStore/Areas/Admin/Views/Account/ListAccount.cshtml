@@ -18,7 +18,7 @@
                             <th width="250px">Email</th>
                             <th>Địa chỉ</th>
                             <th>Trạng thái</th>
-                            <th>Tác vụ</th>
+                            <th>Khóa tài khoản</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,6 +76,23 @@
                                             </div>
                                         </td>
                                     }
+                                    @if (item.Status == true)
+                                    {
+                                        <td>
+                                            <a href="#" style="padding-left:50px">
+                                                <i class="fas fa-lock" style="color:red"></i>
+                                            </a>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <a href="#" style="padding-left:50px">
+                                                <i class="fas fa-unlock" style="color:#04D182"></i>
+                                            </a>
+                                        </td>
+                                    }
+
 
                                 </tr>
                             }
@@ -153,10 +170,10 @@
                                         <td>@item.Address</td>
                                     }
                                 </tr>
-                                }
+                            }
 
-                                }
-                            </tbody>
+                        }
+                    </tbody>
                 </table>
             </div>
         </div>

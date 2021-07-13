@@ -264,10 +264,6 @@ D:\CNTT\TH LTW\lab3\PetStore\PetStore\obj\Debug\PetStore.csproj.CoreCompileInput
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\obj\Debug\PetStore.csproj.CopyComplete
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\obj\Debug\PetStore.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\obj\Debug\PetStore.pdb
-C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.AssemblyReference.cache
-C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.CoreCompileInputs.cache
-C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.dll
-C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.pdb
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\PetStore.dll.config
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\PetStore.dll
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\PetStore.pdb
@@ -353,4 +349,12 @@ C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\System.Web.WebPag
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\Newtonsoft.Json.xml
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\Antlr3.Runtime.pdb
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.AssemblyReference.cache
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.CoreCompileInputs.cache
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.csproj.CopyComplete
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.dll
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\obj\Debug\PetStore.pdb
+D:\Project\React\PetStore\PetStore\bin\PagedList.dll
+D:\Project\React\PetStore\PetStore\bin\PagedList.Mvc.dll
+D:\Project\React\PetStore\PetStore\bin\PagedList.xml
+D:\Project\React\PetStore\PetStore\bin\PagedList.Mvc.xml
