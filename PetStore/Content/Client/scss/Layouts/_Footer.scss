@@ -1,0 +1,49 @@
+.footer {
+  background-color: $colorFooter;
+  min-height: 100px;
+  &__detail1 {
+    width: 80%;
+    margin: auto;
+    // border-bottom: 1px solid $white;
+    .footer__top-item {
+      margin-top: 20px;
+      h4 {
+        @include Text($fs-6, $white, $fw-4, 0);
+      }
+      .footer__item-title {
+        a {
+          @include Text($fs-6-1, $colorLight, $fw-2, 0);
+          &:hover {
+            color: $white;
+          }
+          i {
+            font-size: $fs-1;
+          }
+        }
+      }
+    }
+    a {
+      img {
+        width: 30px;
+      }
+    }
+  }
+  .footer__detail2 {
+    img {
+      width: 60px;
+      border-radius: 5px;
+    }
+    p:nth-child(1) {
+      @include Text($fs-6, $white, $fw-4, 0);
+    }
+    p {
+      margin-bottom: 3px;
+      @include Text($fs-6-1, $colorLight, $fw-4, 0);
+    }
+    .img-2 {
+      img {
+        width: 120px;
+      }
+    }
+  }
+}
