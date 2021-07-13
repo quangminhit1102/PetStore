@@ -21,12 +21,12 @@ namespace PetStore.Controllers
             {
                 list = (List<CartItem>)cart;
             }
-            return View();
+            return View(list);
         }
 
         public ActionResult AddItem(int productId, int quantity)
         {
-            //var product = new Product().ViewDetail(Id);
+            var product = new Product().Id;
             var cart = Session[CartSession];
             if (cart != null)
             {
@@ -44,6 +44,7 @@ namespace PetStore.Controllers
                 }
                 else
                 {
+                    //Add New cart Item
                     var item = new CartItem();
                     item.Product.Id = productId;
                     item.Quantity = quantity;
@@ -52,10 +53,13 @@ namespace PetStore.Controllers
             }
             else
             {
+                //Add New cart Item
                 var item = new CartItem();
                 item.Product.Id = productId;
                 item.Quantity = quantity;
                 var list = new List<CartItem>();
+
+                //gan vao session
                 Session[CartSession] = list;
             }
             return RedirectToAction("Index");
