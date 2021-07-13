@@ -13,7 +13,6 @@ namespace PetStore.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        [Route]
         public ActionResult Index()
         {
             return View();
@@ -41,7 +40,7 @@ namespace PetStore.Controllers
                     }
                     else
                     {
-                        return Redirect("/admin/adminhome");
+                        return Redirect("/admin/adminhome/index");
                     }
                 }
                 else if (result == 0)

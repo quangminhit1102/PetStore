@@ -71,7 +71,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>STT</th>
+                            <th>ID</th>
                             <th>Khách hàng</th>
                             <th>Ngày đặt</th>
                             <th>Tình trạng đặt</th>
@@ -80,12 +80,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @{ int count = 1;}
                         @foreach (var item in Model)
                         {
                             <tr>
-                                <td>@count</td>
-                                @{ count++;}
+                                <td>@item.Id</td>
                                 <td>
                                     <div class="order-owner">
                                         <img src="~/Content/Admin/img/user-image-2.png" alt="user image" />
@@ -97,7 +95,7 @@
                                 @{ if (item.OrderStatus == true)
                                     {
                                         <td>
-                                            <span class="order-status order-shipped"> Đã giao hàng </span>
+                                            <span class="order-status order-shipped">  Đã giao hàng </span>
                                         </td>
                                     }
                                     else
@@ -128,7 +126,7 @@
 
                                     }
                                 }
-                            <td>@string.Format(info, "{0:0,0}", item.Total)đ</td>
+                                <td>@item.Total</td>
                             </tr>
                         }
 

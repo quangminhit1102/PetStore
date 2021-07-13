@@ -1,5 +1,4 @@
-﻿using Model.DAO;
-using Model.EF;
+﻿using Model.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +16,10 @@ namespace PetStore.Areas.Admin.Controllers
             db = new PetStoreDbContext();
             List<User> listUser = db.Users.ToList();
             return View(listUser);
+        }
+        public ActionResult Profile()
+        {
+            return View();
         }
     }
 }
