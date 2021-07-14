@@ -17,12 +17,11 @@ namespace Model.EF
 
         public int Id { get; set; }
 
-        [Required]
         [StringLength(50)]
         public string Username { get; set; }
 
         [Required]
-        [StringLength(150)]
+        [StringLength(32)]
         public string Password { get; set; }
 
         public int Role { get; set; }

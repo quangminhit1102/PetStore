@@ -15,7 +15,7 @@ namespace PetStore.Areas.Admin.Controllers
             var session = Session["USERID"];
             if(session==null)
             {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", action = "Index", Area = ""}));
+                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "AdLogin", action = "Index", Area = "Admin"}));
             }
 
             base.OnActionExecuting(filterContext);
