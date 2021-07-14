@@ -44,9 +44,9 @@ namespace Model.DAO
         }
         //Delete
         //
-        public int Login(string userName, string passWord)
+        public int Login(string userName, string passWord, int role)
         {
-            var result = db.Users.SingleOrDefault(x => x.Username == userName);
+            var result = db.Users.SingleOrDefault(x => x.Username == userName && x.Role==role);
             if(result == null)
             {
                 return 0;
@@ -62,8 +62,28 @@ namespace Model.DAO
                     else
                         return -2;
                 }    
-            } 
-                
+            }    
+        }
+        public int Login(string userName, string passWord)
+        {
+            var result = db.Users.SingleOrDefault(x => x.Username == userName && x.Role!=4);
+            if (result == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if (result.Status == false)
+                    return -1;
+                else
+                {
+                    if (result.Password == passWord)
+                        return 1;
+                    else
+                        return -2;
+                }
+            }
+
         }
     }
 }

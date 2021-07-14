@@ -141,6 +141,7 @@
     <Compile Include="Areas\Admin\Controllers\AdOrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdPostController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdLoginController.cs" />
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -162,6 +163,7 @@
     <Content Include="Content\Admin\css\app.css" />
     <Content Include="Content\Admin\css\grid.css" />
     <Content Include="Content\Admin\css\login.css" />
+    <Content Include="Content\Admin\css\loginadmin.css" />
     <Content Include="Content\Admin\img\backpack.jpg" />
     <Content Include="Content\Admin\img\bg-07.svg" />
     <Content Include="Content\Admin\img\headphone.jpg" />
@@ -548,6 +550,7 @@
     <Content Include="Areas\Admin\Views\AdOrder\ListOrder.cshtml" />
     <Content Include="Areas\Admin\Views\AdProduct\ListProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ChangePass.cshtml" />
+    <Content Include="Areas\Admin\Views\AdLogin\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
