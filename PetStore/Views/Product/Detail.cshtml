@@ -222,7 +222,7 @@
                             }
                             <span>(@item.TotalEvaluate)</span>
                         </div>
-                        <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                        <h5>@item.Name</h5>
                         @if (@item.Price == null)
                         {
                             <span class="price">@string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price) đ</span>
