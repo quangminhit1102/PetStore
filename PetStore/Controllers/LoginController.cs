@@ -25,23 +25,17 @@ namespace PetStore.Controllers
             if (ModelState.IsValid)
             {
 
-                var result = dao.Login(model.Username, MD5Encryptor.MD5Hash(model.Password));
+                var result = dao.Login(model.Username, MD5Encryptor.MD5Hash(model.Password),4);
                 if (result == 1)
                 {
                     var user = dao.getByUserName(model.Username);
                     var userSession = new UserLogin();
-                    userSession.UserID = user.Id;//
-                    userSession.UserName = user.Username;//
-                    userSession.Role = user.Role;//
+                    userSession.UserID = user.Id;
+                    userSession.UserName = user.Username;
+                    userSession.Role = user.Role;
                     Session.Add("USERID", user.Id);
-                    if (user.Role == 4)
-                    {
-                        return RedirectToAction("Index", "Home");
-                    }
-                    else
-                    {
-                        return Redirect("/admin/adminhome/index");
-                    }
+                    if(user.Role == 4)
+                    return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)
                 {

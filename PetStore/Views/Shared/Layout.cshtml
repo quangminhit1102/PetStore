@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@{ 
+    var user = (Model.EF.User)ViewBag.user;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -30,8 +33,8 @@
     <header class="container-fluid header desktop">
         <div class="container h-100">
             <div class="header-bar mr-3">
-                <a>
-                    <img width="210px"
+                <a href="/">
+                    <img width="210"
                          class="logo-with-name"
                          src="~/Content/Client/img/logo-lg.png"
                          alt="petStore" />
@@ -54,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="nav ml-3">
+                <div class="nav ml-3 h-100">
                     <a href="/tin-tuc">
                         <div class="link">
                             <div class="icon-wrap">
@@ -65,30 +68,55 @@
                             </div>
                         </div>
                     </a>
-                    <a class="link" href="/login">
-                        <div class="link">
-                            <div class="icon-wrap">
-                                <i class="bx bx-user"></i>
+                    @if (Session["USERID"] == null)
+                    {
+
+
+                        <a class="link" href="/login">
+                            <div class="link">
+                                <div class="icon-wrap">
+                                    <i class="bx bx-user"></i>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    @*Trường hợp đăng nhập xuất thông tin div phía dưới*@
-                    @*<div class="user-info pl-3">
+                        </a>
+                    }
+                    else
+                    {
+                        <div class="user-info pl-3">
                             <div class="img-user">
-                                <img class="img-fluid" src="img/user-image.jpg" alt="" />
+                                <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt="" />
                             </div>
                             <div class="user_dropdown">
                                 <div class="my-2 p-0">
                                     <ul>
-                                        <li><a href="">Thông tin tài khoản</a></li>
+                                        <li><a href="/Account/@user.Id">Thông tin tài khoản</a></li>
                                         <li>
-                                            <a href="">Đơn hàng</a>
+                                            <a href="/Account/Donhang/@user.Id">Đơn hàng</a>
                                         </li>
-                                        <li><a href="">Đăng xuất</a></li>
+                                        <li><a href="/Login/Logout">Đăng xuất</a></li>
                                     </ul>
                                 </div>
                             </div>
-                        </div>*@
+                        </div>
+                    }
+
+                    @*Trường hợp đăng nhập xuất thông tin div phía dưới*@
+                    @*<div class="user-info pl-3">
+            <div class="img-user">
+                <img class="img-fluid" src="img/user-image.jpg" alt="" />
+            </div>
+            <div class="user_dropdown">
+                <div class="my-2 p-0">
+                    <ul>
+                        <li><a href="">Thông tin tài khoản</a></li>
+                        <li>
+                            <a href="">Đơn hàng</a>
+                        </li>
+                        <li><a href="">Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>*@
                 </div>
             </div>
         </div>
