@@ -32,8 +32,9 @@ namespace PetStore.Controllers
                     var userSession = new UserLogin();
                     userSession.UserID = user.Id;
                     userSession.UserName = user.Username;
-                    userSession.Role = user.Role;
-                    Session.Add("USERID", user.Id);
+                    userSession.Name = user.FullName;
+                    //userSession.ProfileImage = user.ProfileImage;
+                    Session.Add("USER", userSession);
                     if(user.Role == 4)
                     return RedirectToAction("Index", "Home");
                 }
@@ -60,7 +61,7 @@ namespace PetStore.Controllers
         //LOGOUT==============================================================
         public ActionResult Logout()
         {
-            Session["USERID"] = null;
+            Session["USER"] = null;
             return Redirect("/");
         }
         //REGISTER==============================================================

@@ -1,7 +1,4 @@
-﻿@{ 
-    var user = (Model.EF.User)ViewBag.user;
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -68,7 +65,8 @@
                             </div>
                         </div>
                     </a>
-                    @if (Session["USERID"] == null)
+                    @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
+                    @if (user == null)
                     {
 
 
@@ -89,9 +87,9 @@
                             <div class="user_dropdown">
                                 <div class="my-2 p-0">
                                     <ul>
-                                        <li><a href="/Account/@user.Id">Thông tin tài khoản</a></li>
+                                        <li><a href="/Account/@user.UserID">Thông tin tài khoản</a></li>
                                         <li>
-                                            <a href="/Account/Donhang/@user.Id">Đơn hàng</a>
+                                            <a href="/Account/Donhang/@user.UserID">Đơn hàng</a>
                                         </li>
                                         <li><a href="/Login/Logout">Đăng xuất</a></li>
                                     </ul>
