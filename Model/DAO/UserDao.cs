@@ -32,15 +32,23 @@ namespace Model.DAO
             return db.Users.Find(id);
         }
         //Update
-        public int Update(User entity)
+        public bool Update(User entity)
         {
-            User userUpdate = db.Users.SingleOrDefault(x => x.Id == entity.Id);
-            if(userUpdate != null)
+            try
             {
-                db.Users.AddOrUpdate(entity);
-                db.SaveChanges();
+                User userUpdate = db.Users.SingleOrDefault(x => x.Id == entity.Id);
+                if (userUpdate != null)
+                {
+                    db.Users.AddOrUpdate(entity);
+                    db.SaveChanges();
+                }
+                return true;
+
             }
-            return entity.Id;
+            catch(Exception ex)
+            {
+                return false;
+            }
         }
         //Delete
         //
