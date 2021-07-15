@@ -82,22 +82,25 @@
                     }
                     else
                     {
-                        <div class="user-info pl-3">
-                            <div class="img-user">
-                                <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt="" />
-                            </div>
-                            <div class="user_dropdown">
-                                <div class="my-2 p-0">
-                                    <ul>
-                                        <li><a href="/Account/@user.Id">Thông tin tài khoản</a></li>
-                                        <li>
-                                            <a href="/Account/Donhang/@user.Id">Đơn hàng</a>
-                                        </li>
-                                        <li><a href="/Login/Logout">Đăng xuất</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                <div class="user-info pl-3">
+                    <div class="user-name">
+                        <h2>@user.FullName</h2>
+                    </div>
+                    <div class="img-user">
+                        <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt="" />
+                    </div>
+                    <div class="user_dropdown">
+                        <div class="my-2 p-0">
+                            <ul>
+                                <li><a href="/Account/@user.Id">Thông tin tài khoản</a></li>
+                                <li>
+                                    <a href="/Account/Donhang/@user.Id">Đơn hàng</a>
+                                </li>
+                                <li><a href="/Login/Logout">Đăng xuất</a></li>
+                            </ul>
                         </div>
+                    </div>
+                </div>
                     }
 
                     @*Trường hợp đăng nhập xuất thông tin div phía dưới*@

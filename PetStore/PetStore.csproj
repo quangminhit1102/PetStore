@@ -584,6 +584,7 @@
     <Content Include="Views\Post\Detail.cshtml" />
     <Content Include="Views\Post\ListPostByCata.cshtml" />
     <Content Include="Views\Post\ListCatalog.cshtml" />
+    <Content Include="Views\Login\CustomerProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

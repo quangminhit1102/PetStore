@@ -1,8 +1,9 @@
 ﻿@model List<Model.EF.User>
 @{
-    ViewBag.Title = "Profile";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "CustomerProfile";
+    Layout = "~/Views/Shared/Layout.cshtml";
 }
+
 <div class="box">
     <div class="row" id="user-profile">
         <div class="col-3 col-sm-12 user-avatar">
@@ -12,18 +13,18 @@
                  class="avatar"
                  alt="avatar" />
 
-            <h2>lqjeqw</h2>
+            <h2>THÔNG TIN KHÁCH HÀNG</h2>
         </div>
         <!--/col-3-->
         <div class="col-9 col-sm-12">
             <ul class="nav-tabs" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link bg-transparent active" href="/admin/account/profile">
+                    <a class="nav-link bg-transparent active" href="#">
                         <span>Thông tin</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link bg-transparent" href="/admin/account/changepass">
+                    <a class="nav-link bg-transparent" href="#">
                         <span>Đổi mật khẩu</span>
                     </a>
                 </li>
@@ -33,51 +34,43 @@
                     <form>
                         <div class="row">
                             <div class="col-6 col-sm-12">
+
+
                                 <div class="form_control">
+                                    <label>Họ Và Tên</label>
+                                    <input required name="name" type="text" />
+                                </div>
+
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <label>Địa chỉ</label>
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
+
                                 </div>
                             </div>
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
+                                    <label>Ngày sinh</label>
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
+                                    <label>Giới tính</label>
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
                                 </div>
                             </div>
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
+                                    <label>Tên đăng nhập</label>
                                     <input required name="email" type="text" />
-                                    <label>User Name</label>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12">
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>User Name</label>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12">
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>User Name</label>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12">
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>User Name</label>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <button class="btn">Lưu lại</button>
+                                <button class="btn">Lưu Lại</button>
                             </div>
                             <div class="col-6">
                                 <button class="btn btn-reset">reset</button>
