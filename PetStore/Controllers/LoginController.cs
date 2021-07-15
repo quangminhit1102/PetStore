@@ -25,17 +25,18 @@ namespace PetStore.Controllers
             if (ModelState.IsValid)
             {
 
-                var result = dao.Login(model.Username, MD5Encryptor.MD5Hash(model.Password), 4);
+                var result = dao.Login(model.Username, MD5Encryptor.MD5Hash(model.Password),4);
                 if (result == 1)
                 {
                     var user = dao.getByUserName(model.Username);
                     var userSession = new UserLogin();
                     userSession.UserID = user.Id;
                     userSession.UserName = user.Username;
-                    userSession.Role = user.Role;
-                    Session.Add("USERID", user.Id);
-                    if (user.Role == 4)
-                        return RedirectToAction("Index", "Home");
+                    userSession.Name = user.FullName;
+                    //userSession.ProfileImage = user.ProfileImage;
+                    Session.Add("USER", userSession);
+                    if(user.Role == 4)
+                    return RedirectToAction("Index", "Home");
                 }
                 else if (result == 0)
                 {
@@ -60,7 +61,7 @@ namespace PetStore.Controllers
         //LOGOUT==============================================================
         public ActionResult Logout()
         {
-            Session["USERID"] = null;
+            Session["USER"] = null;
             return Redirect("/");
         }
         //REGISTER==============================================================
@@ -77,7 +78,7 @@ namespace PetStore.Controllers
             if (ModelState.IsValid)
             {
                 var temp = dao.getByUserName(model.username);
-                if (temp != null)
+                if(temp!=null)
                 {
                     ModelState.AddModelError("username", "Tên đăng nhập đã tồn tại!");
                 }
@@ -91,24 +92,19 @@ namespace PetStore.Controllers
                     user.Email = model.email;
                     user.Status = true;
                     var result = dao.Insert(user);
-                    if (result > 0)
+                    if(result>0)
                     {
                         ViewBag.Success = "Đăng ký thành công mời đăng nhập lại!";
                         model = new RegisterModel();
-                    }
+                    }    
                     else
                     {
                         ModelState.AddModelError("", "Đăng kí không thành công!");
-                    }
+                    }    
                 }
             }
-
+            
             return View(model);
-        }
-        //DETAIL CUSTOMER
-        public ActionResult CustomerProfile()
-        {
-            return View();
         }
     }
 }

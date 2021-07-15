@@ -10,6 +10,7 @@ namespace PetStore.Models.Common
     {
         public int UserID { set; get; }
         public string UserName { set; get; }
+        public string Name { set; get; }
         public int Role { set; get; }
     }
 }

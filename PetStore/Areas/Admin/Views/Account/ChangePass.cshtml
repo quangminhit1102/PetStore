@@ -1,4 +1,5 @@
-﻿@{
+﻿@model PetStore.Areas.Admin.Models.PasswordModel
+@{
     ViewBag.Title = "ChangePass";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
@@ -11,21 +12,12 @@
                  class="avatar"
                  alt="avatar" width="200px" />
 
-            @*<h2>Xin chào @Model.Username</h2>
-            @if (Model.Role == 1)
+            @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
+            <h2>@user.Name</h2>
+            @if (user.Role == 1)
             {
-
-
-                <h4>Quản trị viên</h4>
+                <h4>Admin</h4>
             }
-            else if (Model.Role == 2)
-            {
-                <h4>Nhân viên Sale</h4>
-            }
-            else
-            {
-                <h4>Nhân viên Marketing</h4>
-            }*@
         </div>
         <!--/col-3-->
         <div class="col-9 col-sm-12">
@@ -47,36 +39,55 @@
                 <div class="tab-pane fade"
                      role="tabpanel"
                      id="doimatkhau">
-                    <form>
+                    @using (Html.BeginForm("ChangePass", "Account", FormMethod.Post, new { are = "Admin" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="row">
+                        @if (ViewBag.WrongPass != null)
+                        {
+                            <div class="col-12">
+                                <div class="text-danger">@ViewBag.WrongPass</div>
+                            </div>
+                        }
+                        @if (ViewBag.Success != null)
+                        {
+                            <div class="col-12">
+                                <div class="text-success">@ViewBag.success</div>
+                            </div>
+                        }
+                        <div class="col-6 col-sm-12">
+                            <div class="form_control">
+                                <input required name="password" type="password" />
+                                <label>Mật khẩu cũ</label>
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                    </div>
                         <div class="row">
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>Họ và Tên</label>
+                                    <input required name="newpassword" type="password" />
+                                    <label>Mật khẩu mới</label>
+                                    @Html.ValidationMessageFor(model => model.newpassword, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-6 col-sm-12">
                                 <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>Địa chỉ</label>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-12">
-                                <div class="form_control">
-                                    <input required name="email" type="text" />
-                                    <label>Giới tính</label>
+                                    <input required name="confirmpassword" type="password" />
+                                    <label>Nhập lại mật khẩu mới</label>
+                                    @Html.ValidationMessageFor(model => model.confirmpassword, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <button class="btn">Lưu lại</button>
-                            </div>
-                            <div class="col-6">
-                                <button class="btn btn-reset">reset</button>
+                                <button class="btn">Đổi mật khẩu</button>
                             </div>
                         </div>
-                    </form>
+                    }
                 </div>
                 <!--/tab-pane-->
             </div>

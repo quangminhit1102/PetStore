@@ -18,11 +18,6 @@ namespace PetStore.Controllers
         {
             var dao = new UserDao();
             db = new PetStoreDbContext();
-            if (Session["USERID"] != null)
-            {
-                var user = dao.getUserById((int)Session["USERID"]);
-                ViewBag.user = user;
-            }
             var listProduct = db.Products.Take(32).ToList();
             HomeModel homemodel = new HomeModel();
             homemodel.listProduct = listProduct;
