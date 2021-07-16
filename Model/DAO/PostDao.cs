@@ -15,9 +15,14 @@ namespace Model.DAO
         {
             db = new PetStoreDbContext();
         }
-        public IEnumerable<Post> listAllPaging(int page, int pageSize)
+        public IEnumerable<Post> ListAllPaging(string searchString, int page, int pageSize)
         {
-            return db.Posts.OrderByDescending(x=>x.CreatedAt).ToPagedList(page, pageSize);
+            IQueryable<Post> model = db.Posts;
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                model = model.Where(x => x.Title.Contains(searchString) || x.Content.Contains(searchString) || x.Catalog.Title.Contains(searchString));
+            }
+            return model.OrderByDescending(x => x.CreatedAt).ToPagedList(page, pageSize);
         }
     }
 }

@@ -551,6 +551,8 @@
     <Content Include="Areas\Admin\Views\AdProduct\ListProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ChangePass.cshtml" />
     <Content Include="Areas\Admin\Views\AdLogin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdProduct\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\AdProduct\AddProduct.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

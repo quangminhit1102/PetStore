@@ -12,10 +12,10 @@ namespace PetStore.Areas.Admin.Controllers
     {
         // GET: Admin/Post
         PetStoreDbContext db = null;
-        public ActionResult ListPost(int page = 1, int pageSize = 5)
+        public ActionResult ListPost(string searchString,int page = 1, int pageSize = 5)
         {
             PostDao dao = new PostDao();
-            var model = dao.listAllPaging(page, pageSize);
+            var model = dao.ListAllPaging(searchString,page, pageSize);
             return View(model);
         }
         //Edit Post
@@ -34,12 +34,14 @@ namespace PetStore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult EditPost()
         {
-            return View("ListPost");
+            return View();
         }
         //Create Post
         public ActionResult CreatePost()
         {
-            return View();
+            db = new PetStoreDbContext();
+            var listCata = db.Catalogs.ToList();
+            return View(listCata);
         }
     }
 }
