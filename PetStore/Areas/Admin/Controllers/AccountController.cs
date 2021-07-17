@@ -1,7 +1,7 @@
 ﻿using Model.DAO;
 using Model.EF;
-using PetStore.Areas.Admin.Models;
 using PetStore.Models.Common;
+using PetStore.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
@@ -25,7 +25,7 @@ namespace PetStore.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Profile()
         {
-            int userid = ((UserLogin)Session["USER"]).UserID;
+           int userid = ((UserLogin)Session["USER"]).UserID;
             var dao = new UserDao();
             var user = dao.getUserById(userid);
             return View(user);

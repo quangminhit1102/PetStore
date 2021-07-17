@@ -25,6 +25,8 @@
 
     <link rel="stylesheet" href="~/Content/Client/css/index.css" />
     <!-- Start Header -->
+    <!-- info css -->
+    <link href="~/Content/Client/css/info.css" rel="stylesheet" />
 </head>
 <body>
     <header class="container-fluid header desktop">
@@ -80,22 +82,25 @@
                     }
                     else
                     {
-                        <div class="user-info pl-3">
-                            <div class="img-user">
-                                <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt="" />
-                            </div>
-                            <div class="user_dropdown">
-                                <div class="my-2 p-0">
-                                    <ul>
-                                        <li><a href="/Account/@user.UserID">Thông tin tài khoản</a></li>
-                                        <li>
-                                            <a href="/Account/Donhang/@user.UserID">Đơn hàng</a>
-                                        </li>
-                                        <li><a href="/Login/Logout">Đăng xuất</a></li>
-                                    </ul>
-                                </div>
-                            </div>
+                <div class="user-info pl-3">
+                    <p><span style="color: black;">Chào bạn</span>
+                       <b style="color: black;">@user.Name</b>
+                    </p>
+                    <div class="img-user">                       
+                        <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt=""
+                    </div>                
+                    <div class="user_dropdown">
+                        <div class="my-2 p-0">
+                            <ul>
+                                <li><a href="/Login/ProfileCustomer">Thông tin tài khoản</a></li>
+                                <li>
+                                    <a href="/Account/Donhang/@user.UserID">Đơn hàng</a>
+                                </li>
+                                <li><a href="/Login/Logout">Đăng xuất</a></li>
+                            </ul>
                         </div>
+                    </div>
+                </div>
                     }
 
                     @*Trường hợp đăng nhập xuất thông tin div phía dưới*@
@@ -291,8 +296,8 @@
         });
         user_info.addEventListener("mouseleave", () => {
             user_dropdown.classList.remove("active");
-        });
+        });     
     </script>
-
+    <script src="~/Content/Client/js/userinfo.js"></script>
 </body>
 </html>
