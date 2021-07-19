@@ -24,26 +24,6 @@ namespace PetStore.Controllers
             return View(list);
         }
 
-        public JsonResult DeleteAll()
-        {
-            Session[CartSession] = null;
-            return Json(new
-            {
-                status = true
-            });
-        }
-
-        public JsonResult Delete(long id)
-        {
-            var sessionCart = (List<CartItem>)Session[CartSession];
-            sessionCart.RemoveAll(x => x.Product.Id == id);
-            Session[CartSession] = sessionCart;
-            return Json(new
-            {
-                status = true
-            });
-        }
-
         public ActionResult AddItem(int productId, int quantity)
         {
             var product = new ProductDao().ViewDetail(productId);
@@ -85,11 +65,6 @@ namespace PetStore.Controllers
             return RedirectToAction("Index");
         }
 
-
-        public ActionResult Success()
-        {
-            return View();
-        }
     }
 }
 

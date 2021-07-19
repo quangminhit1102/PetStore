@@ -34,17 +34,6 @@ namespace PetStore.Controllers
             return View(Product);
         }
 
-        public ActionResult Index(string searchName)
-        {
-            var links = from l in db.Products // lấy toàn bộ liên kết
-                        select l;
-
-            if (!String.IsNullOrEmpty(searchName)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
-            {
-                links = links.Where(s => s.Name.Contains(searchName)); //lọc theo chuỗi tìm kiếm
-            }
-
-            return View(links); //trả về kết quả
-        }
+        
     }
 }

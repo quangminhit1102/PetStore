@@ -218,7 +218,6 @@
     <Content Include="Content\Client\img\user-image-3.png" />
     <Content Include="Content\Client\img\user-image.jpg" />
     <Content Include="Content\Client\js\app.js" />
-    <Content Include="Content\Client\js\cartController.js" />
     <Content Include="Content\Client\js\shoplist.js" />
     <Content Include="Content\Client\js\userinfo.js" />
     <Content Include="Content\Images\Brands\brand-1.png" />
@@ -582,7 +581,6 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListProductByCate.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
-    <Content Include="Views\Home\HeaderCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
