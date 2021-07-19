@@ -1,0 +1,10 @@
+.forny-container .forny-inner > div:last-child .forny-form {
+    background-color: #fff;
+    border-radius: 4px;
+}
+@media screen and (max-width: 992px){
+    .forny-container .forny-inner > div:first-child {
+        
+        background-color: #fff;
+    }
+}

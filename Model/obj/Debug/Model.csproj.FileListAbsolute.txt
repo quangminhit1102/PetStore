@@ -56,7 +56,6 @@ C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.C
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.dll
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.pdb
-C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.dll
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.Mvc.dll
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.xml

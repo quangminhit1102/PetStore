@@ -30,7 +30,7 @@
                     <li class="cart-products__products">
                         <div class="cart-products__inner">
                             <div class="cart-products__img">
-                                <img src="@item.Product.ProductImages" alt="" />
+                                <img src="@item.Product.ProductImages.FirstOrDefault().Image" width="145.4" alt="" />
                             </div>
                             <div class="cart-products__content">
                                 <div class="cart-products__desc">
@@ -124,11 +124,51 @@ else
                 <p class="empty__note">
                     Không có sản phẩm nào trong giỏ hàng của bạn.
                 </p>
-                <a href="./index.html" class="empty__btn">Tiếp tục mua sắm</a>
+                <a href="/" class="empty__btn">Tiếp tục mua sắm</a>
             </div>
 
         </div>
     </div>
 }
 
+<!-- SLICK -->
+<script type="text/javascript"
+        src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    const nav_categories = document.querySelectorAll(".nav-categories");
+    const header_category = document.querySelector(".header-category");
+    const header_category_content = document.querySelector(
+        ".header-category-content"
+    );
+    header_category.addEventListener("mouseenter", () => {
+        header_category_content.classList.add("active");
+    });
+    header_category.addEventListener("mouseleave", () => {
+        header_category_content.classList.remove("active");
+    });
+    nav_categories.forEach((e) => {
+        e.addEventListener("mouseenter", () => {
+            e.querySelector(".category-name").classList.remove("false");
+            e.querySelector(".category-name").classList.add("active");
+            e.querySelector(".sub-navbar").classList.add("active");
+        });
+        e.addEventListener("mouseleave", () => {
+            e.querySelector(".category-name").classList.add("false");
+            e.querySelector(".category-name").classList.remove("active");
+            e.querySelector(".sub-navbar").classList.remove("active");
+        });
+    });
+</script>
+<script>
+    const progress = document.getElementById("progress");
+    const circles = document.querySelectorAll(".circle");
+    update();
+    function update() {
+        const actives = document.querySelectorAll(".circle.active");
+        console.log(((actives.length - 1) / (circles.length - 1)) * 100);
+        progress.style.width =
+            ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
+    }
+</script>
 
