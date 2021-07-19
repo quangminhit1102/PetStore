@@ -10,6 +10,6 @@ namespace PetStore.Models.Common
     {
         public Product Product { set; get; }
         public int Quantity { set; get; }
-
+        public decimal CartTotal { get; set; }
     }
 }

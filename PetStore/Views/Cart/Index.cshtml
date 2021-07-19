@@ -3,6 +3,9 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+
+<script src="~/Content/Client/js/cartController.js"></script>
+
 <div class="main-content">
     <div class="header-position"></div>
     <section id="cart">
@@ -35,10 +38,10 @@
                             <div class="cart-products__content">
                                 <div class="cart-products__desc">
                                     <div class="cart-products__name">
-                                        @item.Product.Description
+                                        @item.Product.Name
                                     </div>
                                     <div class="cart-products__actions">
-                                        <span class="cart-products__del"><i class='bx bx-trash'></i></span>
+                                        <span class="cart-products__del"><i class='bx bx-trash'> Xóa sản phẩm </i></span>
                                     </div>
                                 </div>
                                 <div class="cart-products__details">
@@ -94,7 +97,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" onclick="" class="cart__submit">
+            <button type="button" onclick="" class="cart_submit">
                 Mua hàng
             </button>
         </div>
