@@ -1,0 +1,133 @@
+.tab-content .active {
+  display: block;
+}
+
+.form_control {
+  position: relative;
+  margin: 0 0 20px;
+  width: 100%;
+}
+.form_control > input:disabled {
+  pointer-events: none;
+}
+.form_control > select,
+.form_control > input {
+  position: relative;
+  background-color: transparent;
+  border: 2px #e0e0e0 solid;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  color: #000;
+  padding: 10px 25px;
+  font-size: 18px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.form_control > select:focus-visible,
+.form_control > input:focus-visible {
+  outline: none;
+}
+.dark .form_control > select,
+.dark .form_control > input {
+  color: #fff;
+}
+
+.dark .form_control > select option {
+  background-color: #000;
+}
+
+.dark .form_control > select:focus + label,
+.dark .form_control > select:valid + label,
+.dark .form_control > input:focus + label,
+.dark .form_control > input:valid + label {
+  background-color: #23242d;
+  color: #fff;
+}
+
+.form_control > select:focus + label,
+.form_control > select:valid + label,
+.form_control > select:disabled + label,
+.form_control > input:disabled + label,
+.form_control > input:focus + label,
+.form_control > input:valid + label {
+  top: 0;
+  left: 15px;
+  padding: 0 2px;
+  background: white;
+  font-size: 15px;
+}
+
+
+.dark .form_control > select:focus + label,
+.form_control > select:focus + label,
+.dark .form_control > input:focus + label,
+.form_control > input:focus + label {
+  color: #3498db;
+}
+
+.form_control > select:focus,
+.form_control > input:focus {
+  border-color: #3498db;
+}
+.dark .form_control > select:focus,
+.dark .form_control > input:focus {
+  border-color: #3498db;
+}
+.form_control > label {
+  pointer-events: none;
+  display: block;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  color: #7f8c8d;
+}
+#userInfo {
+  padding: 2rem 0;
+}
+.userInfo_cata,.userInfo_content{
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+    .userInfo_cata ul li {
+        margin-bottom: 5px;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }.userInfo_cata ul li:last-child {
+        margin-bottom: 0;
+        
+    }
+.userInfo_cata ul li:hover {
+  background-color: #e6e6e6;
+  padding: 10px;
+}
+.userInfo_cata ul li:hover a {
+  color: #3498db;
+}.userInfo_cata ul li.active {
+        background-color: #e6e6e6;
+ }
+.userInfo_cata ul li a {
+  width: 100%;
+  height: 100%;
+}
+.userInfo_content h2{
+    font-size: 1.5rem;
+    color: #3498db;
+}
+.userInfo_content .userInfo_img img{
+    border-radius: 50%;
+}
+.btn_changes i{
+    font-size: 1.5rem;
+    color: #3498db;
+}
+#user_save{
+  display: none;
+}

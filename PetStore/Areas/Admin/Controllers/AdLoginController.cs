@@ -29,9 +29,9 @@ namespace PetStore.Areas.Admin.Controllers
                     var user = dao.getByUserName(model.Username);
                     var userSession = new UserLogin();
                     userSession.UserID = user.Id;
-                    userSession.UserName = user.Username;
+                    userSession.Name = user.FullName;
                     userSession.Role = user.Role;
-                    Session.Add("USERID", user.Id);
+                    Session.Add("USER", userSession);
                     return RedirectToAction("Index", "AdminHome");
                 }
                 else if (result == 0)
@@ -57,8 +57,8 @@ namespace PetStore.Areas.Admin.Controllers
         //LOGOUT==============================================================
         public ActionResult Logout()
         {
-            Session["USERID"] = null;
-            return Redirect("/");
+            Session["USER"] = null;
+            return Redirect("/admin");
         }
     }
 }

@@ -1,0 +1,155 @@
+﻿@model Model.EF.User
+@{
+    ViewBag.Title = "ProfileCustomer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="header-position"></div>
+<section id="userInfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="userInfo_cata">
+                    <ul class="m-0">
+                        <li class="active"><a href="ProfileCustomer">Thông tin tài khoản</a></li>
+                        <li ><a href="ChangePassCustomer">Đổi mật khẩu</a></li>
+                        <li ><a href="">Quản lý đơn hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="userInfo_content">
+                    <h2 class="text-left pl-0 pt-0">Thông tin</h2>                    
+                        @using (Html.BeginForm("ProfileCustomer", "Login", FormMethod.Post, new { are = "" }))
+                        {
+                <div class="row">
+                    <div class="col-2">
+                        <div class="userInfo_img">
+                            <img class="img-fluid" src="~/Content/Client/img/user-image-3.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="col-9">
+                        @Html.AntiForgeryToken()
+                        <div class="row">
+                            @if (ViewBag.Fail != null)
+                            {
+                                <div class="col-12 mb-2">
+                                    <div class="text-success">@ViewBag.Fail</div>
+                                </div>
+                            }
+                            @if (ViewBag.Success != null)
+                            {
+                                <div class="col-12 mb-2">
+                                    <div class="text-success">@ViewBag.Success</div>
+                                </div>
+                            }
+                            <div class="col-12">
+                                <div class="form_control">
+                                    <input value="@Model.FullName"
+                                           id="userFullName"
+                                           required
+                                           name="FullName"
+                                           type="text"
+                                           disabled />
+                                    <label for="userFullName">Họ và tên</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form_control">
+                                    <select id="Gender" required name="Gender" disabled>
+                                        @if (Model.Gender == true)
+                                        {
+                                            <option value="true" selected>Nam</option>
+                                            <option value="false">Nữ</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="true">Nam</option>
+                                            <option value="false" selected>Nữ</option>
+                                        }
+                                    </select>
+                                    <label for="Gender">Giới Tính</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form_control">
+                                    <input value="@Model.Birthday.Value.ToString("yyyy-MM-dd")"
+                                           id="userBirthday"
+                                           required
+                                           name="Birthday"
+                                           type="date"
+                                           disabled />
+                                    <label for="userBirthday">Ngày sinh</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form_control">
+                                    <input value="@Model.Phone"
+                                           id="userPhone"
+                                           required
+                                           name="Phone"
+                                           type="text"
+                                           disabled />
+                                    <label for="userPhone">Số điện thoại</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form_control">
+                                    <input value="@Model.Email"
+                                           id="userEmail"
+                                           required
+                                           name="email"
+                                           type="text"
+                                           disabled />
+
+                                    <label for="userEmail">Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form_control">
+                                    <input value="@Model.Address"
+                                           id="userAddress"
+                                           required
+                                           name="Address"
+                                           type="text"
+                                           disabled />
+                                    <label for="userAddress">Địa chỉ</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" id="user_save">
+                            <div class="row">
+                                <div class="col-6 pl-0">
+                                    <button type="submit"
+                                            class="btn btn-primary w-100 font-weight-bold">
+                                        Lưu lại
+                                    </button>
+                                </div>
+                                <div class="col-6 pr-0">
+                                    <button id=""
+                                            onclick="handleOffChange()"
+                                            class="
+                              btn btn-outline-primary
+                              w-100
+                              font-weight-bold
+                            ">
+                                        Huỷ
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <div class="btn btn_changes" onclick="handleOnChange()">
+                            <i class="bx bx-pencil"></i>
+                        </div>
+                    </div>
+                </div>
+                        }
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Content/Client/js/userinfo.js"></script>

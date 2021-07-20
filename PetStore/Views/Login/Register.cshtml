@@ -71,9 +71,10 @@
                                     <label>Họ và tên</label>
                                 </div>
                                 <div class="form_control">
-                                    @Html.TextBoxFor(model => model.email, htmlAttributes: new { name = "email", type = "email", required = "required" })
+                                    @Html.TextBoxFor(model => model.email, htmlAttributes: new { name = "email", type = "text", required = "required" })
                                     @*<input required name="email" type="email" />*@
                                     <label>Email</label>
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
                                 </div>
 
                                 <div class="form_control">
@@ -87,7 +88,6 @@
                                     <label>Xác nhận Password</label>
                                     @Html.ValidationMessageFor(model => model.confirmpassword, "", new { @class = "text-danger" })
                                 </div>
-
                                 <div class="row">
                                     <div class="col-12">
                                         <button class="btn btn-primary btn-block">

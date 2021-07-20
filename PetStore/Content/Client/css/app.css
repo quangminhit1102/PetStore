@@ -386,6 +386,14 @@ li.dropdown-menu-item:hover {
   text-transform: capitalize;
 }
 
+.user-name {
+    argin-left: 10px;
+    color: black;
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
 .profile-image {
   width: var(--profile-image-size);
   height: var(--profile-image-size);

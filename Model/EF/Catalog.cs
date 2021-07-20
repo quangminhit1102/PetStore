@@ -22,7 +22,7 @@ namespace Model.EF
 
         public bool? Status { get; set; }
 
-        public int? Total { get; set; }
+        public int Total;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Post> Posts { get; set; }
