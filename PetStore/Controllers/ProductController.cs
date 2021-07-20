@@ -35,6 +35,17 @@ namespace PetStore.Controllers
             ViewBag.listRelatedProduct = listRelatedProduct;
             return View(Product);
         }
-
+        public ActionResult AsideCategory()
+        {
+            db = new PetStoreDbContext();
+            var listCategory = db.Categories.ToList();
+            return PartialView(listCategory);
+        }
+        public ActionResult AsidePost()
+        {
+            db = new PetStoreDbContext();
+            var listPost = db.Posts.Where(x=> x.Status == true).Take(3).ToList();
+            return PartialView(listPost);
+        }
     }
 }

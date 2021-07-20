@@ -46,5 +46,11 @@ namespace PetStore.Controllers
             }
             return View(listCatalog);
         }
+        public ActionResult AsideProduct()
+        {
+            db = new PetStoreDbContext();
+            var listProduct = db.Products.Where(x => x.Status == true).OrderByDescending(x=> x.ViewCount).Take(4).ToList();
+            return PartialView(listProduct);
+        }
     }
 }

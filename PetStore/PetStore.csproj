@@ -584,6 +584,9 @@
     <Content Include="Views\Post\Detail.cshtml" />
     <Content Include="Views\Post\ListPostByCata.cshtml" />
     <Content Include="Views\Post\ListCatalog.cshtml" />
+    <Content Include="Views\Product\AsideCategory.cshtml" />
+    <Content Include="Views\Product\AsidePost.cshtml" />
+    <Content Include="Views\Post\AsideProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
