@@ -268,6 +268,7 @@ D:\Project\React\PetStore\PetStore\obj\Debug\PetStore.csproj.CoreCompileInputs.c
 D:\Project\React\PetStore\PetStore\obj\Debug\PetStore.csproj.CopyComplete
 D:\Project\React\PetStore\PetStore\obj\Debug\PetStore.dll
 D:\Project\React\PetStore\PetStore\obj\Debug\PetStore.pdb
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\PetStore.dll.config
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\PetStore.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\PetStore.pdb
@@ -282,7 +283,6 @@ D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.d
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CodeAnalysis.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.CSharp.Core.targets
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
 D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll

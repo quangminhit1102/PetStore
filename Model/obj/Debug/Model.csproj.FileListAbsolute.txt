@@ -61,4 +61,3 @@ D:\CNTT\TH LTW\lab3\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cach
 D:\CNTT\TH LTW\lab3\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 D:\CNTT\TH LTW\lab3\PetStore\Model\obj\Debug\Model.dll
 D:\CNTT\TH LTW\lab3\PetStore\Model\obj\Debug\Model.pdb
-D:\CNTT\TH LTW\lab3\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache
