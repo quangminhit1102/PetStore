@@ -12,95 +12,6 @@
         <div class="row">
             <div class="col-3 pt-2">
 
-
-
-
-                <!-- <aside class="widget widget-categories">
-                  <div class="widget-title">
-                    <h4>Price</h4>
-                  </div>
-                  <div
-                    id="cat-treeview"
-                    class="widget-info product-cat boxscrol2"
-                    tabindex="0"
-
-                  >
-                    <ul class="treeview">
-                      <li class="expandable">
-
-                        <span class="expandable-text">Chair</span>
-                        <ul class="treeview">
-                          <li><a href="#" class="selected">T-Shirts</a></li>
-                          <li><a href="#" class="selected">Striped Shirts</a></li>
-                          <li><a href="#" class="selected">Half Shirts</a></li>
-                          <li><a href="#" class="selected">Formal Shirts</a></li>
-                          <li class="last">
-                            <a href="#" class="selected">Bilazers</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="expandable">
-
-                        <span class="expandable-text">Furniture</span>
-                        <ul class="treeview">
-                          <li><a href="#" class="selected">Men Bag</a></li>
-                          <li><a href="#" class="selected">Shoes</a></li>
-                          <li><a href="#" class="selected">Watch</a></li>
-                          <li><a href="#" class="selected">T-shirt</a></li>
-                          <li class="last">
-                            <a href="#" class="selected">Shirt</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="expandable">
-
-                        <span class="expandable-text">Accessories</span>
-                        <ul class="treeview">
-                          <li><a href="#" class="selected">T-Shirts</a></li>
-                          <li><a href="#" class="selected">Striped Shirts</a></li>
-                          <li><a href="#" class="selected">Half Shirts</a></li>
-                          <li><a href="#" class="selected">Formal Shirts</a></li>
-                          <li class="last">
-                            <a href="#" class="selected">Bilazers</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="expandable">
-
-                        <span class="expandable-text">Top Brands</span>
-                        <ul class="treeview">
-                          <li><a href="#" class="selected">T-Shirts</a></li>
-                          <li><a href="#" class="selected">Striped Shirts</a></li>
-                          <li><a href="#" class="selected">Half Shirts</a></li>
-                          <li><a href="#" class="selected">Formal Shirts</a></li>
-                          <li class="last">
-                            <a href="#" class="selected">Bilazers</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="expandable lastExpandable">
-                        <div
-                          class="
-                            hitarea
-                            expandable-hitarea
-                            lastExpandable-hitarea
-                          "
-                        ></div>
-                        <span class="expandable-text">Jewelry</span>
-                        <ul class="treeview">
-                          <li><a href="#" class="selected">T-Shirts</a></li>
-                          <li><a href="#" class="selected">Striped Shirts</a></li>
-                          <li><a href="#" class="selected">Half Shirts</a></li>
-                          <li><a href="#" class="selected">Formal Shirts</a></li>
-                          <li class="last">
-                            <a href="#" class="selected">Bilazers</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
-                </aside> -->
-
                 @Html.Action("AsideCategory", "Product")
                 @Html.Action("AsidePost", "Product")
 
@@ -156,7 +67,7 @@
                             }
                             @foreach (var item in Model)
                             {
-                                <a href="/san-pham/@item.SiteTile/@item.Id" class="col-4 sort-grid-product">
+                                <a href="/san-pham/@item.SiteTile-@item.Id" class="col-4 sort-grid-product">
                                     <img class="img-fluid"
                                          src="@item.ProductImages.FirstOrDefault().Image"
                                          alt=""
@@ -194,7 +105,7 @@
 
                             @foreach (var item in Model)
                             {
-                                <a href="/san-pham/@item.SiteTile/@item.Id" class="col-12 sort-list-product">
+                                <a href="/san-pham/@item.SiteTile-@item.Id" class="col-12 sort-list-product">
                                     <img class="img-fluid"
                                          src="@item.ProductImages.FirstOrDefault().Image"
                                          alt=""
