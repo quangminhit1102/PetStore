@@ -589,6 +589,7 @@
     <Content Include="Views\Post\ListCatalog.cshtml" />
     <Content Include="Views\Login\ProfileCustomer.cshtml" />
     <Content Include="Views\Login\ChangePassCustomer.cshtml" />
+    <Content Include="Views\Login\Order.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

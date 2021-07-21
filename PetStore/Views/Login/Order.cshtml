@@ -1,0 +1,99 @@
+﻿
+@{ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="header-position"></div>
+<section id="userInfo">
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <div class="userInfo_cata">
+                    <ul class="m-0">
+                        <li class="active"><a href="ProfileCustomer">Thông tin tài khoản</a></li>
+                        <li><a href="ChangePassCustomer">Đổi mật khẩu</a></li>
+                        <li><a href="Order">Quản lý đơn hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="userInfo_content">
+                    <h2 class="text-left pl-0 pt-0">Thông tin</h2>
+                    @using (Html.BeginForm("Order", "Login", FormMethod.Post, new { are = "" }))
+                    {
+                        <div class="col-12">
+                            <!-- ORDERS TABLE -->
+                            @{ var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN"); }
+                            <div class="box">
+                                <div class="box-header">Đơn hàng gần đây</div>
+                                <div class="box-body overflow-scroll">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th width="250px">Khách hàng</th>
+                                                <th width="150px">Ngày đặt</th>                                              
+                                                <th width="230px">thanh toán</th>
+                                                <th>Tổng tiền</th>                                           
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                           @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>@item.Id</td>                                                
+                                                    <td>@item.OrderDate</td>
+
+                                                    @{ if (item.OrderStatus == true)
+                                                        {
+                                                            <td>
+                                                                <span class="order-status order-shipped">  Đã giao hàng </span>
+                                                            </td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>
+                                                                <span class="order-status order-ready"> Đang giao hàng </span>
+                                                            </td>
+                                                        } }
+                                                    @{ if (item.PaymentStatus == true)
+                                                        {
+                                                            <td>
+                                                                <div class="payment-status payment-paid">
+                                                                    <div class="dot"></div>
+                                                                    <span>Đã thanh toán</span>
+                                                                </div>
+                                                            </td>
+                                                        }
+                                                        else
+                                                        {
+                                                            <td>
+                                                                <div class="payment-status payment-pending">
+                                                                    <div class="dot"></div>
+                                                                    <span>Chưa thanh toán</span>
+                                                                </div>
+                                                            </td>
+                                                        } }
+
+                                                   <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
+                                                    <td>
+                                                        <a href="#" style="padding-left:15px">
+                                                            <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- END ORDERS TABLE -->
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
