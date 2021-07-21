@@ -142,6 +142,7 @@
     <Compile Include="Areas\Admin\Controllers\AdOrderController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdPostController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdProductController.cs" />
+    <Compile Include="Areas\Admin\Models\PasswordModel.cs" />
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -179,6 +180,7 @@
     <Content Include="Content\Client\css\app.css" />
     <Content Include="Content\Client\css\grid.css" />
     <Content Include="Content\Client\css\index.css" />
+    <Content Include="Content\Client\css\info.css" />
     <Content Include="Content\Client\css\login.css" />
     <Content Include="Content\Client\img\backpack.jpg" />
     <Content Include="Content\Client\img\banner-12.jpg" />
@@ -219,6 +221,7 @@
     <Content Include="Content\Client\img\user-image.jpg" />
     <Content Include="Content\Client\js\app.js" />
     <Content Include="Content\Client\js\shoplist.js" />
+    <Content Include="Content\Client\js\userinfo.js" />
     <Content Include="Content\Images\Brands\brand-1.png" />
     <Content Include="Content\Images\Brands\brand-10.png" />
     <Content Include="Content\Images\Brands\brand-11.png" />
@@ -536,15 +539,6 @@
     <Content Include="Areas\Admin\Views\Account\ListAccount.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Profile.cshtml" />
     <Content Include="Content\Client\css\login.css.map" />
-    <Content Include="Content\Client\scss\Base\_reset.scss" />
-    <Content Include="Content\Client\scss\Helper\_function.scss" />
-    <Content Include="Content\Client\scss\Helper\_mixin.scss" />
-    <Content Include="Content\Client\scss\Helper\_variable.scss" />
-    <Content Include="Content\Client\scss\Layouts\_detail-content.scss" />
-    <Content Include="Content\Client\scss\Layouts\_Footer.scss" />
-    <Content Include="Content\Client\scss\Layouts\_header.scss" />
-    <Content Include="Content\Client\scss\Layouts\_login.scss" />
-    <Content Include="Content\Client\scss\Pages\login.scss" />
     <Content Include="Areas\Admin\Views\AdBrand\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdOrder\ListOrder.cshtml" />
     <Content Include="Areas\Admin\Views\AdProduct\ListProduct.cshtml" />
@@ -587,6 +581,8 @@
     <Content Include="Views\Product\AsideCategory.cshtml" />
     <Content Include="Views\Product\AsidePost.cshtml" />
     <Content Include="Views\Post\AsideProduct.cshtml" />
+    <Content Include="Views\Login\ChangePassCustomer.cshtml" />
+    <Content Include="Views\Login\ProfileCustomer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
