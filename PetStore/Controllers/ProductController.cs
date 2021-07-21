@@ -28,11 +28,15 @@ namespace PetStore.Controllers
             var Cate = db.Categories.Where(x => x.Id == subCate.ParentId).SingleOrDefault();
             var supCate = db.Categories.Where(x => x.Id == Cate.ParentId).SingleOrDefault();
             var listRelatedProduct = db.Products.Where(x => x.CateId == Product.CateId).Take(4).ToList();
+            var listAttributes = db.ProductAttributes.Where(x => x.ProductId == ProId).ToList();
+
 
             ViewBag.subCate = subCate.Name;
             ViewBag.Cate = Cate.Name;
             ViewBag.supCate = supCate.Name;
             ViewBag.listRelatedProduct = listRelatedProduct;
+            ViewBag.listAttributes = listAttributes;
+
             return View(Product);
         }
         public ActionResult AsideCategory()

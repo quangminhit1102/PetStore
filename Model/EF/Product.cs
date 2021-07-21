@@ -15,7 +15,7 @@ namespace Model.EF
             ProductAttributes = new HashSet<ProductAttribute>();
             ProductImages = new HashSet<ProductImage>();
         }
-
+        
         public int Id { get; set; }
 
         [Required]

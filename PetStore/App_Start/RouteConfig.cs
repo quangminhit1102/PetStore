@@ -31,6 +31,29 @@ namespace PetStore
 
             );
 
+            routes.MapRoute(
+                name: "List Post By Categories",
+                url: "bai-viet/danh-muc-bai-viet-{id}",
+                defaults: new { controller = "Post", action = "ListPostByCata", id = UrlParameter.Optional }
+
+            );
+
+            routes.MapRoute(
+                name: "Post Details",
+                url: "bai-viet/{sitetile}-{id}",
+                defaults: new { controller = "Post", action = "Detail", id = UrlParameter.Optional }
+
+            );
+
+            routes.MapRoute(
+                name: "Posts",
+                url: "bai-viet",
+                defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional }
+
+            );
+
+
+
 
             routes.MapRoute(
                 name: "Brands",

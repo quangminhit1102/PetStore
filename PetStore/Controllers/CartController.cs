@@ -11,12 +11,18 @@ namespace PetStore.Controllers
 {
     public class CartController : Controller
     {
+
         public const string CartSession = "CartSession";
         // GET: Cart
         public ActionResult Index()
         {
+            PetStoreDbContext db = new PetStoreDbContext();
             var cart = Session[CartSession];
             var list = new List<CartItem>();
+            int id = ((UserLogin)Session["USER"]).UserID;
+            var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
+
+            ViewBag.user = user;
             if (cart != null)
             {
                 list = (List<CartItem>)cart;
