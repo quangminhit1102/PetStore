@@ -581,6 +581,7 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListProductByCate.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Home\HeaderCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

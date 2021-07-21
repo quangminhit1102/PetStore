@@ -228,31 +228,31 @@
                             }
                             @foreach (var item in Model)
                             {
-                                <a href="/san-pham/@item.SiteTile/@item.Id" class="col-4 sort-grid-product">
-                                    <img class="img-fluid"
-                                         src="@item.ProductImages.FirstOrDefault().Image"
-                                         alt=""
-                                         srcset="" />
-                                    <div class="products__rating">
-                                        <i class="bx bxs-star"></i>
-                                        <i class="bx bxs-star"></i>
-                                        <i class="bx bxs-star"></i>
-                                        <i class="bx bxs-star"></i>
-                                        <i class="bx bxs-star-half"></i>
-                                        <span>(1)</span>
-                                    </div>
-                                    <h5>
-                                        @item.Name
-                                    </h5>
-                                    @if (@item.Price == null)
-                                    {
-                                        <span class="price"> @*@string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price)đ*@</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="price">@string.Format(info, "{0:0,0}", @item.Price)đ</span>
-                                    }
-                                </a>
+                            <a href="/san-pham/@item.SiteTile/@item.Id" class="col-4 sort-grid-product">
+                                <img class="img-fluid"
+                                     src="@item.ProductImages.FirstOrDefault().Image"
+                                     alt=""
+                                     srcset="" />
+                                <div class="products__rating">
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star"></i>
+                                    <i class="bx bxs-star-half"></i>
+                                    <span>(1)</span>
+                                </div>
+                                <h5>
+                                    @item.Name
+                                </h5>
+                                @if (@item.Price == null)
+                                {
+                                    <span class="price"> @string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price)đ</span>
+                                }
+                                else
+                                {
+                                    <span class="price">@string.Format(info, "{0:0,0}", @item.Price)đ</span>
+                                }
+                            </a>
                             }
 
                         </div>

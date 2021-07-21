@@ -1365,7 +1365,6 @@ input[type="number"]::-webkit-outer-spin-button {
   list-style: none;
   margin: 0px;
   padding: 0px;
-  background-color: #fff;
   border-radius: 4px;
 }
 
@@ -1373,11 +1372,12 @@ input[type="number"]::-webkit-outer-spin-button {
   margin-bottom: 10px;
 }
 
-.container .checkout .cart-inner .cart-prodcuts .cart-products__products,
-.cart-products__products {
-  border-radius: 10px;
-  padding: 20px;
-}
+    .container .checkout .cart-inner .cart-prodcuts .cart-products__products,
+    .cart-products__products {
+        border-radius: 10px;
+        padding: 20px;
+        background-color: #fff;
+    }
 
 .container
   .checkout
@@ -1545,27 +1545,28 @@ input[type="number"]::-webkit-outer-spin-button {
   display: inline-block;
 }
 
-.container .checkout .cart-total-prices .cart__submit {
-  color: white;
-  text-align: center;
-  width: 100%;
-  display: block;
-  cursor: pointer;
-  background-color: #ff424e;
-  padding: 13px 10px;
-  border-radius: 4px;
-  border-width: initial;
-  border-style: none;
-  border-color: initial;
-  -o-border-image: initial;
-  border-image: initial;
-  margin: 15px 0px;
-  transition: background-color 0.5s ease;
-}
-.container .checkout .cart-total-prices .cart__submit:hover {
-  background-color: #c0392b;
-}
-.container .checkout .cart-total-prices .prices,
+    .container .cart-total-prices .cart__submit {
+        color: white;
+        text-align: center;
+        width: 100%;
+        display: block;
+        cursor: pointer;
+        background-color: #ff424e;
+        padding: 13px 10px;
+        border-radius: 4px;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        -o-border-image: initial;
+        border-image: initial;
+        margin: 15px 0px;
+        transition: background-color 0.5s ease;
+    }
+
+        .container .cart-total-prices .cart__submit:hover {
+            background-color: #c0392b;
+        }
+.container .cart-total-prices .prices,
 .prices,
 .deliveryAddress {
   background: white;
@@ -1574,11 +1575,11 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 15px;
 }
 
-.container .checkout .cart-total-prices .prices .prices__text,
+.container .cart-total-prices .prices .prices__text,
 .prices .prices__text {
   color: #7e776e;
 }
-.container .checkout .cart-total-prices .prices .prices__value,
+.container .cart-total-prices .prices .prices__value,
 .prices .prices__value {
   font-weight: 700;
   color: #eb4d4b;
