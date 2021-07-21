@@ -1,0 +1,69 @@
+﻿@model List<Model.EF.Category>
+<aside class="widget widget-categories">
+    <div class="widget-title">
+        <h4>Danh Mục Sản Phẩm</h4>
+    </div>
+    <div id="cat-treeview"
+         class="widget-info product-cat boxscrol2"
+         tabindex="0">
+        <ul class="treeview">
+            <li class="expandable">
+                <span class="expandable-text">Chó</span>
+                <ul class="treeview">
+                    @foreach (var item in Model.Where(x => x.ParentId == 1).Take(4))
+                    {
+                        foreach (var item1 in Model.Where(x => x.ParentId == item.Id).Take(2))
+                        {
+                            <li >
+                                <a href="/danh-muc-san-pham/@item1.SiteTile/@item1.Id">@item1.Name </a>
+                            </li>
+                        }
+                    }
+                    
+                </ul>
+            </li>
+            <li class="expandable">
+                <span class="expandable-text">Mèo</span>
+                <ul class="treeview">
+
+                    @foreach (var item in Model.Where(x => x.ParentId == 32).Take(6))
+                    {
+                        foreach (var item1 in Model.Where(x => x.ParentId == item.Id).Take(2))
+                        {
+                            <li>
+                                <a href="/danh-muc-san-pham/@item1.SiteTile/@item1.Id">@item1.Name </a>
+                            </li>
+                        }
+                    }
+
+                </ul>
+            </li>
+            <li class="expandable">
+                <span class="expandable-text">Chim </span>
+                <ul class="treeview">
+                    @foreach (var item in Model.Where(x => x.ParentId == 64))
+                    {
+                      
+                            <li>
+                                <a href="/danh-muc-san-pham/@item.SiteTile/@item.Id">@item.Name </a>
+                            </li>
+                     
+                    }
+                </ul>
+            </li>
+            <li class="expandable">
+                <span class="expandable-text">Cá</span>
+                <ul class="treeview">
+                    @foreach (var item in Model.Where(x => x.ParentId == 59))
+                    {
+                       
+                            <li>
+                                <a href="/danh-muc-san-pham/@item.SiteTile/@item.Id">@item.Name </a>
+                            </li>
+                       
+                    }
+                </ul>
+            </li>       
+        </ul>
+    </div>
+</aside>

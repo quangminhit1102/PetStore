@@ -1,0 +1,6 @@
+﻿@model List<Model.EF.Catalog>
+
+@foreach (var item in Model)
+{
+    <li><a href="/Post/ListPostByCata/@item.Id">@item.Title (@item.Total)</a></li>
+}

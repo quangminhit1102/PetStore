@@ -2,16 +2,18 @@
 using Model.EF;
 using PetStore.Models;
 using PetStore.Models.Common;
+using PetStore.Areas.Admin.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity.Migrations;
 
 namespace PetStore.Controllers
 {
     public class LoginController : Controller
-    {
+    {       
         // GET: Login
         public ActionResult Index()
         {
@@ -25,23 +27,18 @@ namespace PetStore.Controllers
             if (ModelState.IsValid)
             {
 
-                var result = dao.Login(model.Username, MD5Encryptor.MD5Hash(model.Password));
+                var result = dao.Login(model.Username, MD5Encryptor.MD5Hash(model.Password), 4);
                 if (result == 1)
                 {
                     var user = dao.getByUserName(model.Username);
                     var userSession = new UserLogin();
-                    userSession.UserID = user.Id;//
-                    userSession.UserName = user.Username;//
-                    userSession.Role = user.Role;//
-                    Session.Add("USERID", user.Id);
+                    userSession.UserID = user.Id;
+                    userSession.UserName = user.Username;
+                    userSession.Name = user.FullName;
+                    //userSession.ProfileImage = user.ProfileImage;
+                    Session.Add("USER", userSession);
                     if (user.Role == 4)
-                    {
                         return RedirectToAction("Index", "Home");
-                    }
-                    else
-                    {
-                        return Redirect("/admin/adminhome/index");
-                    }
                 }
                 else if (result == 0)
                 {
@@ -66,7 +63,7 @@ namespace PetStore.Controllers
         //LOGOUT==============================================================
         public ActionResult Logout()
         {
-            Session["USERID"] = null;
+            Session["USER"] = null;
             return Redirect("/");
         }
         //REGISTER==============================================================
@@ -83,7 +80,7 @@ namespace PetStore.Controllers
             if (ModelState.IsValid)
             {
                 var temp = dao.getByUserName(model.username);
-                if(temp!=null)
+                if (temp != null)
                 {
                     ModelState.AddModelError("username", "Tên đăng nhập đã tồn tại!");
                 }
@@ -97,19 +94,116 @@ namespace PetStore.Controllers
                     user.Email = model.email;
                     user.Status = true;
                     var result = dao.Insert(user);
-                    if(result>0)
+                    if (result > 0)
                     {
                         ViewBag.Success = "Đăng ký thành công mời đăng nhập lại!";
                         model = new RegisterModel();
-                    }    
+                    }
                     else
                     {
                         ModelState.AddModelError("", "Đăng kí không thành công!");
-                    }    
+                    }
                 }
             }
-            
+
             return View(model);
+        }
+        PetStoreDbContext db = null;
+        [HttpGet]
+        public ActionResult ProfileCustomer()
+        {
+            int userid = ((UserLogin)Session["USER"]).UserID;
+            var dao = new UserDao();
+            var user = dao.getUserById(userid);
+            return View(user);
+        }
+        //Update Profile
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ProfileCustomer(User collection)
+        {
+            db = new PetStoreDbContext();
+            int userid = ((UserLogin)Session["USER"]).UserID;
+            var dao = new UserDao();
+            var user = dao.getUserById(userid);
+            try
+            {
+                var errors = ModelState.Values.SelectMany(b => b.Errors);
+                if (ModelState.IsValid)
+                {
+                    //Update Profile
+                    user.FullName = collection.FullName;
+                    user.Gender = collection.Gender;
+                    user.Phone = collection.Phone;
+                    user.Role = 4;
+                    user.Birthday = collection.Birthday;
+                    user.Email = collection.Email;
+                    user.Address = collection.Address;
+                    //save change
+                    var result = dao.Update(user);
+                    if (result)
+                    {
+                        ViewBag.Success = "Cập nhật thông tin thành công!";
+                    }
+                    else
+                    {
+                        ViewBag.Fail = "Cập nhật thông tin thất bại!";
+                    }
+                }
+                return View(collection);
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        //Change Password View
+        [HttpGet]
+        public ActionResult ChangePassCustomer()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ChangePassCustomer(PasswordModel model)
+        {
+            db = new PetStoreDbContext();
+            int userid = ((UserLogin)Session["USER"]).UserID;
+            var dao = new UserDao();
+            var user = dao.getUserById(userid);
+            try
+            {
+                var errors = ModelState.Values.SelectMany(b => b.Errors);
+                if (ModelState.IsValid)
+                {
+                    if (user.Password == MD5Encryptor.MD5Hash(model.password))
+                    {
+                        //Update Password
+                        user.Password = MD5Encryptor.MD5Hash(model.newpassword);
+                        db.Users.AddOrUpdate(user);
+                        try
+                        {
+                            db.SaveChanges();
+                            ViewBag.Success = "Đổi mật khẩu thành công";
+                        }
+                        catch (Exception ex)
+                        {
+                            ViewBag.Fail = "Đổi mật khẩu thất bại";
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.WrongPass = "Mật khẩu cũ không đúng";
+                    }
+
+                    //save change
+                }
+                return View(model);
+            }
+            catch
+            {
+                return View();
+            }
         }
     }
 }

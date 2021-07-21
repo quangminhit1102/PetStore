@@ -54,9 +54,9 @@ namespace Model.EF
 
         public bool? Status { get; set; }
 
-        public double Evaluate { set; get; }
+        public double? Evaluate { get; set; }
 
-        public int TotalEvaluate { set; get; }
+        public int? TotalEvaluate { get; set; }
 
         public virtual Brand Brand { get; set; }
 

@@ -1,0 +1,22 @@
+﻿@model List<Model.EF.Post>
+<aside class="widget widget-categories">
+    <div class="widget-title">
+        <h4>Bài viết nổi bật</h4>
+    </div>
+    <div class="row justify-content-center m-0">
+        @foreach (var item in Model)
+        {
+                <a class="post__item p-2 mb-2 rounded border border-dark" href="/Post/Detail/@item.Id">
+                    <img class="img-fluid"
+                          style="height:auto"
+                         src="@item.Image"
+                         alt="" />
+                    <h4 style="-webkit-line-clamp:2">@item.Title</h4>
+                    <p>
+                        @item.Content
+                    </p>
+                </a>         
+        }
+        
+    </div>
+</aside>

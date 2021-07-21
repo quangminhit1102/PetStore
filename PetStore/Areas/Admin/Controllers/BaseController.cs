@@ -12,10 +12,10 @@ namespace PetStore.Areas.Admin.Controllers
     {
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var session = Session["USERID"];
+            var session = Session["USER"];
             if(session==null)
             {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", action = "Index", Area = ""}));
+                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "AdLogin", action = "Index", Area = "Admin"}));
             }
 
             base.OnActionExecuting(filterContext);
