@@ -42,7 +42,7 @@
                                                     @item.Product.Description
                                                 </div>
                                                 <div class="cart-products__actions">
-                                                    <span class="cart-products__del"><i class='bx bx-trash'></i></span>
+                                                    <span class="cart-products__del"><a href="@Url.Action("Delete","Cart",new { @id = item.Product.Id})"><i class='bx bx-trash'> Xóa Sản Phẩm</i></a></span>
                                                 </div>
                                             </div>
                                             <div class="cart-products__details">
