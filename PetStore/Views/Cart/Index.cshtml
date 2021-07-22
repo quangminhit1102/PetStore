@@ -34,12 +34,12 @@
                                 <li class="cart-products__products mb-2">
                                     <div class="cart-products__inner">
                                         <div class="cart-products__img">
-                                            <img src="@item.Product.ProductImages.FirstOrDefault().Image" width="145.4" alt="" />
+                                            <img src="@item.Product.ProductImages.FirstOrDefault().Image" width="140" alt="" />
                                         </div>
                                         <div class="cart-products__content">
                                             <div class="cart-products__desc">
                                                 <div class="cart-products__name">
-                                                    @item.Product.Description
+                                                    @item.Product.Name
                                                 </div>
                                                 <div class="cart-products__actions">
                                                     <span class="cart-products__del"><a href="@Url.Action("Delete","Cart",new { @id = item.Product.Id})"><i class='bx bx-trash'> Xóa Sản Phẩm</i></a></span>
@@ -57,7 +57,7 @@
                                                     </button>
                                                     <input class="h-100"
                                                            type="number"
-                                                           value="1"
+                                                           value="@item.Quantity"
                                                            min="1"
                                                            max="" />
                                                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"

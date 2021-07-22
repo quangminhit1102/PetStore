@@ -74,6 +74,13 @@ namespace PetStore
             );
 
             routes.MapRoute(
+                name: "Add to Cart",
+                url: "them-vao-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem2", Id = UrlParameter.Optional }
+
+            );
+
+            routes.MapRoute(
                 name: "Add Cart",
                 url: "them-gio-hang",
                 defaults: new { controller = "Cart", action = "AddItem", Id = UrlParameter.Optional }
