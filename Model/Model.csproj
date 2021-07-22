@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\PostDao.cs" />
+    <Compile Include="DAO\ProductDao.cs" />
     <Compile Include="DAO\UserDao.cs" />
     <Compile Include="EF\Attribute.cs" />
     <Compile Include="EF\AttributeValue.cs" />

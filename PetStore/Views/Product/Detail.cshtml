@@ -85,8 +85,13 @@
 
                         <div class="price-single">
                             <ul>
-                                <li class="btn btn-outline-secondary">6 gói - 2000000</li>
-                                <li class="btn btn-outline-secondary">12 gói - 20000</li>
+                                @if (Model.Price == null)
+                                {
+                                    <li class="btn btn-outline-secondary">@Model.ProductAttributes.FirstOrDefault().AttributeValue.Name - @Model.ProductAttributes.FirstOrDefault().Price</li>
+                                    <li class="btn btn-outline-secondary">@Model.ProductAttributes.LastOrDefault().AttributeValue.Name - @Model.ProductAttributes.LastOrDefault().Price</li>
+                                }
+
+
 
                             </ul>
                             <div class="price">
@@ -124,10 +129,10 @@
                                     </button>
                                 </div>
                                 <button class="btn add-cart" type="submit">
-                                    Thêm Vào Giỏ Hàng
+                                    <a href="/them-gio-hang?productId=@Model.Id&quantity=1"> Thêm Vào Giỏ Hàng </a>
                                 </button>
 
-                                <button class="btn buy-cart">Mua Ngay</button>
+                                <button class="btn buy-cart"><a href="/them-gio-hang?productId=@Model.Id&quantity=1"> Mua Ngay </a></button>
                             </div>
                         </form>
                     </div>

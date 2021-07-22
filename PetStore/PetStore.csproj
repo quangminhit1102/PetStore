@@ -182,6 +182,7 @@
     <Content Include="Content\Client\css\index.css" />
     <Content Include="Content\Client\css\info.css" />
     <Content Include="Content\Client\css\login.css" />
+    <Content Include="Content\Client\css\loginadmin.css" />
     <Content Include="Content\Client\img\backpack.jpg" />
     <Content Include="Content\Client\img\banner-12.jpg" />
     <Content Include="Content\Client\img\banner-13.jpg" />
@@ -196,6 +197,7 @@
     <Content Include="Content\Client\img\cat.862fddc4.gif" />
     <Content Include="Content\Client\img\dog.8d179361.gif" />
     <Content Include="Content\Client\img\fish.6c4bafb9.gif" />
+    <Content Include="Content\Client\img\giong-cho-alaskan-malamute-khong-lo-lieu-gia-co-re.jpg" />
     <Content Include="Content\Client\img\headphone.jpg" />
     <Content Include="Content\Client\img\logo-lg.png" />
     <Content Include="Content\Client\img\logo-mb.png" />
@@ -574,6 +576,7 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListProductByCate.cshtml" />
     <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Home\HeaderCart.cshtml" />
     <Content Include="Views\Post\Index.cshtml" />
     <Content Include="Views\Post\Detail.cshtml" />
     <Content Include="Views\Post\ListPostByCata.cshtml" />

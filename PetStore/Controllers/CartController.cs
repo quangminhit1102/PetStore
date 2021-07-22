@@ -1,4 +1,4 @@
-﻿
+﻿using Model.DAO;
 using Model.EF;
 using PetStore.Models.Common;
 using System;
@@ -26,7 +26,7 @@ namespace PetStore.Controllers
 
         public ActionResult AddItem(int productId, int quantity)
         {
-            var product = new Product().Id;
+            var product = new ProductDao().ViewDetail(productId);
             var cart = Session[CartSession];
             if (cart != null)
             {
@@ -46,7 +46,7 @@ namespace PetStore.Controllers
                 {
                     //Add New cart Item
                     var item = new CartItem();
-                    item.Product.Id = productId;
+                    item.Product = product;
                     item.Quantity = quantity;
                     list.Add(item);
                 }
@@ -55,10 +55,10 @@ namespace PetStore.Controllers
             {
                 //Add New cart Item
                 var item = new CartItem();
-                item.Product.Id = productId;
+                item.Product = product;
                 item.Quantity = quantity;
                 var list = new List<CartItem>();
-
+                list.Add(item);
                 //gan vao session
                 Session[CartSession] = list;
             }
@@ -67,3 +67,5 @@ namespace PetStore.Controllers
 
     }
 }
+
+
