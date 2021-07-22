@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PetStore.Models.Common;
 
 namespace PetStore.Areas.Admin.Controllers
 {
@@ -37,11 +38,31 @@ namespace PetStore.Areas.Admin.Controllers
             return View();
         }
         //Create Post
+        [HttpGet]
         public ActionResult CreatePost()
         {
             db = new PetStoreDbContext();
             var listCata = db.Catalogs.ToList();
-            return View(listCata);
+            ViewBag.listCata = listCata;
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult CreatePost(Post model)
+        {
+            try
+            {
+                db = new PetStoreDbContext();
+                if (ModelState.IsValid)
+                {
+                    return Redirect("/admin/");
+                }
+                return View(model);
+            }
+            catch
+            {
+                return View();
+            } 
         }
     }
 }

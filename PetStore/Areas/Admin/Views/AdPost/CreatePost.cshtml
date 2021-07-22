@@ -1,49 +1,56 @@
-﻿@model List<Model.EF.Catalog> 
+﻿@model Model.EF.Post
 
 @{ ViewBag.Title = "CreatePost";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    ICollection<Model.EF.Catalog> listCata = ViewBag.listCata;
+}
 
 <h2>CreatePost</h2>
+@ViewBag.test
 <div class="box">
     <div class="row">
         <div class="col-6">
-            <form>
+            @using (Html.BeginForm("CreatePost","AdPost", new { are = "Admin" }))
+            {
+                @Html.AntiForgeryToken()
                 <div class="col-6 col-12">
                     <label>Tiêu đề bài viết</label>
                     <div class="form_control">
                         <input required
                                name="Tittle"
                                type="text" />
+                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
                     </div>
+                   
                 </div>
                 <div class="col-6 col-12">
                     <label>Chủ đề</label>
                     <div class="form_control">
-                        @Html.DropDownList("Chủ đề", new SelectList(Model, "Id", "Title"))
+                      @*  @Html.DropDownList("Chủ đề", new SelectList(listCata, "Id", "Title"), new { @Name="CataId"})*@
                     </div>
                 </div>
                 <div class="col-6 col-12">
-                    <label>Họ và tên</label>
+                    <label>Hình ảnh</label>
                     <div class="form_control">
                         <input required
-                               name="email"
+                               name="image"
                                type="text" />
                     </div>
                 </div>
                 <div class="col-6 col-12">
-                    <label>Họ và tên</label>
+                    <label>Nôi dung</label>
                     <div class="form_control">
                         <input required
-                               name="email"
+                               name="Content"
                                type="text" />
                     </div>
                 </div>
                 <div class="col-6 col-12">
-                    <a href="#">
+                    <a href="">
                         <button class="btn btn-success" type="submit">Thêm mới Bài</button>
                     </a>
                 </div>
-            </form>
+            }
         </div>
     </div>
 

@@ -154,6 +154,7 @@
     </Compile>
     <Compile Include="Models\Common\CartItem.cs" />
     <Compile Include="Models\Common\ConmmonConstants.cs" />
+    <Compile Include="Models\Common\FriendlyURL.cs" />
     <Compile Include="Models\Common\MD5Encryptor.cs" />
     <Compile Include="Models\Common\UserLogin.cs" />
     <Compile Include="Models\HomeModel.cs" />

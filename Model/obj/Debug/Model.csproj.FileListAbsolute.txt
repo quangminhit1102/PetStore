@@ -57,8 +57,8 @@ C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\EntityFram
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.xml
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\bin\Debug\PagedList.Mvc.xml
-C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csprojAssemblyReference.cache
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.dll
 C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.pdb
+C:\Users\Admin\OneDrive\Tài liệu\GitHub\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache

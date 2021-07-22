@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -18,8 +18,9 @@ namespace Model.EF
 
         public int CataId { get; set; }
 
+        
+        [StringLength(100, ErrorMessage = "Tiêu Đề không quá 100 ký tự")]
         [Required]
-        [StringLength(128)]
         public string Title { get; set; }
 
         [StringLength(255)]
