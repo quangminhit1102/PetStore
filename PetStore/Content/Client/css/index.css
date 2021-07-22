@@ -2049,7 +2049,9 @@ input[type="radio"]:checked + .radio-fake::before {
             color: #0984e3;
             font-weight: 700;
         }
+.choose-item.active{
 
+}
 .is-divider {
     height: 3px;
     display: block;

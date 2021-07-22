@@ -3,6 +3,7 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/Layout.cshtml";
     var listProduct = (List<Model.EF.Product>)ViewBag.listRelatedProduct;
+    var listAttributes = (List<Model.EF.ProductAttribute>)ViewBag.listAttributes;
 }
 
 <div class="header-position"></div>
@@ -87,8 +88,11 @@
                             <ul>
                                 @if (Model.Price == null)
                                 {
-                                    <li class="btn btn-outline-secondary">@Model.ProductAttributes.FirstOrDefault().AttributeValue.Name - @Model.ProductAttributes.FirstOrDefault().Price</li>
-                                    <li class="btn btn-outline-secondary">@Model.ProductAttributes.LastOrDefault().AttributeValue.Name - @Model.ProductAttributes.LastOrDefault().Price</li>
+                                    foreach (var item in listAttributes)
+                                    {
+                                        <li class="btn btn-outline-secondary choose-item"> @item.AttributeValue.Name - @item.Price</li>
+                                    }
+
                                 }
 
 
