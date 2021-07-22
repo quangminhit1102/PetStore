@@ -32,29 +32,21 @@ namespace Model.DAO
             return db.Users.Find(id);
         }
         //Update
-        public bool Update(User entity)
+        public int Update(User entity)
         {
-            try
+            User userUpdate = db.Users.SingleOrDefault(x => x.Id == entity.Id);
+            if(userUpdate != null)
             {
-                User userUpdate = db.Users.SingleOrDefault(x => x.Id == entity.Id);
-                if (userUpdate != null)
-                {
-                    db.Users.AddOrUpdate(entity);
-                    db.SaveChanges();
-                }
-                return true;
-
+                db.Users.AddOrUpdate(entity);
+                db.SaveChanges();
             }
-            catch(Exception ex)
-            {
-                return false;
-            }
+            return entity.Id;
         }
         //Delete
         //
-        public int Login(string userName, string passWord, int role)
+        public int Login(string userName, string passWord)
         {
-            var result = db.Users.SingleOrDefault(x => x.Username == userName && x.Role==role);
+            var result = db.Users.SingleOrDefault(x => x.Username == userName);
             if(result == null)
             {
                 return 0;
@@ -70,28 +62,8 @@ namespace Model.DAO
                     else
                         return -2;
                 }    
-            }    
-        }
-        public int Login(string userName, string passWord)
-        {
-            var result = db.Users.SingleOrDefault(x => x.Username == userName && x.Role!=4);
-            if (result == null)
-            {
-                return 0;
-            }
-            else
-            {
-                if (result.Status == false)
-                    return -1;
-                else
-                {
-                    if (result.Password == passWord)
-                        return 1;
-                    else
-                        return -2;
-                }
-            }
-
+            } 
+                
         }
     }
 }

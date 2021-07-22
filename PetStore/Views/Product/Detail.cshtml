@@ -2,8 +2,11 @@
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/Layout.cshtml";
+<<<<<<< HEAD
     var listProduct = (List<Model.EF.Product>)ViewBag.listRelatedProduct;
     var listAttributes = (List<Model.EF.ProductAttribute>)ViewBag.listAttributes;
+=======
+>>>>>>> parent of fda1dd5 (Merge branch 'main' into quan)
 }
 
 <div class="header-position"></div>
@@ -59,25 +62,12 @@
                         </div>
                         <div class="woocommerce-product-rating">
                             <div class="products__rating">
-                                @{var soSaoSanPham = Model.Evaluate;}
-                                @for (var i = 0; i < 5; i++)
-                                {
-                                    if ((int)soSaoSanPham / 1 == 5 || (int)soSaoSanPham / 1 == 4 || (int)soSaoSanPham / 1 == 3 || (int)soSaoSanPham / 1 == 2 || (int)soSaoSanPham / 1 == 1)
-                                    {
-                                        <i class="bx bxs-star"></i>
-                                        soSaoSanPham--;
-                                    }
-                                    else if (soSaoSanPham % 1.0 == 0.5 && soSaoSanPham < 1)
-                                    {
-                                        <i class="bx bxs-star-half"></i>
-                                        soSaoSanPham -= 0.5;
-                                    }
-                                    else
-                                    {
-                                        <i class="bx bx-star"></i>
-                                    }
-                                }
-                                <span>(@Model.TotalEvaluate)</span>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bx-star"></i>
+                                <span>(2)</span>
                             </div>
                         </div>
                         <h1 itemprop="name" class="product_title entry-title">
@@ -195,55 +185,79 @@
         </div>
     </div>
 </section>
-@if (listProduct.Count != 0 ) { 
 <section id="relatedProducts">
     <div class="container">
         <div class="relatedProducts-title w-100">
             <h2>Sản phẩm liên quan</h2>
         </div>
-        <div>
-            <div class="row justify-content-center">
-                @foreach (var item in listProduct)
-                {
-                    <a href="#" class="col-3 relatedProducts-product">
-                        <img class="img-fluid"
-                             src="@item.ProductImages.FirstOrDefault().Image"
-                             alt=""
-                             srcset="" />
-                        <div class="products__rating">
-                            @{var soSao = item.Evaluate;}
-                            @for (var i = 0; i < 5; i++)
-                            {
-                                if ((int)soSao / 1 == 5 || (int)soSao / 1 == 4 || (int)soSao / 1 == 3 || (int)soSao / 1 == 2 || (int)soSao / 1 == 1)
-                                {
-                                    <i class="bx bxs-star"></i>
-                                    soSao--;
-                                }
-                                else if (soSao % 1.0 == 0.5 && soSao < 1)
-                                {
-                                    <i class="bx bxs-star-half"></i>
-                                    soSao -= 0.5;
-                                }
-                                else
-                                {
-                                    <i class="bx bx-star"></i>
-                                }
-                            }
-                            <span>(@item.TotalEvaluate)</span>
-                        </div>
-                        <h5>@item.Name</h5>
-                        @if (@item.Price == null)
-                        {
-                            <span class="price">@string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price) đ</span>
-                        }
-                        else
-                        {
-                            <span class="price">@string.Format(info, "{0:0,0}", @item.Price) đ</span>
-                        }
-                    </a>
-                }
-            </div>
+        <div class="row">
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
+
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
+
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
+            <a href="#" class="col-3 relatedProducts-product">
+                <img class="img-fluid"
+                     src="~/Content/Client/img/product-1-450x450.jpg"
+                     alt=""
+                     srcset="" />
+                <div class="products__rating">
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <i class="bx bxs-star"></i>
+                    <span>(1)</span>
+                </div>
+                <h5>Donec Faucibus Odio Felis Nec Viverra Nisi Sollicitudin</h5>
+                <span class="price">145.000 đ</span>
+            </a>
         </div>
     </div>
-</section>}
+</section>
 

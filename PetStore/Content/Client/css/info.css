@@ -94,25 +94,19 @@
   padding: 1rem;
   border-radius: 4px;
 }
-    .userInfo_cata ul li {
-        margin-bottom: 5px;
-        padding: 10px;
-        cursor: pointer;
-        border-radius: 4px;
-        transition: all 0.2s ease;
-    }.userInfo_cata ul li:last-child {
-        margin-bottom: 0;
-        
-    }
+.userInfo_cata ul li {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
 .userInfo_cata ul li:hover {
   background-color: #e6e6e6;
   padding: 10px;
 }
 .userInfo_cata ul li:hover a {
   color: #3498db;
-}.userInfo_cata ul li.active {
-        background-color: #e6e6e6;
- }
+}
 .userInfo_cata ul li a {
   width: 100%;
   height: 100%;

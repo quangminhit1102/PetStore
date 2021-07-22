@@ -1,5 +1,4 @@
-﻿using Model.DAO;
-using Model.EF;
+﻿using Model.EF;
 using PetStore.Models;
 using System;
 using System.Collections.Generic;
@@ -16,12 +15,10 @@ namespace PetStore.Controllers
         PetStoreDbContext db = null;
         public ActionResult Index()
         {
-            var dao = new UserDao();
             db = new PetStoreDbContext();
             var listProduct = db.Products.Take(32).ToList();
             HomeModel homemodel = new HomeModel();
             homemodel.listProduct = listProduct;
-            
             return View(homemodel);
         }
 

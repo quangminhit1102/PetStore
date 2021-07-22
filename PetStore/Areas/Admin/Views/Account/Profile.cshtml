@@ -1,4 +1,4 @@
-﻿@model Model.EF.User
+﻿
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -8,16 +8,11 @@
         <div class="col-3 col-sm-12 user-avatar">
             <!--left col-->
 
-            <img src="~/Content/Admin/img/user-image-2.png"
+            <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
                  class="avatar"
-                 alt="avatar" width="200px" />
-            @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
-            <h2>@user.Name</h2>
-            @if (user.Role == 1)
-            {
-                <h4>Admin</h4>
-            }
+                 alt="avatar" />
 
+            <h2>Trương Biên</h2>
         </div>
         <!--/col-3-->
         <div class="col-9 col-sm-12">
@@ -35,87 +30,60 @@
             </ul>
             <div class="tab-content">
                 <div class="tab-pane fade show active">
-                    @using (Html.BeginForm("Profile", "Account", FormMethod.Post, new { are = "Admin" }))
-                    {
-                        @Html.AntiForgeryToken()
-                    <div class="row">
-                        @if (ViewBag.Fail != null)
-                        {
-                            <div class="col-12">
-                                <div class="text-success">@ViewBag.Fail</div>
-                            </div>
-                        }
-                        @if (ViewBag.Success != null)
-                        {
-                            <div class="col-12">
-                                <div class="text-success">@ViewBag.Success</div>
-                            </div>
-                        }
-                        <div class="col-6 col-sm-12">
-                            <div class="form_control">
-                                <input required name="FullName" type="text" value="@Model.FullName" />
-                                <label>Họ và tên</label>
-                                @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="form_control">
-                                <select required name="Gender">
-                                    @if (Model.Gender == true)
-                                    {
-                                        <option value="true" selected>Nam</option>
-                                        <option value="false">Nữ</option>
-                                    }
-                                    else
-                                    {
-                                        <option value="true">Nam</option>
-                                        <option value="false" selected>Nữ</option>
-                                    }
-                                </select>
-                                <label>Giới Tính</label>
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="form_control">
-                                <input required name="Phone" type="text" value="@Model.Phone" />
-                                <label>Số Điện thoại</label>
-                                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="form_control">
-                                <input required name="Birthday" value="@Model.Birthday.Value.ToString("yyyy/MM/dd")" type="date" />
-                                <label>Ngày Sinh</label>
-                                @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="form_control">
-                                <input required name="Email" type="text" value="@Model.Email" />
-                                <label>Email</label>
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-                        <div class="col-6 col-sm-12">
-                            <div class="form_control">
+                    <form>
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
                                 <div class="form_control">
-                                    <input required name="Address" type="text" value="@Model.Address" />
-                                    <label>Địa chỉ</label>
-                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-12">
+                                <div class="form_control">
+                                    <input required name="email" type="text" />
+                                    <label>User Name</label>
                                 </div>
                             </div>
                         </div>
-                    </div>
                         <div class="row">
                             <div class="col-6">
-                                <button class="btn">Lưu Thông Tin</button>
+                                <button class="btn">Lưu lại</button>
                             </div>
                             <div class="col-6">
-                                <a href="/admin/account/profile" class="btn btn-reset">reset</a>
+                                <button class="btn btn-reset">reset</button>
                             </div>
                         </div>
-                    }
-
+                    </form>
                 </div>
             </div>
             <!--/tab-pane-->

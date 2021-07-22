@@ -1,0 +1,62 @@
+﻿@model PagedList.IPagedList<Model.EF.Post>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "ListPost";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-12">
+        <!-- Post TABLE -->
+        <div class="box">
+            <div class="box-header"><h3>Danh sách các bài viết:</h3></div>
+            <div class="box-body overflow-scroll">
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="50px">STT</th>
+                            <th width="500px">Tên bài viết</th>
+                            <th width="150px">Loại bài viết</th>
+                            <th width="150px">Ảnh bìa</th>
+                            <th width="100px">Ngày viết</th>
+                            <th width="100px">Tác Vụ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ int count = 1;} 
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@count</td>
+                            @{
+                                count++;
+                            }
+
+                            <td>@item.Title</td>
+
+                            <td>@item.Catalog.Title</td>
+
+                            <td><img src=" @item.Image" width="80px"</td>
+
+                            <td>@item.CreatedAt</td>
+
+                            <td>
+                                <a href="/admin/post/editpost/@item.Id" style="padding-right:20px">
+                                    <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fas fa-trash-alt" style="color:red"></i>
+                                </a>
+                            </td>
+                        </tr>
+                                }
+                    </tbody>
+                </table>
+                @Html.PagedListPager(Model, page => Url.Action("ListPost", new { page }))
+            </div>
+        </div>
+    </div>
+    <!-- END ORDERS TABLE -->
+</div>
+</div>
+

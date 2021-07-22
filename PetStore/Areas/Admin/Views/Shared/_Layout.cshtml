@@ -38,7 +38,14 @@
     <!-- Navbar  -->
     <div class="navbar">
         <!-- nav left -->
-        @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
+        @*@using Model.DAO
+        @{
+            var dao = new UserDao();
+            int id = (int)Session["USERID"];
+            var user = dao.getUserById(id);
+            var username = user.FullName;
+
+        }*@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <img src="~/Content/Admin/img/logo-lg.png" alt="ATPro logo" class="logo" />
@@ -245,7 +252,7 @@
                         <li class="dropdown-menu-item profile">
                             <a href="#" class="dropdown-menu-link">
                                 <img src="~/Content/Admin/img/user-image-2.png" alt="User image" />
-                                <p>@user.Name</p>
+                                @*<p>@username</p>*@
                             </a>
                         </li>
                         <li class="dropdown-menu-item">
@@ -265,7 +272,7 @@
                             </a>
                         </li>
                         <li class="dropdown-menu-item">
-                            <a href="@Url.Action("Logout", "AdLogin", new { Area = "Admin"})" class="dropdown-menu-link">
+                            <a href="@Url.Action("Logout", "Login", new { Area = ""})" class="dropdown-menu-link">
                                 <div>
                                     <i class="fas fa-sign-out-alt"></i>
                                 </div>

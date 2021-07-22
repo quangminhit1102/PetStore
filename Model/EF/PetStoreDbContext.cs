@@ -73,6 +73,10 @@ namespace Model.EF
                 .IsFixedLength();
 
             modelBuilder.Entity<User>()
+                .Property(e => e.Password)
+                .IsFixedLength();
+
+            modelBuilder.Entity<User>()
                 .HasMany(e => e.Orders)
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.CustomerId)

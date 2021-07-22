@@ -11,9 +11,11 @@ namespace PetStore.Models
         public string username { set; get; }
         public string name { set; get; }
         public string email { set; get; }
-        [StringLength(50, MinimumLength = 6, ErrorMessage = "Độ dài mật khẩu ít nhất 6 kí tự!")]
+        [StringLength(50,MinimumLength = 6,ErrorMessage = "Độ dài mật khẩu ít nhất 6 kí tự!")]
         public string password { set; get; }
-        [Compare("password", ErrorMessage = "Mật khẩu không trùng khớp!")]
+        [Compare("password",ErrorMessage = "Mật khẩu không trùng khớp!")]
         public string confirmpassword { set; get; }
+
+        
     }
 }
