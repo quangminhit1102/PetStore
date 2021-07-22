@@ -26,11 +26,31 @@ namespace PetStore
 
             routes.MapRoute(
                 name: "Product Details",
-                url: "san-pham/{sitetile}/{ProId}",
+                url: "san-pham/{sitetile}-{ProId}",
                 defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
 
             );
 
+            routes.MapRoute(
+                name: "List Post By Categories",
+                url: "bai-viet/danh-muc-bai-viet-{id}",
+                defaults: new { controller = "Post", action = "ListPostByCata", id = UrlParameter.Optional }
+
+            );
+
+            routes.MapRoute(
+                name: "Post Details",
+                url: "bai-viet/{sitetile}-{id}",
+                defaults: new { controller = "Post", action = "Detail", id = UrlParameter.Optional }
+
+            );
+
+            routes.MapRoute(
+                name: "Posts",
+                url: "bai-viet",
+                defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional }
+
+            );
 
             routes.MapRoute(
                 name: "Brands",
@@ -48,10 +68,25 @@ namespace PetStore
 
             routes.MapRoute(
                 name: "Categories",
-                url: "danh-muc-san-pham/{sitetile}/{CateId}",
+                url: "danh-muc-san-pham/{sitetile}-{CateId}",
                 defaults: new { controller = "Product", action = "ListProductByCate", CateId = UrlParameter.Optional }
 
             );
+
+            routes.MapRoute(
+                name: "Add to Cart",
+                url: "them-vao-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem2", Id = UrlParameter.Optional }
+
+            );
+
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem", Id = UrlParameter.Optional }
+
+            );
+
 
             routes.MapRoute(
                 name: "Default",

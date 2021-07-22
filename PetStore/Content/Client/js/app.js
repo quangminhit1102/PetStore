@@ -140,3 +140,26 @@ function switchTheme() {
     setCookie(themeCookieName, themeLight);
   }
 }
+
+	
+  // Popup Open
+    
+  function popupSanPhamOpen() {
+    
+  document.getElementById("popupSanpham").classList.add("active");
+    
+  document.getElementById("overlay").style.display = "block";
+    
+  }
+    
+  // Popup Close
+    
+  function popupSanPhamClose() {
+    
+  document.getElementById("popupSanpham").classList.remove("active");
+    
+  document.getElementById("overlay").style.display = "none";
+    
+  }
+    
+

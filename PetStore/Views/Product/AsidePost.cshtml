@@ -6,7 +6,7 @@
     <div class="row justify-content-center m-0">
         @foreach (var item in Model)
         {
-                <a class="post__item p-2 mb-2 rounded border border-dark" href="/Post/Detail/@item.Id">
+                <a class="post__item p-2 mb-2 rounded border border-dark" href="/bai-viet/@item.SiteTitle.Replace(" ", "")-@item.Id">
                     <img class="img-fluid"
                           style="height:auto"
                          src="@item.Image"

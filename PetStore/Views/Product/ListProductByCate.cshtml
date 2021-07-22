@@ -65,7 +65,7 @@
                             }
                             @foreach (var item in Model)
                             {
-                            <a href="/san-pham/@item.SiteTile/@item.Id" class="col-4 sort-grid-product">
+                            <a href="/san-pham/@item.SiteTile-@item.Id" class="col-4 sort-grid-product">
                                 <img class="img-fluid"
                                      src="@item.ProductImages.FirstOrDefault().Image"
                                      alt=""
@@ -116,7 +116,7 @@
 
                             @foreach (var item in Model)
                             {
-                                <a href="/san-pham/@item.SiteTile/@item.Id" class="col-12 sort-list-product">
+                                <a href="/san-pham/@item.SiteTile-@item.Id" class="col-12 sort-list-product">
                                     <img class="img-fluid"
                                          src="@item.ProductImages.FirstOrDefault().Image"
                                          alt=""

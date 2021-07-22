@@ -19,5 +19,7 @@ namespace Model.EF
         public virtual AttributeValue AttributeValue { get; set; }
 
         public virtual Product Product { get; set; }
+
+        public List<Model.EF.AttributeValue> listAttributeValue = new List<AttributeValue>();
     }
 }
