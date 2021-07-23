@@ -19,7 +19,7 @@
         public int CataId { get; set; }
 
         
-        [StringLength(100, ErrorMessage = "Tiêu Đề không quá 100 ký tự")]
+        [StringLength(50,ErrorMessage = "Tiều đề không quá 50 kí tự!")]
         [Required]
         public string Title { get; set; }
 

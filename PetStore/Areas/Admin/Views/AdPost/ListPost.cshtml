@@ -10,6 +10,12 @@
         <!-- Post TABLE -->
         <div class="box">
             <div class="box-header"><h3>Danh sách các bài viết:</h3></div>
+            <div>
+                <a href="/admin/adpost/createpost" class="btn btn-success" style="display:inline-block">
+                    <i class="fa fa-plus-circle"></i>
+                    Thêm mới Bài
+                </a>
+            </div>
             <div class="box-body overflow-scroll">
                 <div class="row">
                     <div class="col-4" style="margin-bottom:0">
@@ -56,9 +62,9 @@
                                     <a href="/admin/adpost/editpost/@item.Id" style="padding-right:20px">
                                         <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
                                     </a>
-                                    <a href="#">
+                                    @*<a href="">
                                         <i class="fas fa-trash-alt" style="color:red"></i>
-                                    </a>
+                                    </a>*@
                                 </td>
                             </tr>
                         }

@@ -22,7 +22,7 @@ namespace Model.DAO
             {
                 model = model.Where(x => x.Title.Contains(searchString) || x.Content.Contains(searchString) || x.Catalog.Title.Contains(searchString));
             }
-            return model.OrderByDescending(x => x.CreatedAt).ToPagedList(page, pageSize);
+            return model.OrderByDescending(x => x.UpdatedAt).ThenByDescending(x => x.CreatedAt).ToPagedList(page, pageSize);
         }
     }
 }

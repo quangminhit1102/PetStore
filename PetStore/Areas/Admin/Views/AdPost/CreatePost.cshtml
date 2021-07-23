@@ -2,56 +2,54 @@
 
 @{ ViewBag.Title = "CreatePost";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-    ICollection<Model.EF.Catalog> listCata = ViewBag.listCata;
 }
 
 <h2>CreatePost</h2>
-@ViewBag.test
 <div class="box">
-    <div class="row">
+    @using (Html.BeginForm("CreatePost", "AdPost", FormMethod.Post, new { @area = "Admin", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
         <div class="col-6">
-            @using (Html.BeginForm("CreatePost","AdPost", new { are = "Admin" }))
-            {
-                @Html.AntiForgeryToken()
-                <div class="col-6 col-12">
-                    <label>Tiêu đề bài viết</label>
-                    <div class="form_control">
-                        <input required
-                               name="Tittle"
-                               type="text" />
-                        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
-                    </div>
-                   
-                </div>
-                <div class="col-6 col-12">
-                    <label>Chủ đề</label>
-                    <div class="form_control">
-                      @*  @Html.DropDownList("Chủ đề", new SelectList(listCata, "Id", "Title"), new { @Name="CataId"})*@
-                    </div>
-                </div>
-                <div class="col-6 col-12">
-                    <label>Hình ảnh</label>
-                    <div class="form_control">
-                        <input required
-                               name="image"
-                               type="text" />
-                    </div>
-                </div>
-                <div class="col-6 col-12">
-                    <label>Nôi dung</label>
-                    <div class="form_control">
-                        <input required
-                               name="Content"
-                               type="text" />
-                    </div>
-                </div>
-                <div class="col-6 col-12">
-                    <a href="">
-                        <button class="btn btn-success" type="submit">Thêm mới Bài</button>
-                    </a>
-                </div>
-            }
+            <a href="/admin/adpost/listpost" class="btn btn-info" style="display:inline-block">
+                Danh Sách Bài viết
+            </a>
         </div>
-    </div>
+        <div class="col-6">
+            <div class="text-success" style="font-size:large">@ViewBag.success</div>
+        </div>
+        <div class="col-6">
+            <label>Tiêu đề bài viết</label>
+            <div class="form_control">
+                <input required
+                       name="Title"
+                       type="text" />
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
 
+        </div>
+        <div class="col-6">
+            <label>Chủ đề</label>
+            <div class="form_control">
+                @Html.DropDownList("Chủ đề", new SelectList(ViewBag.listCata, "Id", "Title"), new { @Name = "CataId" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Hình ảnh</label>
+            <div class="form_control">
+                <input required type="file" name="fileUpload" />
+            </div>
+        </div>
+        <div class="col-12">
+            <label>Nôi dung</label>
+            <div class="form_control">
+                <textarea name="Content" rows="30">Nhập nội dung...</textarea>
+            </div>
+        </div>
+        <div class="col-6 col-12">
+            <a href="">
+                <button class="btn btn-success" type="submit">Thêm mới Bài</button>
+            </a>
+        </div>
+    }
 </div>
+<script>tinymce.init({ selector: 'textarea' });</script>

@@ -20,9 +20,9 @@
                          src="@Model.Image"
                          alt="@Model.SiteTitle" />
                     <div class="listPost_context">
-                        <p>
-                           @Model.Content
-                        </p>
+                        @*<p>*@
+                        @Html.Raw(@Model.Content)
+                        @*</p>*@
                     </div>
                 </div>
             </div>
