@@ -44,14 +44,14 @@
                 @* End Menu*@
                 @* Search Bar *@
             <div class="header-search-bar ml-3">
-                @using (Html.BeginForm("Index", "Search"))
+                @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "input" }))
                 {
-                    <input placeholder="Tìm kiếm trên Chợ Pet" maxlength="50" class="input" type="search" name="Keyword" value="" />
+                    <input placeholder="Tìm kiếm trên Chợ Pet" maxlength="50" class="w-100 height-100 text-center" type="search" name="Keyword" value="" />
                 }
                 <div class="search-option">
                     <div class="wrap">
                         <span class="value-selected">
-                            <span><i class="fa fa-search"></i></span>
+                         <i class='bx bx-search-alt'></i>
                         </span>
                     </div>
                 </div>

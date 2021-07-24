@@ -6,17 +6,21 @@
     <div class="row justify-content-center m-0">
         @foreach (var item in Model)
         {
-                <a class="post__item p-2 mb-2 rounded border border-dark" href="/bai-viet/@item.SiteTitle.Replace(" ", "")-@item.Id">
-                    <img class="img-fluid"
-                          style="height:auto"
-                         src="@item.Image"
-                         alt="" />
-                    <h4 style="-webkit-line-clamp:2">@item.Title</h4>
-                    <p>
-                        @Html.Raw(@item.Content)
-                    </p>
-                </a>         
-        }
+   
         
+                <div class="post__item p-2 mb-2 rounded border border-dark col-12">
+                    <a href="/bai-viet/@item.SiteTitle.Replace(" ", "")-@item.Id" class="w-100">
+                        <img class="img-fluid"
+                             src="@item.Image"
+                             alt="" />
+                        <h4>@item.Title</h4>
+                    </a>
+                    <div class="post_content">
+                        @Html.Raw(@item.Content)
+                    </div>
+                </div>
+         
+        }
+
     </div>
 </aside>

@@ -13,7 +13,7 @@ namespace PetStore.Controllers
     public class ProductController : Controller
     {
         PetStoreDbContext db = null;
-        public ActionResult ListProductByCate(int CateId, int page = 1, int pageSize = 6)
+        public ActionResult ListProductByCate(int CateId, int page = 1, int pageSize = 10)
         {
             db = new PetStoreDbContext();
             ViewBag.CateName = db.Categories.Where(x => x.Id == CateId).FirstOrDefault().Name;

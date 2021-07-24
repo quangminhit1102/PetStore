@@ -193,6 +193,7 @@
     <Content Include="Content\Client\css\index.css" />
     <Content Include="Content\Client\css\info.css" />
     <Content Include="Content\Client\css\login.css" />
+    <Content Include="Content\Client\css\loginadmin.css" />
     <Content Include="Content\Client\img\backpack.jpg" />
     <Content Include="Content\Client\img\banner-12.jpg" />
     <Content Include="Content\Client\img\banner-13.jpg" />
@@ -584,7 +585,6 @@
     <Content Include="Views\Brand\ListProductByBrand.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListProductByCate.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Post\Index.cshtml" />
     <Content Include="Views\Post\Detail.cshtml" />
     <Content Include="Views\Post\ListPostByCata.cshtml" />
@@ -594,12 +594,13 @@
     <Content Include="Views\Post\AsideProduct.cshtml" />
     <Content Include="Views\Login\ChangePassCustomer.cshtml" />
     <Content Include="Views\Login\ProfileCustomer.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Login\Order.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Cart\ViewCart.cshtml" />
     <Content Include="Views\Cart\Checkout.cshtml" />
     <Content Include="Views\Cart\Success.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

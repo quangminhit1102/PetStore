@@ -244,7 +244,7 @@ namespace PetStore.Controllers
                     Order order = new Order();
                     //tạo đơn hàng 
                     order.CustomerId = id;
-                    order.OrderDate = "2021-5-20";
+                    order.OrderDate = DateTime.Now;
                     order.PaymentStatus = false;
                     order.OrderStatus = false;
                     order.Total = (int)this.getTotal();
