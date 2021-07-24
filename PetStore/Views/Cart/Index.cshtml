@@ -6,9 +6,12 @@
     Layout = "~/Views/Shared/Layout.cshtml";
     var user = (Model.EF.User)ViewBag.user;
 }
+@{
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+
+}
 
 
-<div class="main-content">
     <div class="header-position"></div>
     <section id="cart">
         <div class="container">
@@ -41,31 +44,57 @@
                                                 <div class="cart-products__name">
                                                     @item.Product.Name
                                                 </div>
+                                                @if (item.AttributeName != null)
+                                                {
+                                                    <div class="cart-products__name">
+                                                        @item.AttributeName
+                                                    </div>
+                                                }
+
                                                 <div class="cart-products__actions">
-                                                    <span class="cart-products__del"><a href="@Url.Action("Delete","Cart",new { @id = item.Product.Id})"><i class='bx bx-trash'> Xóa Sản Phẩm</i></a></span>
+                                                    <span class="cart-products__del"><a class="btn btn-danger" style="padding: 5px; padding-bottom: 0px; " href="@Url.Action("Delete","Cart",new { @id = item.Product.Id})"><i class='bx bx-trash' style="font-size:1.5rem"></i></a></span>
                                                 </div>
                                             </div>
                                             <div class="cart-products__details">
                                                 <div class="cart-products__pricess">
-                                                    <p class="cart-products__real-prices">@((item.Product.Price.GetValueOrDefault(0) * @item.Quantity).ToString("N0")) đ</p>
+                                                    @if (item.Product.Price != null)
+                                                    {
+                                                        @* <p class="cart-products__real-prices">@((item.Product.Price.GetValueOrDefault(0) * @item.Quantity).ToString("N0")) đ</p>*@
+                                                        <p class="cart-products__real-prices">@string.Format(info, "{0:0,0}", @item.Product.Price) đ</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p class="cart-products__real-prices">@string.Format(info, "{0:0,0}", @item.Price) đ</p>
+                                                    }
+
                                                 </div>
-                                                <div class="quantity">
-                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                                            type="button"
-                                                            class="plus">
-                                                        +
-                                                    </button>
-                                                    <input class="h-100"
-                                                           type="number"
-                                                           value="@item.Quantity"
-                                                           min="1"
-                                                           max="" />
-                                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                                            type="button"
-                                                            class="minus">
-                                                        -
-                                                    </button>
-                                                </div>
+                                                
+
+                                                <form action="/Cart/Update?id=@item.Product.Id" method="post" enctype="multipart/form-data">
+                                                    <input value="@item.Product" type="hidden" name="Product" />
+                                                    <input value="@item.Price" type="hidden" name="Price" />
+
+                                                    <input value="@item.AttributeName" type="hidden" name="AttributeName" />
+                                                    <div class="quantity">
+                                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                                                type="submit"
+                                                                class="plus js-tongle-qty">
+                                                            +
+                                                        </button>
+                                                        <input class="h-100 upCart" name="Quantity"
+                                                               type="number"
+                                                               value="@item.Quantity"
+                                                               min="1"
+                                                               max="" />
+                                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                                                type="submit"
+                                                                class="minus">
+                                                            -
+                                                        </button>
+                                                    </div>
+                                                </form>
+
+                                             
                                             </div>
                                         </div>
                                     </div>
@@ -82,7 +111,8 @@
                             </p>
                             <p class="title">
                                 <b class="name">@user.FullName</b>
-                                <b class="phone"> - @user.Phone</b>
+                                <br />
+                                <b class="phone">@user.Phone</b>
                             </p>
                             <p class="address">
                                 Địa Chỉ: @user.Address
@@ -90,11 +120,11 @@
                         </div>
                         <div class="prices">
                             <div class="row">
-                                <div class="col-5">
+                                <div class="col-4 pr-0">
                                     <p class="prices__text" onclick="">Tổng tiền</p>
                                 </div>
-                                <div class="col-7">
-                                    <p class="prices__value" id="priceValue">5.500.742đ</p>
+                                <div class="col-8 pl-0">
+                                    <p class="prices__value" id="priceValue"> @string.Format(info, "{0:0,0}", @ViewBag.total)đ</p>
                                 </div>
                             </div>
                         </div>
@@ -136,38 +166,14 @@
             }
         </div>
     </section>
-</div>
 
 
-<!-- SLICK -->
-<script type="text/javascript"
-        src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<script>
-    const nav_categories = document.querySelectorAll(".nav-categories");
-    const header_category = document.querySelector(".header-category");
-    const header_category_content = document.querySelector(
-        ".header-category-content"
-    );
-    header_category.addEventListener("mouseenter", () => {
-        header_category_content.classList.add("active");
-    });
-    header_category.addEventListener("mouseleave", () => {
-        header_category_content.classList.remove("active");
-    });
-    nav_categories.forEach((e) => {
-        e.addEventListener("mouseenter", () => {
-            e.querySelector(".category-name").classList.remove("false");
-            e.querySelector(".category-name").classList.add("active");
-            e.querySelector(".sub-navbar").classList.add("active");
-        });
-        e.addEventListener("mouseleave", () => {
-            e.querySelector(".category-name").classList.add("false");
-            e.querySelector(".category-name").classList.remove("active");
-            e.querySelector(".sub-navbar").classList.remove("active");
-        });
-    });
-</script>
+
+
+
+
+
 <script>
     const progress = document.getElementById("progress");
     const circles = document.querySelectorAll(".circle");
@@ -178,7 +184,9 @@
         progress.style.width =
             ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
     }
+
 </script>
+
 
 
 

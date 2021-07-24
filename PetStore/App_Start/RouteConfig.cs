@@ -23,7 +23,18 @@ namespace PetStore
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapRoute(
+                name: "Add Cart Attribute",
+                url: "them-gio-hang-theo-loai",
+                defaults: new { controller = "Cart", action = "AddItemAttribute", Id = UrlParameter.Optional }
+            );
 
+            routes.MapRoute(
+                name: "Add Cart",
+                url: "them-gio-hang",
+                defaults: new { controller = "Cart", action = "AddItem", Id = UrlParameter.Optional }
+
+            );
             routes.MapRoute(
                 name: "Product Details",
                 url: "san-pham/{sitetile}-{ProId}",
@@ -56,7 +67,7 @@ namespace PetStore
                 name: "Brands",
                 url: "thuong-hieu",
                 defaults: new { controller = "Brand", action = "Index", id = UrlParameter.Optional }
-               
+
             );
 
             routes.MapRoute(
@@ -73,26 +84,19 @@ namespace PetStore
 
             );
 
-            routes.MapRoute(
-                name: "Add to Cart",
-                url: "them-vao-gio-hang",
-                defaults: new { controller = "Cart", action = "AddItem2", Id = UrlParameter.Optional }
 
-            );
 
             routes.MapRoute(
-                name: "Add Cart",
-                url: "them-gio-hang",
-                defaults: new { controller = "Cart", action = "AddItem", Id = UrlParameter.Optional }
-
-            );
-
+               name: "Cart",
+               url: "gio-hang",
+               defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-                
+
             );
         }
 
