@@ -15,19 +15,19 @@
                     @foreach (var item in Model)
                     {
                         <div class="col-6 mb-4">
-                            <a class="post__item" href="/Post/Detail/@item.Id">
-                                <img class="img-fluid"
-                                     src="@item.Image"
-                                     alt="" />
-                                <h4>@item.Title</h4>
-                                <p>
-                                   @item.Content
-                                </p>
-                            </a>
+                            <div class="post__item h-100">
+                                <a href="/Post/Detail/@item.Id" class="w-100">
+                                    <img class="img-fluid"
+                                         src="@item.Image"
+                                         alt="" />
+                                    <h4>@item.Title</h4>
+                                </a>
+                                <div class="post_content">
+                                    @Html.Raw(@item.Content)
+                                </div>
+                            </div>
                         </div>
                     }
-
-                   
                 </div>
             </div>
             <div class="col-3">

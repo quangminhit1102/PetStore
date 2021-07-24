@@ -1,4 +1,4 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
@@ -19,15 +19,15 @@ namespace Model.EF
         public int Id { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50,ErrorMessage = "Tên sản phẩm không quá 50 kí tự!")]
         public string Name { get; set; }
 
         public int CateId { get; set; }
 
         public int? BrandId { get; set; }
-
+       
         public string Description { get; set; }
-
+        [Range(1000,20000000,ErrorMessage = "Giá của sản phẩm phải từ 1000 - 20.000.000VNĐ")]
         public int? Price { get; set; }
 
         [StringLength(128)]

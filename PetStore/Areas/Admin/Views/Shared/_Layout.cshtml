@@ -40,7 +40,7 @@
     <!-- Navbar  -->
     <div class="navbar">
         <!-- nav left -->
-        @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
+        @{ var user = (PetStore.Models.Common.UserLogin)Session["AD"];}
         <ul class="navbar-nav">
             <li class="nav-item">
                 <img src="~/Content/Admin/img/logo-lg.png" alt="ATPro logo" class="logo" />
@@ -314,7 +314,7 @@
                         <a href="/admin/adproduct/listproduct"> Danh sách sản phẩm </a>
                     </li>
                     <li>
-                        <a href="/admin/adproduct/addproduct"> Thêm sản phẩm </a>
+                        <a href="/admin/adproduct/createproduct"> Thêm sản phẩm </a>
                     </li>
                     @*<li>
                         <a href="#"> Thêm loại sản phẩm </a>

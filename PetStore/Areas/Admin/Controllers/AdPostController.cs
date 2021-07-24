@@ -69,7 +69,7 @@ namespace PetStore.Areas.Admin.Controllers
                 editpost.CataId = post.CataId;
                 editpost.Content = post.Content;
                 editpost.UpdatedAt = DateTime.Now;
-                editpost.UpdatedBy = ((UserLogin)Session["USER"]).UserID;
+                editpost.UpdatedBy = ((UserLogin)Session["AD"]).UserID;
                 editpost.SiteTitle = FriendlyURL.URLFriendly(post.Title);
                 editpost.Status = true;
                 db.Posts.AddOrUpdate(editpost);
@@ -118,7 +118,7 @@ namespace PetStore.Areas.Admin.Controllers
 
                 }
                 post.CreatedAt = DateTime.Now;
-                post.CreatedBy = ((UserLogin)Session["USER"]).UserID;
+                post.CreatedBy = ((UserLogin)Session["AD"]).UserID;
                 post.SiteTitle = FriendlyURL.URLFriendly(post.Title);
                 post.Status = true;
                 db.Posts.Add(post);
@@ -132,7 +132,7 @@ namespace PetStore.Areas.Admin.Controllers
             }     
         }
         //Delete Post=======================================================
-        public ActionResult Delete(int id)
+        public ActionResult DeletePost(int id)
         {
             db = new PetStoreDbContext();
             var delpost = db.Posts.Where(x => x.Id == id).SingleOrDefault();

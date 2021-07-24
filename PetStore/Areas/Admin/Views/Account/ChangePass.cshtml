@@ -12,7 +12,7 @@
                  class="avatar"
                  alt="avatar" width="200px" />
 
-            @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
+            @{ var user = (PetStore.Models.Common.UserLogin)Session["AD"];}
             <h2>@user.Name</h2>
             @if (user.Role == 1)
             {
