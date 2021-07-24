@@ -237,3 +237,32 @@
         </div>
     </div>
 </div>
+
+
+
+    <script>
+        const nav_categories = document.querySelectorAll(".nav-categories");
+        const header_category = document.querySelector(".header-category");
+        const header_category_content = document.querySelector(
+            ".header-category-content"
+        );
+        header_category.addEventListener("mouseenter", () => {
+            header_category_content.classList.add("active");
+        });
+        header_category.addEventListener("mouseleave", () => {
+            header_category_content.classList.remove("active");
+        });
+        nav_categories.forEach((e) => {
+            e.addEventListener("mouseenter", () => {
+                e.querySelector(".category-name").classList.remove("false");
+                e.querySelector(".category-name").classList.add("active");
+                e.querySelector(".sub-navbar").classList.add("active");
+            });
+            e.addEventListener("mouseleave", () => {
+                e.querySelector(".category-name").classList.add("false");
+                e.querySelector(".category-name").classList.remove("active");
+                e.querySelector(".sub-navbar").classList.remove("active");
+            });
+        });
+    </script>
+

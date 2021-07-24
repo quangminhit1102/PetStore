@@ -60,3 +60,4 @@ D:\Project\React\PetStore\Model\bin\Debug\PagedList.dll
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.Mvc.dll
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.xml
 D:\Project\React\PetStore\Model\bin\Debug\PagedList.Mvc.xml
+D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache

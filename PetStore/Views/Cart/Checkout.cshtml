@@ -1,0 +1,234 @@
+﻿@model List<PetStore.Models.Common.CartItem>
+
+@{
+    ViewBag.Title = "Checkout";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+    var user = (Model.EF.User)ViewBag.user;
+}
+@{
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+
+}
+<div class="header-position"></div>
+<section id="payment">
+    <div class="container">
+        <div class="progress-steps">
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+                <div class="circle active">
+                    1
+                    <p class="circle__Content">Đăng nhập</p>
+                </div>
+                <div class="circle active">
+                    2
+                    <p class="circle__Content">Giỏ hàng</p>
+                </div>
+                <div class="circle active">
+                    3
+                    <p class="circle__Content">Thanh Toán</p>
+                </div>
+                <div class="circle">
+                    4
+                    <p class="circle__Content">Thanh Toán Hoàn Tất</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <div class="cart__Section">
+                    <h3 class="title">1. Đơn hàng</h3>
+                    <div class="box">
+                        <ul class="cart-prodcuts">
+                            @foreach (var item in Model)
+                            {
+                                <li class="cart-products__products">
+                                    <div class="cart-products__inner">
+                                        <div class="cart-products__img">
+                                            <img class="img-fluid"
+                                                 src="@item.Product.ProductImages.FirstOrDefault().Image"
+                                                 alt="" />
+                                        </div>
+                                        <div class="cart-products__content">
+                                            <div class="cart-products__desc">
+                                                <div class="cart-products__name">
+                                                    @item.Product.Name
+                                                </div>
+                                                @if (item.AttributeName != null)
+                                                {
+                                                    <div class="cart-products__name">
+                                                        @item.AttributeName
+                                                    </div>
+                                                }
+                                                <div class="cart-products__actions">
+                                                    <span class="cart-products__amount">SL: <b>@item.Quantity</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="cart-products__details">
+                                                <div class="cart-products__pricess">
+                                                    @if (item.Product.Price != null)
+                                                    {
+                                                        @* <p class="cart-products__real-prices">@((item.Product.Price.GetValueOrDefault(0) * @item.Quantity).ToString("N0")) đ</p>*@
+                                                        <p class="cart-products__real-prices">@string.Format(info, "{0:0,0}", @item.Product.Price) đ</p>
+                                                    }
+                                                    else
+                                                    {
+                                                        <p class="cart-products__real-prices">@string.Format(info, "{0:0,0}", @item.Price) đ</p>
+                                                    }
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                            @*<li class="cart-products__products">
+                                    <div class="cart-products__inner">
+                                        <div class="cart-products__img">
+                                            <img class="img-fluid"
+                                                 src="~/Content/Client/img/product-2-450x450.jpg"
+                                                 alt="" />
+                                        </div>
+                                        <div class="cart-products__content">
+                                            <div class="cart-products__desc">
+                                                <div class="cart-products__name">
+                                                    Lorem ipsum dolor sit amet, consectetur
+                                                    adipisicing elit. Mollitia officia consequatur
+                                                    beatae molestias, iusto dolore tenetur commodi
+                                                    architecto sequi illum soluta magni expedita
+                                                    cumque voluptatem incidunt ducimus qui saepe.
+                                                    Distinctio.
+                                                </div>
+                                                <div class="cart-products__actions">
+                                                    <span class="cart-products__amount">SL: <b>1</b></span>
+                                                </div>
+                                            </div>
+                                            <div class="cart-products__details">
+                                                <div class="cart-products__pricess">
+                                                    <p class="cart-products__real-prices">900.000đ</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>*@
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="cart__Section">
+                    <h3 class="title">2. Phương thức thanh toán</h3>
+                    <div class="box">
+                        <ul class="list">
+                            <li class="list-item">
+                                <label>
+                                    <input type="radio"
+                                           name="payment-methods"
+                                           value="tienmat" checked/>
+                                    <span class="radio-fake"></span>
+                                    <span class="label">
+                                        <div class="label__content">
+                                            <img class="method-icon"
+                                                 width="32"
+                                                 src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-cod.svg"
+                                                 alt="momo" />
+                                            <div class="method-content">
+                                                <div class="method-content__name">
+                                                    <span>Thanh Toán Khi Nhận Hàng</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="list-item">
+                                <label>
+                                    <input type="radio"
+                                           name="payment-methods"
+                                           value="momo" />
+                                    <span class="radio-fake"></span>
+                                    <span class="label">
+                                        <div class="label__content">
+                                            <img class="method-icon"
+                                                 width="32"
+                                                 src="https://frontend.tikicdn.com/_desktop-next/static/img/icons/checkout/icon-payment-method-mo-mo.svg"
+                                                 alt="momo" />
+                                            <div class="method-content">
+                                                <div class="method-content__name">
+                                                    <span>Thanh Toán Momo</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row m-0">
+                    <form id="myForm" class="col-6 p-0" method="post" action="/Cart/CheckoutSubmit?payment=">
+                        <button type="submit" class="w-100 btn btn-danger">Đặt Mua</button>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="col-3 pl-0 cart-total-prices pr-0">
+                <div class="deliveryAddress">
+                    <p class="heading">
+                        <span class="text">Giao tới</span><a href="" class="link">Thay đổi</a>
+                    </p>
+                    <p class="title">
+                        <b class="name">@user.FullName </b>
+                        <b class="phone">@user.Phone</b>
+                    </p>
+                    <p class="address">
+                        @user.Address
+                    </p>
+                </div>
+                <div class="prices">
+                    <div class="row">
+                        <div class="col-4 pr-0">
+                            <p class="prices__text" onclick="">Tổng tiền</p>
+                        </div>
+                        <div class="col-8 pl-0">
+                            <p class="prices__value" id="priceValue"> @string.Format(info, "{0:0,0}", @ViewBag.total)đ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const progress = document.getElementById("progress");
+    const circles = document.querySelectorAll(".circle");
+    update();
+    function update() {
+        const actives = document.querySelectorAll(".circle.active");
+        console.log(((actives.length - 1) / (circles.length - 1)) * 100);
+        progress.style.width =
+            ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
+    }
+
+</script>
+@section scripts{
+    <script>
+  
+        $(document).ready(function () {
+            var payment = $("input[name=payment-methods]:checked").attr("value");
+            $("form").attr("action", `/Cart/CheckoutSubmit?payment=` + payment)
+            $("input[type='radio']").click(() => {
+                var payment = $("input[name=payment-methods]:checked").attr("value");
+                console.log(payment)
+                $("form").attr("action", `/Cart/CheckoutSubmit?payment=` + payment)
+            })
+          
+        });
+    </script>
+    }

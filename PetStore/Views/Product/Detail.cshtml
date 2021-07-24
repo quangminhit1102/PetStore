@@ -5,22 +5,21 @@
     var listProduct = (List<Model.EF.Product>)ViewBag.listRelatedProduct;
     var listAttributes = (List<Model.EF.ProductAttribute>)ViewBag.listAttributes;
 }
+@{
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
+}
 
 <div class="header-position"></div>
 <section id="detail">
     <div class="detail-info">
         <div class="container">
             <div class="row">
-                @{
-                            var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 
-
-                }
                 <div class="col-12 col-sm-6">
                     <div class="slide-for">
                         @foreach (var item in Model.ProductImages)
                         {
-                            <div class="slide-for-item">
+                            <div class="slide-for-item" style="overflow:hidden">
                                 <img class="img-fluid"
                                      src="@item.Image"
                                      alt="" />
@@ -90,14 +89,14 @@
                                 {
                                     foreach (var item in listAttributes)
                                     {
-                                        <li class="btn btn-outline-secondary"> @item.AttributeValue.Name - @item.Price</li>
+                                        <li class="btn btn-outline-secondary" data-attribute-id="@item.Id"> @item.AttributeValue.Name - @item.Price</li>
                                     }
 
                                 }
 
 
                             </ul>
-                            <div class="price">
+                            <div>
                                 <span>
                                     @if (@Model.Price == null)
                                     {
@@ -119,24 +118,31 @@
                         <form>
                             <div class="row">
                                 <div class="quantity">
-                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); addAttribute();"
                                             type="button"
                                             class="plus">
                                         +
                                     </button>
-                                    <input type="number" value="1" min="1" max="" />
-                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                                    <input id="qty" type="number" value="1" min="1" max="" />
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); addAttribute();"
                                             type="button"
                                             class="minus">
                                         -
                                     </button>
                                 </div>
-                                <button class="btn add-cart" type="submit">
-                                    <a href="/them-gio-hang?productId=@Model.Id&quantity=1"> Thêm Vào Giỏ Hàng </a>
 
-                                </button>
+                                @if (Model.Price != null)
+                                {
+                                    <a class=" btn add-cart add-cart-item" href="/them-gio-hang?productId=@Model.Id&quantity=1" onclick="add()"> Thêm Vào Giỏ Hàng </a>
+                                    <a class="btn buy-cart buy-cart-item" href="/them-gio-hang?productId=@Model.Id&quantity=1" onclick="add()"> Mua Ngay </a>
+                                }
+                                else
+                                {
+                                    <a class=" btn add-cart add-cart-item" href="/them-gio-hang-theo-loai?productId=@Model.Id&quantity=1" onclick="addAttribute()"> Thêm Vào Giỏ Hàng </a>
+                                    <a class="btn buy-cart buy-cart-item" href="/them-gio-hang-theo-loai?productId=@Model.Id&quantity=1" onclick="addAttribute()"> Mua Ngay </a>
+                                }
 
-                                <button class="btn buy-cart"><a href="/them-gio-hang?productId=@Model.Id&quantity=1"> Mua Ngay </a></button>
+
                             </div>
                         </form>
                     </div>
@@ -248,3 +254,66 @@
         </div>
     </section>}
 
+@if (Model.Price == null)
+{
+    <script>
+        document.querySelector(".btn.btn-outline-secondary:first-child").classList.add("active");
+
+    </script>
+}
+<script>
+
+    function add() {
+
+        var qty = document.getElementById("qty").value;
+        document.querySelector(".add-cart-item").href = "/them-gio-hang?productId=" + @Model.Id + "&quantity=" + qty;
+         document.querySelector(".buy-cart-item").href = "/them-gio-hang?productId=" + @Model.Id + "&quantity=" + qty;
+
+    }
+    function addAttribute() {
+        var attribute = document.querySelector(".btn.btn-outline-secondary.active").dataset.attributeId;
+        var qty = document.getElementById("qty").value;
+        document.querySelector(".add-cart-item").href = "/them-gio-hang-theo-loai?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute;
+        document.querySelector(".buy-cart-item").href = "/them-gio-hang-theo-loai?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute;
+
+    }
+
+        var chooseS = document.querySelectorAll(".btn.btn-outline-secondary");
+        chooseS.forEach((e) => {
+            e.addEventListener('click', (event) => {
+                event.preventDefault();
+                chooseS.forEach((ex) => {
+                    ex.classList.remove("active")
+                })
+                e.classList.add("active")
+
+            })
+        })
+
+
+
+</script>
+@section ProductDetail{
+<script>
+    $(".slide-for").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "60px",
+        arrows: false,
+        fade: true,
+        asNavFor: ".slide-nav",
+    });
+    $(".slide-nav").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: false,
+        nextArrow: false,
+        asNavFor: ".slide-for",
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true,
+        centerPadding: "0px",
+    });
+</script>
+}
