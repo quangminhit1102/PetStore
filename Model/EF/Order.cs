@@ -18,16 +18,11 @@ namespace Model.EF
 
         public int CustomerId { get; set; }
 
-        [StringLength(10)]
-        public string OrderDate { get; set; }
+        public DateTime? OrderDate { get; set; }
 
         public bool? OrderStatus { get; set; }
 
         public bool? PaymentStatus { get; set; }
-
-        public int? CreateBy { get; set; }
-
-        public DateTime? CreateAt { get; set; }
 
         public int? Total { get; set; }
 
