@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 
 namespace PetStore.Controllers
@@ -12,12 +13,13 @@ namespace PetStore.Controllers
     public class ProductController : Controller
     {
         PetStoreDbContext db = null;
-        public ActionResult ListProductByCate(int CateId)
+        public ActionResult ListProductByCate(int CateId, int page = 1, int pageSize = 6)
         {
             db = new PetStoreDbContext();
             ViewBag.CateName = db.Categories.Where(x => x.Id == CateId).FirstOrDefault().Name;
             var listProductbyCate = db.Products.Where(x => x.CateId == CateId).ToList();
-            return View(listProductbyCate);
+
+            return View(listProductbyCate.OrderBy(x => x.ViewCount).ToPagedList(page, pageSize));
         }
 
         public ActionResult Detail(int ProId)

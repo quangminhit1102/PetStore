@@ -27,6 +27,7 @@
     <!-- Start Header -->
     <!-- info css -->
     <link href="~/Content/Client/css/info.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <header class="container-fluid header desktop">
@@ -42,20 +43,20 @@
                 @Html.Action("LoadMenu", "Home")
                 @* End Menu*@
                 @* Search Bar *@
-                <div class="header-search-bar ml-3">
-                    <input placeholder="Tìm kiếm trên Chợ Pet"
-                           maxlength="50"
-                           class="input"
-                           type="search"
-                           value="" />
-                    <div class="search-option">
-                        <div class="wrap">
-                            <span class="value-selected">
-                                <span><i class="fa fa-search"></i></span>
-                            </span>
-                        </div>
+            <div class="header-search-bar ml-3">
+                @using (Html.BeginForm("Index", "Search"))
+                {
+                    <input placeholder="Tìm kiếm trên Chợ Pet" maxlength="50" class="input" type="search" name="Keyword" value="" />
+                }
+                <div class="search-option">
+                    <div class="wrap">
+                        <span class="value-selected">
+                            <span><i class="fa fa-search"></i></span>
+                        </span>
                     </div>
                 </div>
+
+            </div>
                 <div class="nav ml-3 h-100">
                     <a href="/tin-tuc">
                         <div class="link">
@@ -82,42 +83,42 @@
                     }
                     else
                     {
-                <div class="user-info pl-3">
-                   
-                    <div class="img-user">                       
-                        <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt=""
-                    </div>                
-                    <div class="user_dropdown">
-                        <div class="my-2 p-0">
-                            <ul>
-                                <li><a href="/Login/ProfileCustomer">Thông tin tài khoản</a></li>
-                                <li>
-                                    <a href="/Account/Donhang/@user.UserID">Đơn hàng</a>
-                                </li>
-                                <li><a href="/Login/Logout">Đăng xuất</a></li>
-                            </ul>
+                        <div class="user-info pl-3">
+
+                            <div class="img-user">
+                                <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt=""
+                            </div>
+                            <div class="user_dropdown">
+                                <div class="my-2 p-0">
+                                    <ul>
+                                        <li><a href="/Login/ProfileCustomer">Thông tin tài khoản</a></li>
+                                        <li>
+                                            <a href="/Account/Donhang/@user.UserID">Đơn hàng</a>
+                                        </li>
+                                        <li><a href="/Login/Logout">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
                     }
 
                     @*Trường hợp đăng nhập xuất thông tin div phía dưới*@
                     @*<div class="user-info pl-3">
-            <div class="img-user">
-                <img class="img-fluid" src="img/user-image.jpg" alt="" />
-            </div>
-            <div class="user_dropdown">
-                <div class="my-2 p-0">
-                    <ul>
-                        <li><a href="">Thông tin tài khoản</a></li>
-                        <li>
-                            <a href="">Đơn hàng</a>
-                        </li>
-                        <li><a href="">Đăng xuất</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
+                            <div class="img-user">
+                                <img class="img-fluid" src="img/user-image.jpg" alt="" />
+                            </div>
+                            <div class="user_dropdown">
+                                <div class="my-2 p-0">
+                                    <ul>
+                                        <li><a href="">Thông tin tài khoản</a></li>
+                                        <li>
+                                            <a href="">Đơn hàng</a>
+                                        </li>
+                                        <li><a href="">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>*@
                 </div>
             </div>
         </div>
@@ -294,7 +295,7 @@
         });
         user_info.addEventListener("mouseleave", () => {
             user_dropdown.classList.remove("active");
-        });     
+        });
     </script>
 
 </body>

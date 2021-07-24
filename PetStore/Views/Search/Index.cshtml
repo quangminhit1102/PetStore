@@ -1,10 +1,9 @@
-﻿@model PagedList.IPagedList<Model.EF.Product>
-@using PagedList.Mvc
+﻿@model IEnumerable<Model.EF.Product>
+@using PetStore.Models;
 @{
-    ViewBag.Title = "ListProductByCate";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
-
 
 <div class="header-listproduct"
      style="background-image: url('/Content/Client/img/breadcumd.jpg')"></div>
@@ -18,8 +17,8 @@
             <div class="col-9">
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="product-amount">
-                        <h1><span style="font-weight: bold; color: black">@ViewBag.CateName</span></h1>
-                        <p>Hiển thị tất cả @Model.Count kết quả</p>
+                        <h1><span style="font-weight: bold; color: black">@ViewBag.Keyword</span></h1>
+                        <p>Kết Quả Tìm Kiếm Cho Từ Khóa @ViewBag.Keyword: </p>
                     </div>
                     <div class="products-sort">
                         <div class="products-sort-item">
@@ -167,13 +166,9 @@
 
                         </div>
                     </div>
-                    @Html.PagedListPager(Model, page => Url.Action("ListProductByCate", new { page = page }))
                 </div>
             </div>
         </div>
     </div>
 </section>
 <script src="~/Content/Client/js/shoplist.js"></script>
-
-
-
