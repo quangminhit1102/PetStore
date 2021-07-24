@@ -1,6 +1,8 @@
 ﻿using Model.DAO;
 using Model.EF;
+using Newtonsoft.Json.Linq;
 using PetStore.Models.Common;
+using PetStore.Models.Others;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -269,8 +271,14 @@ namespace PetStore.Controllers
                         db.SaveChanges();
                     }
                 }
-           
-                
+
+                if (payment == "momo")
+                {
+                    return RedirectToAction("Payment", "Cart");
+                }
+
+
+
             }
             else
             {
@@ -289,6 +297,76 @@ namespace PetStore.Controllers
           
             return View();
         }
+
+        public ActionResult Payment()
+        {
+            //request params need to request to MoMo system
+            string endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
+            string partnerCode = "MOMOUWCQ20210723";
+            string accessKey = "Sv0bg6Exj4w21f0e";
+            string serectkey = "aRqDgit3JmAciVJ3wXkcWhdIREHyXdEM";
+            string orderInfo = "test";
+            string returnUrl = "http://localhost:44305/Cart/Success";
+            string notifyurl = "http://6b1739365976.ngrok.io/Cart/Success"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+
+            string amount =  this.getTotal().ToString();
+            string orderid = DateTime.Now.Ticks.ToString();
+            string requestId = DateTime.Now.Ticks.ToString();
+            string extraData = "";
+
+            //Before sign HMAC SHA256 signature
+            string rawHash = "partnerCode=" +
+                partnerCode + "&accessKey=" +
+                accessKey + "&requestId=" +
+                requestId + "&amount=" +
+                amount + "&orderId=" +
+                orderid + "&orderInfo=" +
+                orderInfo + "&returnUrl=" +
+                returnUrl + "&notifyUrl=" +
+                notifyurl + "&extraData=" +
+                extraData;
+
+            MomoSecurity crypto = new MomoSecurity();
+            //sign signature SHA256
+            string signature = crypto.signSHA256(rawHash, serectkey);
+
+            //build body json request
+            JObject message = new JObject
+            {
+                { "partnerCode", partnerCode },
+                { "accessKey", accessKey },
+                { "requestId", requestId },
+                { "amount", amount },
+                { "orderId", orderid },
+                { "orderInfo", orderInfo },
+                { "returnUrl", returnUrl },
+                { "notifyUrl", notifyurl },
+                { "extraData", extraData },
+                { "requestType", "captureMoMoWallet" },
+                { "signature", signature }
+
+            };
+
+            string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
+
+            JObject jmessage = JObject.Parse(responseFromMomo);
+
+            return Redirect(jmessage.GetValue("payUrl").ToString());
+        }
+
+        public ActionResult ConfirmPaymentClient()
+        {
+            //hiển thị thông báo cho người dùng
+            return View();
+        }
+
+        [HttpPost]
+        public void SavePayment()
+        {
+            //cập nhật dữ liệu vào db
+        }
+
+
 
     }
 }
