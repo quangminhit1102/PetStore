@@ -1968,44 +1968,6 @@ input[type="radio"] {
     color: rgb(120, 120, 120);
 }
 /* ---- Post ---- */
-#listPost {
-    padding: 2rem;
-}
-
-    #listPost .post__item {
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-        #listPost .post__item h4 {
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin: 0.5rem 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        #listPost .post__item .post_content {
-            color: #4a4a4a;
-            font-size: 16px;
-            margin: 0;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        #listPost .post__item img {
-            width: 100%;
-            height: 200px;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
 
     #listPost .post__cate h4 {
         margin-bottom: 1rem;
@@ -2071,42 +2033,52 @@ input[type="radio"] {
 }
 /* ---- Post ---- */
 #listPost {
-    padding: 2rem 0;
+    padding: 2rem;
 }
 
-.post__item {
-    background-color: #fff;
-    padding: 15px;
-    border-radius: 4px;
-    cursor: pointer;
+  .post__item {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+.post__item h4 {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+#listPost .post__item h4 {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+         .post__item .post_content {
+            color: #4a4a4a;
+            font-size: 16px;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-    .post__item h4 {
-        font-weight: 700;
-        font-size: 1.2rem;
-        margin: 0.5rem 0;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
+      .post__item img {
+            width: 100%;
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-    .post__item p {
-        color: #4a4a4a;
-        font-size: 16px;
-        margin: 0;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-
-    .post__item img {
-        width: 100%;
-        height: 200px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
 
 #listPost .post__cate h4 {
     margin-bottom: 1rem;
