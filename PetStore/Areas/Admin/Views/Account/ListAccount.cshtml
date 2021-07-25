@@ -79,7 +79,7 @@
                                     @if (item.Status == true)
                                     {
                                         <td>
-                                            <a href="#" style="padding-left:50px">
+                                            <a href="/admin/account/LockOrUnlockAccount/@item.Id" style="padding-left:50px" onclick="return confirm('Bạn có muốn khóa tài khoản?\nHọ tên: @item.FullName\nGmail: @item.Email')">
                                                 <i class="fas fa-lock" style="color:red"></i>
                                             </a>
                                         </td>
@@ -87,7 +87,7 @@
                                     else
                                     {
                                         <td>
-                                            <a href="#" style="padding-left:50px">
+                                            <a href="/admin/account/LockOrUnlockAccount/@item.Id" style="padding-left:50px" onclick="return confirm('Bạn có muốn mở khóa tài khoản?\nHọ tên: @item.FullName\nGmail: @item.Email')">
                                                 <i class="fas fa-unlock" style="color:#04D182"></i>
                                             </a>
                                         </td>
@@ -106,7 +106,6 @@
     </div>
 </div>
 @* ========================================================================================= *@
-<h1>Add a button here</h1>
 <div class="row">
     <div class="col-12">
         <!-- TABLE -->

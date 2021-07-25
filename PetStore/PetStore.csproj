@@ -554,6 +554,7 @@
     <Content Include="Areas\Admin\Views\AdLogin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\AdProduct\EditProduct.cshtml" />
     <Content Include="Areas\Admin\Views\AdProduct\CreateProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\AdBrand\CreateBrand.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

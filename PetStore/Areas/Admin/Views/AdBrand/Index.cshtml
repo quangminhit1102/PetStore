@@ -4,10 +4,15 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Brand</h2>
+<h2>Tất cả các Thương hiệu</h2>
 <div class="box">
+    <div>
+        <a href="/admin/adbrand/createbrand" class="btn btn-success" style="display:inline-block">
+            <i class="fa fa-plus-circle"></i>
+            Thêm mới thương hiệu
+        </a>
+    </div>
     @foreach (var item in Model)
     {
-        <img src="@item.Image" width="120" height="120" style="margin-right:50px"/>
-    }
+<img src="@item.Image" width="120" height="120" style="margin-right:50px" />}
 </div>

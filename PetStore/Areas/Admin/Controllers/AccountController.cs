@@ -116,5 +116,15 @@ namespace PetStore.Areas.Admin.Controllers
                 return View();
             }
         }
+        //Lock and Unlock Account
+        public ActionResult LockOrUnlockAccount(int id)
+        {
+            db = new PetStoreDbContext();
+            var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
+            user.Status = !user.Status;
+            db.Users.AddOrUpdate(user);
+            db.SaveChanges();
+            return RedirectToAction("ListAccount");
+        }
     }
 }
