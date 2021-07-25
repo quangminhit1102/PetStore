@@ -41,50 +41,50 @@
 
                 @foreach (var item in Model.listProduct)
                 {
-                    <a href="/san-pham/@item.SiteTile-@item.Id" class="col-12 bestSeller-product">
-                        <img class="img-fluid"
-                             src="@item.ProductImages.FirstOrDefault().Image"
-                             alt=""
-                             srcset="" />
-                        <div class="products__rating">
-                            @*@for (var i = item.Evaluate - 1; i >= 0; i--)
-                                {
-                                    <i class="bx bxs-star"></i>
-                                    if (i == 0.5)
-                                    {
-                                        <i class="bx bxs-star-half"></i>
-                                    }
-                                }*@
-                            @{var soSao = item.Evaluate;}
-                            @for (var i = 0; i < 5; i++)
+                <a href="/san-pham/@item.SiteTile-@item.Id" class="col-12 bestSeller-product">
+                    <img class="img-fluid"
+                         src="@item.ProductImages.FirstOrDefault().Image"
+                         alt=""
+                         srcset="" />
+                    <div class="products__rating">
+                        @*@for (var i = item.Evaluate - 1; i >= 0; i--)
+            {
+                <i class="bx bxs-star"></i>
+                if (i == 0.5)
+                {
+                    <i class="bx bxs-star-half"></i>
+                }
+            }*@
+                        @{var soSao = item.Evaluate;}
+                        @for (var i = 0; i < 5; i++)
+                        {
+                            if ((int)soSao / 1 == 5 || (int)soSao / 1 == 4 || (int)soSao / 1 == 3 || (int)soSao / 1 == 2 || (int)soSao / 1 == 1)
                             {
-                                if ((int)soSao / 1 == 5 || (int)soSao / 1 == 4 || (int)soSao / 1 == 3 || (int)soSao / 1 == 2 || (int)soSao / 1 == 1)
-                                {
-                                    <i class="bx bxs-star"></i>
-                                    soSao--;
-                                }
-                                else if (soSao % 1.0 == 0.5 && soSao < 1)
-                                {
-                                    <i class="bx bxs-star-half"></i>
-                                    soSao -= 0.5;
-                                }
-                                else
-                                {
-                                    <i class="bx bx-star"></i>
-                                }
+                                <i class="bx bxs-star"></i>
+                                soSao--;
                             }
-                            <span>(@item.TotalEvaluate)</span>
-                        </div>
-                        <h5>@item.Name</h5>
-                        @if (item.Price == null)
-                        {
-                            <span class="price">Xem Chi Tiết</span>
+                            else if (soSao % 1.0 == 0.5 && soSao < 1)
+                            {
+                                <i class="bx bxs-star-half"></i>
+                                soSao -= 0.5;
+                            }
+                            else
+                            {
+                                <i class="bx bx-star"></i>
+                            }
                         }
-                        else
-                        {
-                            <span class="price">@string.Format(info, "{0:0,0}", @item.Price)đ</span>
-                        }
-                    </a>
+                        <span>(@item.TotalEvaluate)</span>
+                    </div>
+                    <h5>@item.Name</h5>
+                    @if (@item.Price == null)
+                    {
+                        <span class="price"> @string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price)đ</span>
+                    }
+                    else
+                    {
+                        <span class="price">@string.Format(info, "{0:0,0}", @item.Price)đ</span>
+                    }
+                </a>
                 }
 
 

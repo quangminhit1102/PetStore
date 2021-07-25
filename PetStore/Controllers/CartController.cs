@@ -307,7 +307,7 @@ namespace PetStore.Controllers
             string serectkey = "kJ0ueEBqeMc8p64wXBjbxlcSvnV5Lntb";
             string orderInfo = "test";
             string returnUrl = "https://localhost:44305/Cart/ConfirmPaymentClient";
-            string notifyurl = "https://6c09c1c15644.ngrok.io/Cart/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+            string notifyurl = "https://abc006ff6988.ngrok.io/Cart/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
 
             string amount = this.getTotal().ToString();
             string orderid = DateTime.Now.Ticks.ToString();
@@ -353,24 +353,24 @@ namespace PetStore.Controllers
 
             return Redirect(jmessage.GetValue("payUrl").ToString());
         }
-       
+
 
         public ActionResult ConfirmPaymentClient()
         {
-           /* if (Session["USER"] == null)
-            {
-                return RedirectToAction("Index", "Login");
-            }
-            string param = Request.QueryString.ToString().Substring(0, Request.QueryString.ToString().IndexOf("signture") - 1);
-            param = Server.UrlDecode(param);
-            string serectkey = "aRqDgit3JmAciVJ3wXkcWhdIREHyXdEM";
-            MomoSecurity crypto = new MomoSecurity();
-            string signture = crypto.signSHA256(param, serectkey);
-            if (signture != Request["signture"].ToString())
-            {
-                ViewBag.message = "Thông tin không hợp lệ";
-                return View();
-            }*/
+            /* if (Session["USER"] == null)
+             {
+                 return RedirectToAction("Index", "Login");
+             }
+             string param = Request.QueryString.ToString().Substring(0, Request.QueryString.ToString().IndexOf("signture") - 1);
+             param = Server.UrlDecode(param);
+             string serectkey = "aRqDgit3JmAciVJ3wXkcWhdIREHyXdEM";
+             MomoSecurity crypto = new MomoSecurity();
+             string signture = crypto.signSHA256(param, serectkey);
+             if (signture != Request["signture"].ToString())
+             {
+                 ViewBag.message = "Thông tin không hợp lệ";
+                 return View();
+             }*/
             if (!Request.QueryString["errorCode"].Equals("0"))
             {
                 ViewBag.message = "Thành toán thất bại";
@@ -380,10 +380,14 @@ namespace PetStore.Controllers
             {
                 db = new PetStoreDbContext();
                 ViewBag.message = "Thành toán thành công";
-                Session[CartSession] = new List<CartItem>();
+              
 
                 var cart = Session[CartSession];
                 var list = new List<CartItem>();
+                if (Session["USER"] == null && Session["CartSession"] ==null)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
                 int id = ((UserLogin)Session["USER"]).UserID;
                 Order order = new Order();
                 //tạo đơn hàng 
@@ -411,17 +415,14 @@ namespace PetStore.Controllers
 
                     db.OrderDetails.Add(temp);
                     db.SaveChanges();
+                    Session[CartSession] = new List<CartItem>();
                 }
             }
 
-
-
             return View();
             //hiển thị thông báo cho người dùng
-      
         }
-
-        [HttpPost] 
+        [HttpPost]
         public void SavePayment()
         {
             //cập nhật dữ liệu vào db
@@ -431,7 +432,7 @@ namespace PetStore.Controllers
             string serectkey = "aRqDgit3JmAciVJ3wXkcWhdIREHyXdEM";
             MomoSecurity crypto = new MomoSecurity();
             string signture = crypto.signSHA256(param, serectkey);*/
-     
+
             if (!Request.QueryString["status"].Equals("0"))
             {
 
@@ -439,7 +440,7 @@ namespace PetStore.Controllers
             }
             else
             {
-                var cart = Session[CartSession];
+               /* var cart = Session[CartSession];
                 var list = new List<CartItem>();
                 int id = ((UserLogin)Session["USER"]).UserID;
                 Order order = new Order();
@@ -468,7 +469,7 @@ namespace PetStore.Controllers
 
                     db.OrderDetails.Add(temp);
                     db.SaveChanges();
-                }
+                }*/
             }
 
 

@@ -23,62 +23,56 @@
                             <!-- ORDERS TABLE -->
                             @{ var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN"); }
                             <div class="box">
-                                <div class="box-header">Đơn hàng gần đây</div>
-                                <div class="box-body overflow-scroll">
-                                    <table>
+                               
+                                <div class="">
+                                    <table class="table">
                                         <thead>
                                             <tr>
-                                                <th>ID</th>
-                                                <th width="250px">Khách Hàng</th>
-                                                <th width="150px">Ngày Đặt</th>
-                                                <th width="230px">Thanh Toán</th>
-                                                <th>Tổng Tiền</th>
+                                                <th scope="col">ID</th>
+                                                <th  scope="col">Ngày Đặt</th>
+                                                <th  scope="col">Giao hàng</th>
+                                                <th  scope="col">Thanh Toán</th>
+                                                <th scope="col">Tổng Tiền</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach (var item in Model)
                                             {
                                                 <tr>
-                                                    <td>@item.Id</td>
-                                                    <td>@item.OrderDate</td>
+                                                    <th scope="row" >@item.Id</th>
+                                                    <td>@item.OrderDate.ToString("dd/MM/yyyy")</td>
 
                                                     @{ if (item.OrderStatus == true)
                                                         {
-                                                            <td>
-                                                                <span class="order-status order-shipped">  Đã giao hàng </span>
+                                                            <td class="order-status order-shipped">
+                                                              Đã giao hàng 
                                                             </td>
                                                         }
                                                         else
                                                         {
-                                                            <td>
-                                                                <span class="order-status order-ready"> Đang giao hàng </span>
+                                                            <td class="order-status order-ready">
+                                                                Đang giao hàng 
                                                             </td>
                                                         } }
                                                     @{ if (item.PaymentStatus == true)
                                                         {
-                                                            <td>
-                                                                <div class="payment-status payment-paid">
-                                                                    <div class="dot"></div>
-                                                                    <span>Đã thanh toán</span>
-                                                                </div>
+                                                            <td class="payment-status payment-paid">
+                                                                
+                                                                 Đã thanh toán
+                                                              
                                                             </td>
                                                         }
                                                         else
                                                         {
-                                                            <td>
-                                                                <div class="payment-status payment-pending">
-                                                                    <div class="dot"></div>
-                                                                    <span>Chưa thanh toán</span>
-                                                                </div>
+                                                            <td  class="payment-status payment-pending">
+                                                           
+                                                                  Chưa thanh toán
+                                                              
                                                             </td>
                                                         } }
 
                                                     <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
-                                                    <td>
-                                                        <a href="#" style="padding-left:15px">
-                                                            <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>
-                                                        </a>
-                                                    </td>
+                                                 
                                                 </tr>
                                             }
 
