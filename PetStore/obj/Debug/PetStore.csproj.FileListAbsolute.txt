@@ -370,3 +370,9 @@ C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\System.Web.Http.W
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\System.Net.Http.Formatting.xml
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\System.Web.Http.xml
 C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\PetStore\bin\System.Web.Http.WebHost.xml
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\System.Net.Http.Formatting.dll
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\System.Web.Http.dll
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\System.Web.Http.WebHost.dll
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\System.Net.Http.Formatting.xml
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\System.Web.Http.xml
+D:\CNTT\TH LTW\lab3\PetStore\PetStore\bin\System.Web.Http.WebHost.xml
