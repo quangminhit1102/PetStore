@@ -30,16 +30,16 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th width="250px">Khách Hàng</th>
-                                                <th width="150px">Ngày Đặt</th>
+                                                <th width="150px">Ngày Đặt</th>                                              
                                                 <th width="230px">Thanh Toán</th>
-                                                <th>Tổng Tiền</th>
+                                                <th>Tổng Tiền</th>                                           
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach (var item in Model)
+                                           @foreach (var item in Model)
                                             {
                                                 <tr>
-                                                    <td>@item.Id</td>
+                                                    <td>@item.Id</td>                                                
                                                     <td>@item.OrderDate</td>
 
                                                     @{ if (item.OrderStatus == true)
@@ -73,7 +73,7 @@
                                                             </td>
                                                         } }
 
-                                                    <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
+                                                   <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
                                                     <td>
                                                         <a href="#" style="padding-left:15px">
                                                             <i class="fas fa-pencil-alt" style="color:dodgerblue"></i>

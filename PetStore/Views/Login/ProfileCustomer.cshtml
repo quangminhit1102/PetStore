@@ -51,6 +51,7 @@
                                            type="text"
                                            disabled />
                                     <label for="userFullName">Họ và tên</label>
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">
@@ -79,6 +80,7 @@
                                            type="date"
                                            disabled />
                                     <label for="userBirthday">Ngày sinh</label>
+                                    @Html.ValidationMessageFor(model => model.Birthday, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">
@@ -90,6 +92,7 @@
                                            type="text"
                                            disabled />
                                     <label for="userPhone">Số điện thoại</label>
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">
@@ -100,8 +103,8 @@
                                            name="email"
                                            type="text"
                                            disabled />
-
                                     <label for="userEmail">Email</label>
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                             <div class="col-12">
@@ -113,6 +116,7 @@
                                            type="text"
                                            disabled />
                                     <label for="userAddress">Địa chỉ</label>
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                                 </div>
                             </div>
                         </div>
