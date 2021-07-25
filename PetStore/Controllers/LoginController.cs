@@ -13,7 +13,7 @@ using System.Data.Entity.Migrations;
 namespace PetStore.Controllers
 {
     public class LoginController : Controller
-    {
+    {       
         // GET: Login
         public ActionResult Index()
         {
@@ -108,7 +108,6 @@ namespace PetStore.Controllers
 
             return View(model);
         }
-        //Show Profile
         PetStoreDbContext db = null;
         [HttpGet]
         public ActionResult ProfileCustomer()
@@ -206,6 +205,7 @@ namespace PetStore.Controllers
                 return View();
             }
         }
+
         // GET: Order
         [HttpGet]
         public ActionResult Order()
@@ -221,10 +221,10 @@ namespace PetStore.Controllers
                 var OD = db.OrderDetails.ToList();
                 var Order = db.Orders.Where(x => x.CustomerId == user.Id).OrderByDescending(x => x.OrderDate).ToList();
                 foreach (var item in Order)
-                  {
+                {
                     item.Total = OD.Where(t => t.OrderId == item.Id).Sum(i => i.Price * i.Quantity);
                 }
-                return View(Order);                       
+                return View(Order);
             }
             catch
             {
