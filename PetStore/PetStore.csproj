@@ -221,6 +221,10 @@
     <Content Include="Content\Client\img\product-5-450x450.jpg" />
     <Content Include="Content\Client\img\product-6-450x450.jpg" />
     <Content Include="Content\Client\img\rabbit.46db3c99.gif" />
+    <Content Include="Content\Client\img\Slider-01.png" />
+    <Content Include="Content\Client\img\Slider-02.png" />
+    <Content Include="Content\Client\img\Slider-03.png" />
+    <Content Include="Content\Client\img\Slider-04.png" />
     <Content Include="Content\Client\img\Slider-1.jpg" />
     <Content Include="Content\Client\img\Slider-19.jpg" />
     <Content Include="Content\Client\img\Slider-2.jpg" />
