@@ -167,9 +167,11 @@
 
                         </div>
                     </div>
-                    @Html.PagedListPager(Model, page => Url.Action("ListProductByCate", new { page = page }))
+
                 </div>
+                @Html.PagedListPager(Model, page => Url.Action("ListProductByCate", new { page = page }))
             </div>
+
         </div>
     </div>
 </section>

@@ -1,5 +1,5 @@
-﻿
-@model List<Model.EF.Product>
+﻿@model PagedList.IPagedList<Model.EF.Product>
+@using PagedList.Mvc
 @{
     ViewBag.Title = "ListProductByBrand";
     Layout = "~/Views/Shared/Layout.cshtml";
@@ -143,6 +143,7 @@
                         </div>
                     </div>
                 </div>
+                @Html.PagedListPager(Model, page => Url.Action("ListProductByBrand", new { page = page }))
             </div>
         </div>
     </div>

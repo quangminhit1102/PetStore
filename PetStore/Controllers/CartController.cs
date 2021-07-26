@@ -307,7 +307,7 @@ namespace PetStore.Controllers
             string serectkey = "kJ0ueEBqeMc8p64wXBjbxlcSvnV5Lntb";
             string orderInfo = "test";
             string returnUrl = "https://localhost:44305/Cart/ConfirmPaymentClient";
-            string notifyurl = "https://abc006ff6988.ngrok.io/Cart/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+            string notifyurl = "https://6ef3c0023c1e.ngrok.io/Cart/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
 
             string amount = this.getTotal().ToString();
             string orderid = DateTime.Now.Ticks.ToString();
