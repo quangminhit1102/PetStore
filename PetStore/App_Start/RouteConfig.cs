@@ -84,7 +84,17 @@ namespace PetStore
 
             );
 
+            routes.MapRoute(
+               name: "Payment Success",
+               url: "gio-hang/thanh-toan-thanh-cong",
+               defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional }
+           );
 
+            routes.MapRoute(
+               name: "Payment",
+               url: "gio-hang/thanh-toan",
+               defaults: new { controller = "Cart", action = "Checkout", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                name: "Cart",
