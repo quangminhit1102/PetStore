@@ -1,8 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Success";
+    ViewBag.Title = "ConfirmPaymentClient";
     Layout = "~/Views/Shared/Layout.cshtml";
 }
+
 <div class="header-position"></div>
 <section id="payment">
     <div class="container">
@@ -30,10 +31,10 @@
     </div>
     <div class="container">
 
-           <div class="box">
-               <h2>Thanh Toán Thành Công</h2>
-           </div>
-   
+        <div class="box">
+            <h2>@ViewBag.message</h2>
+        </div>
+
     </div>
 </section>
 
@@ -49,4 +50,6 @@
     }
 
 </script>
+
+
 

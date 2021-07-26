@@ -112,6 +112,10 @@ namespace PetStore.Controllers
         [HttpGet]
         public ActionResult ProfileCustomer()
         {
+            if (Session["USER"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             int userid = ((UserLogin)Session["USER"]).UserID;
             var dao = new UserDao();
             var user = dao.getUserById(userid);
@@ -167,6 +171,10 @@ namespace PetStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult ChangePassCustomer(PasswordModel model)
         {
+            if (Session["USER"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             db = new PetStoreDbContext();
             int userid = ((UserLogin)Session["USER"]).UserID;
             var dao = new UserDao();
@@ -210,6 +218,10 @@ namespace PetStore.Controllers
         [HttpGet]
         public ActionResult Order()
         {
+            if (Session["USER"] == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
             db = new PetStoreDbContext();
             int userid = ((UserLogin)Session["USER"]).UserID;
             var dao = new UserDao();
@@ -222,7 +234,10 @@ namespace PetStore.Controllers
                 var Order = db.Orders.Where(x => x.CustomerId == user.Id).OrderByDescending(x => x.OrderDate).ToList();
                 foreach (var item in Order)
                 {
-                    item.Total = OD.Where(t => t.OrderId == item.Id).Sum(i => i.Price * i.Quantity);
+                    if (item.Total == null){
+                        item.Total = OD.Where(t => t.OrderId == item.Id).Sum(i => i.Price * i.Quantity);
+                    }
+                
                 }
                 return View(Order);
             }
