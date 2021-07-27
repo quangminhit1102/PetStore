@@ -33,7 +33,10 @@ namespace PetStore.Controllers
             int id = ((UserLogin)Session["USER"]).UserID;
 
             var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
-
+            if(user.Address == null || user.Phone == null)
+            {
+                return RedirectToAction("ProfileCustomer", "Login");
+            }
             ViewBag.total = this.getTotal();
             ViewBag.user = user;
             if (cart != null)
@@ -44,7 +47,96 @@ namespace PetStore.Controllers
         }
 
         //Mua Hàng Ngay
-        public ActionResult AddItem(int productId, int quantity)
+        public ActionResult AddItem(int productId, int quantity, string url)
+        {
+            var product = new ProductDao().ViewDetail(productId);
+            var cart = Session[CartSession];
+            if (cart != null)
+            {
+                var list = (List<CartItem>)cart;
+                if (list.Exists(x => x.Product.Id == productId))
+                {
+                    foreach (var item in list)
+                    {
+                        if (item.Product.Id == productId)
+                        {
+                            item.Quantity += quantity;
+                        }
+
+                    }
+                }
+                else
+                {
+                    //Add New cart Item
+                    var item = new CartItem();
+                    item.Product = product;
+                    item.Quantity = quantity;
+                    item.Price = product.Price;
+                    list.Add(item);
+                }
+            }
+            else
+            {
+                //Add New cart Item
+                var item = new CartItem();
+                item.Product = product;
+                item.Quantity = quantity;
+                item.Price = product.Price;
+                var list = new List<CartItem>();
+                list.Add(item);
+                //gan vao session
+                Session[CartSession] = list;
+            }
+            return Redirect(url);
+        }
+        //Mua Hàng Ngay
+        public ActionResult AddItemAttribute(int productId, int quantity, int attribute, string url)
+        {
+            db = new PetStoreDbContext();
+            var product = new ProductDao().ViewDetail(productId);
+            var cart = Session[CartSession];
+            var PriceAttributes = db.ProductAttributes.Where(x => x.Id == attribute).FirstOrDefault();
+            if (cart != null)
+            {
+                var list = (List<CartItem>)cart;
+                if (list.Exists(x => x.Product.Id == productId && x.AttributeName == PriceAttributes.AttributeValue.Name))
+                {
+                    foreach (var item in list)
+                    {
+                        if (item.Product.Id == productId && item.AttributeName == PriceAttributes.AttributeValue.Name)
+                        {
+                            item.Quantity += quantity;
+                        }
+
+                    }
+                }
+                else
+                {
+                    //Add New cart Item
+                    var item = new CartItem();
+                    item.Product = product;
+                    item.Quantity = quantity;
+                    item.Price = PriceAttributes.Price;
+                    item.AttributeName = PriceAttributes.AttributeValue.Name;
+                    list.Add(item);
+                }
+            }
+            else
+            {
+                //Add New cart Item
+                var item = new CartItem();
+                item.Product = product;
+                item.Quantity = quantity;
+                item.Price = PriceAttributes.Price;
+                item.AttributeName = PriceAttributes.AttributeValue.Name;
+                var list = new List<CartItem>();
+                list.Add(item);
+                //gan vao session
+                Session[CartSession] = list;
+            }
+            return Redirect(url);
+        }
+        public ActionResult AddItemNow(int productId, int quantity)
         {
             var product = new ProductDao().ViewDetail(productId);
             var cart = Session[CartSession];
@@ -87,7 +179,7 @@ namespace PetStore.Controllers
             return RedirectToAction("Index");
         }
         //Mua Hàng Ngay
-        public ActionResult AddItemAttribute(int productId, int quantity, int attribute)
+        public ActionResult AddItemAttributeNow(int productId, int quantity, int attribute)
         {
             db = new PetStoreDbContext();
             var product = new ProductDao().ViewDetail(productId);
@@ -100,7 +192,7 @@ namespace PetStore.Controllers
                 {
                     foreach (var item in list)
                     {
-                        if (item.Product.Id == productId)
+                        if (item.Product.Id == productId && item.AttributeName == PriceAttributes.AttributeValue.Name)
                         {
                             item.Quantity += quantity;
                         }
@@ -133,7 +225,6 @@ namespace PetStore.Controllers
             }
             return RedirectToAction("Index");
         }
-
         //Xóa sản phẩm trong giỏ hàng
         public ActionResult Delete(int id)
         {
@@ -209,7 +300,10 @@ namespace PetStore.Controllers
             int id = ((UserLogin)Session["USER"]).UserID;
 
             var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
-
+            if (user.Address == null || user.Phone == null)
+            {
+                return RedirectToAction("ProfileCustomer", "Login");
+            }
             ViewBag.total = this.getTotal();
             ViewBag.user = user;
             if (cart != null)
@@ -373,13 +467,13 @@ namespace PetStore.Controllers
              }*/
             if (!Request.QueryString["errorCode"].Equals("0"))
             {
-                ViewBag.message = "Thành toán thất bại";
+                ViewBag.message = "Thanh toán thất bại";
 
             }
             else
             {
                 db = new PetStoreDbContext();
-                ViewBag.message = "Thành toán thành công";
+                ViewBag.message = "Đặt hàng thành công";
               
 
                 var cart = Session[CartSession];

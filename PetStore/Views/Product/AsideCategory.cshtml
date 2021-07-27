@@ -15,7 +15,7 @@
                         foreach (var item1 in Model.Where(x => x.ParentId == item.Id).Take(2))
                         {
                             <li >
-                                <a href="/danh-muc-san-pham/@item1.SiteTile/@item1.Id">@item1.Name </a>
+                                <a href="/danh-muc-san-pham/@item1.SiteTile-@item1.Id">+ @item1.Name </a>
                             </li>
                         }
                     }
@@ -31,7 +31,7 @@
                         foreach (var item1 in Model.Where(x => x.ParentId == item.Id).Take(2))
                         {
                             <li>
-                                <a href="/danh-muc-san-pham/@item1.SiteTile/@item1.Id">@item1.Name </a>
+                                <a href="/danh-muc-san-pham/@item1.SiteTile-@item1.Id">+ @item1.Name </a>
                             </li>
                         }
                     }
@@ -45,7 +45,7 @@
                     {
                       
                             <li>
-                                <a href="/danh-muc-san-pham/@item.SiteTile/@item.Id">@item.Name </a>
+                                <a href="/danh-muc-san-pham/@item.SiteTile-@item.Id">+ @item.Name </a>
                             </li>
                      
                     }
@@ -58,7 +58,7 @@
                     {
                        
                             <li>
-                                <a href="/danh-muc-san-pham/@item.SiteTile/@item.Id">@item.Name </a>
+                                <a href="/danh-muc-san-pham/@item.SiteTile-@item.Id">+ @item.Name </a>
                             </li>
                        
                     }

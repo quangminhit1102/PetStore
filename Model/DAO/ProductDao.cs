@@ -10,7 +10,7 @@ namespace Model.DAO
 {
     public class ProductDao
     {
-        PetStoreDbContext db = null;
+        PetStoreDbContext db = new PetStoreDbContext();
         public ProductDao()
         {
             db = new PetStoreDbContext();
@@ -21,7 +21,7 @@ namespace Model.DAO
         {
             return db.Products.Find(id);
         }
-        PetStoreDbContext db = new PetStoreDbContext();
+    
         public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize)
         {
             IQueryable<Product> model = db.Products;

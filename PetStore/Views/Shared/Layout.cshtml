@@ -61,7 +61,7 @@
                     {
 
 
-                        <a class="link" href="/login">
+                        <a class="link" href="/dang-nhap">
                             <div class="link">
                                 <div class="icon-wrap">
                                     <i class="bx bx-user"></i>
@@ -79,9 +79,9 @@
                             <div class="user_dropdown">
                                 <div class="my-2 p-0">
                                     <ul>
-                                        <li><a href="/Login/ProfileCustomer">Thông tin tài khoản</a></li>
+                                        <li><a href="/thong-tin-tai-khoan">Thông tin tài khoản</a></li>
                                         <li>
-                                            <a href="/Login/Order">Đơn hàng</a>
+                                            <a href="/quan-ly-don-hang">Đơn hàng</a>
                                         </li>
                                         <li><a href="/Login/Logout">Đăng xuất</a></li>
                                     </ul>
@@ -222,18 +222,21 @@
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
+    @if (user != null)
+    {
+        <script>
 
-    <script>
+            const user_info = document.querySelector(".user-info");
+            const user_dropdown = document.querySelector(".user_dropdown");
+            user_info.addEventListener("mouseenter", () => {
+                user_dropdown.classList.add("active");
+            });
+            user_info.addEventListener("mouseleave", () => {
+                user_dropdown.classList.remove("active");
+            });
+        </script>
+    }
 
-        const user_info = document.querySelector(".user-info");
-        const user_dropdown = document.querySelector(".user_dropdown");
-        user_info.addEventListener("mouseenter", () => {
-            user_dropdown.classList.add("active");
-        });
-        user_info.addEventListener("mouseleave", () => {
-            user_dropdown.classList.remove("active");
-        });
-    </script>
 
 
     @RenderSection("scripts", required: false)

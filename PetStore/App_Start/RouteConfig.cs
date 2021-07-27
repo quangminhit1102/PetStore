@@ -23,7 +23,7 @@ namespace PetStore
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute(
+           /* routes.MapRoute(
                 name: "Add Cart Attribute",
                 url: "them-gio-hang-theo-loai",
                 defaults: new { controller = "Cart", action = "AddItemAttribute", Id = UrlParameter.Optional }
@@ -34,7 +34,7 @@ namespace PetStore
                 url: "them-gio-hang",
                 defaults: new { controller = "Cart", action = "AddItem", Id = UrlParameter.Optional }
 
-            );
+            );*/
             routes.MapRoute(
                 name: "Product Details",
                 url: "san-pham/{sitetile}-{ProId}",
@@ -85,11 +85,48 @@ namespace PetStore
             );
 
 
+            routes.MapRoute(
+              name: "Payment Success",
+              url: "gio-hang/thanh-toan-thanh-cong",
+              defaults: new { controller = "Cart", action = "Success", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
+               name: "Payment",
+               url: "gio-hang/thanh-toan",
+               defaults: new { controller = "Cart", action = "Checkout", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                name: "Cart",
                url: "gio-hang",
                defaults: new { controller = "Cart", action = "Index", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+            name: "Order",
+            url: "quan-ly-don-hang",
+            defaults: new { controller = "Login", action = "Order", id = UrlParameter.Optional }
+        );
+            routes.MapRoute(
+             name: "ChangePassCustomer",
+             url: "thay-doi-mat-khau",
+             defaults: new { controller = "Login", action = "ChangePassCustomer", id = UrlParameter.Optional }
+         );
+            routes.MapRoute(
+             name: "ProfileCustomer",
+             url: "thong-tin-tai-khoan",
+             defaults: new { controller = "Login", action = "ProfileCustomer", id = UrlParameter.Optional }
+         );
+            routes.MapRoute(
+              name: "Register",
+              url: "dang-ky",
+              defaults: new { controller = "Login", action = "Register", id = UrlParameter.Optional }
+          );
+
+            routes.MapRoute(
+               name: "Login",
+               url: "dang-nhap",
+               defaults: new { controller = "Login", action = "Index", id = UrlParameter.Optional }
            );
 
             routes.MapRoute(
