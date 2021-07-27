@@ -14,6 +14,7 @@ namespace PetStore.Areas.Admin.Controllers
         // GET: Admin/Login
         public ActionResult Index()
         {
+            if (Session["AD"] != null) return Redirect("/admin/adminhome");
             return View();
         }
         [HttpPost]
@@ -31,7 +32,7 @@ namespace PetStore.Areas.Admin.Controllers
                     userSession.UserID = user.Id;
                     userSession.Name = user.FullName;
                     userSession.Role = user.Role;
-                    Session.Add("USER", userSession);
+                    Session.Add("AD", userSession);
                     return RedirectToAction("Index", "AdminHome");
                 }
                 else if (result == 0)
@@ -57,7 +58,7 @@ namespace PetStore.Areas.Admin.Controllers
         //LOGOUT==============================================================
         public ActionResult Logout()
         {
-            Session["USER"] = null;
+            Session["AD"] = null;
             return Redirect("/admin");
         }
     }

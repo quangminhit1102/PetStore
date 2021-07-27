@@ -165,6 +165,7 @@
     </Compile>
     <Compile Include="Models\Common\CartItem.cs" />
     <Compile Include="Models\Common\ConmmonConstants.cs" />
+    <Compile Include="Models\Common\FriendlyURL.cs" />
     <Compile Include="Models\Common\MD5Encryptor.cs" />
     <Compile Include="Models\Common\UserLogin.cs" />
     <Compile Include="Models\HomeModel.cs" />
@@ -558,6 +559,9 @@
     <Content Include="Areas\Admin\Views\AdProduct\ListProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Account\ChangePass.cshtml" />
     <Content Include="Areas\Admin\Views\AdLogin\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\AdProduct\EditProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\AdProduct\CreateProduct.cshtml" />
+    <Content Include="Areas\Admin\Views\AdBrand\CreateBrand.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
