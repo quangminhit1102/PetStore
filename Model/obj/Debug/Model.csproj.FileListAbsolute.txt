@@ -61,3 +61,4 @@ D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Project\React\PetStore\Model\obj\Debug\Model.dll
 D:\Project\React\PetStore\Model\obj\Debug\Model.pdb
 D:\Project\React\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache
+C:\Users\Nguyen Le QUan\Documents\GitHub\PetStore\Model\obj\Debug\Model.csproj.AssemblyReference.cache
