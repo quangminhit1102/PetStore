@@ -17,6 +17,10 @@ namespace PetStore.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            if (Session["USER"] != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
         //lOGIN==============================================================
