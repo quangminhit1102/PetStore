@@ -385,10 +385,14 @@ namespace PetStore.Controllers
         [HttpPost]
         public ActionResult Success()
         {
+            db = new PetStoreDbContext();
             if (Session["USER"] == null)
             {
                 return RedirectToAction("Index", "Login");
             }
+            int id = ((UserLogin)Session["USER"]).UserID;
+            var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
+            ViewBag.address = user.Address;
             return View();
         }
 
@@ -474,7 +478,11 @@ namespace PetStore.Controllers
             {
                 db = new PetStoreDbContext();
                 ViewBag.message = "Đặt hàng thành công";
-              
+               
+               
+                int id = ((UserLogin)Session["USER"]).UserID;
+                var user = db.Users.Where(x => x.Id == id).FirstOrDefault();
+                ViewBag.address = user.Address;
 
                 var cart = Session[CartSession];
                 var list = new List<CartItem>();
@@ -482,7 +490,7 @@ namespace PetStore.Controllers
                 {
                     return RedirectToAction("Index", "Login");
                 }
-                int id = ((UserLogin)Session["USER"]).UserID;
+           
                 Order order = new Order();
                 //tạo đơn hàng 
                 order.CustomerId = id;

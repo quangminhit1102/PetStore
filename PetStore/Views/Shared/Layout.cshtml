@@ -27,6 +27,12 @@
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <div id="loader">
+        <!-- <span class="fas fa-spider xoay icon"></span> -->
+        <div class="loader-content">
+            <img class="img-fluid" src="~/Content/Client/img/ezgif.com-gif-maker_2.gif" alt="" />
+        </div>
+    </div>
     <header class="container-fluid header desktop">
         <div class="container h-100">
             <div class="header-bar mr-3">
@@ -220,7 +226,13 @@
     <!-- SLICK -->
     <script type="text/javascript"
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(window).on("load", function (event) {
 
+            $("#loader").fadeOut(400);
+
+        });
+    </script>
 
     @if (user != null)
     {
