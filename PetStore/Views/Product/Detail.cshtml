@@ -118,13 +118,13 @@
                         <form>
                             <div class="row">
                                 <div class="quantity">
-                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); addAttribute();"
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
                                             type="button"
                                             class="plus">
                                         +
                                     </button>
                                     <input id="qty" type="number" value="1" min="1" max="" />
-                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); addAttribute();"
+                                    <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                                             type="button"
                                             class="minus">
                                         -
@@ -133,13 +133,13 @@
 
                                 @if (Model.Price != null)
                                 {
-                                    <a class=" btn add-cart add-cart-item" href="/them-gio-hang?productId=@Model.Id&quantity=1" onclick="add()"> Thêm Vào Giỏ Hàng </a>
-                                    <a class="btn buy-cart buy-cart-item" href="/them-gio-hang?productId=@Model.Id&quantity=1" onclick="add()"> Mua Ngay </a>
+                                    <a class=" btn add-cart add-cart-item" href="/Cart/AddItem?productId=@Model.Id&quantity=1&url=@Request.Url.ToString()" onclick="add()"> Thêm Vào Giỏ Hàng </a>
+                                    <a class="btn buy-cart buy-cart-item" href="/Cart/AddItemNow?productId=@Model.Id&quantity=1" onclick="add()"> Mua Ngay </a>
                                 }
                                 else
                                 {
-                                    <a class=" btn add-cart add-cart-item" href="/them-gio-hang-theo-loai?productId=@Model.Id&quantity=1" onclick="addAttribute()"> Thêm Vào Giỏ Hàng </a>
-                                    <a class="btn buy-cart buy-cart-item" href="/them-gio-hang-theo-loai?productId=@Model.Id&quantity=1" onclick="addAttribute()"> Mua Ngay </a>
+                                    <a class=" btn add-cart add-cart-item" href="/Cart/AddItemAttribute?productId=@Model.Id&quantity=1&url=@Request.Url.ToString()" onclick="addAttribute()"> Thêm Vào Giỏ Hàng </a>
+                                    <a class="btn buy-cart buy-cart-item" href="/Cart/AddItemAttributeNow?productId=@Model.Id&quantity=1" onclick="addAttribute()"> Mua Ngay </a>
                                 }
 
 
@@ -266,15 +266,15 @@
     function add() {
 
         var qty = document.getElementById("qty").value;
-        document.querySelector(".add-cart-item").href = "/them-gio-hang?productId=" + @Model.Id + "&quantity=" + qty;
-         document.querySelector(".buy-cart-item").href = "/them-gio-hang?productId=" + @Model.Id + "&quantity=" + qty;
+        document.querySelector(".add-cart-item").href = "/Cart/AddItem?productId=" + @Model.Id + "&quantity=" + qty + "&url=" + "@Request.Url.ToString()";
+        document.querySelector(".buy-cart-item").href = "/Cart/AddItemNow?productId=" + @Model.Id + "&quantity=" + qty;
 
     }
     function addAttribute() {
         var attribute = document.querySelector(".btn.btn-outline-secondary.active").dataset.attributeId;
         var qty = document.getElementById("qty").value;
-        document.querySelector(".add-cart-item").href = "/them-gio-hang-theo-loai?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute;
-        document.querySelector(".buy-cart-item").href = "/them-gio-hang-theo-loai?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute;
+        document.querySelector(".add-cart-item").href = "/Cart/AddItemAttribute?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute + "&url=" + "@Request.Url.ToString()";
+        document.querySelector(".buy-cart-item").href = "/Cart/AddItemAttributeNow?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute;
 
     }
 
@@ -294,26 +294,26 @@
 
 </script>
 @section ProductDetail{
-<script>
-    $(".slide-for").slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "60px",
-        arrows: false,
-        fade: true,
-        asNavFor: ".slide-nav",
-    });
-    $(".slide-nav").slick({
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        prevArrow: false,
-        nextArrow: false,
-        asNavFor: ".slide-for",
-        dots: false,
-        centerMode: false,
-        focusOnSelect: true,
-        centerPadding: "0px",
-    });
-</script>
+    <script>
+        $(".slide-for").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "60px",
+            arrows: false,
+            fade: true,
+            asNavFor: ".slide-nav",
+        });
+        $(".slide-nav").slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            prevArrow: false,
+            nextArrow: false,
+            asNavFor: ".slide-for",
+            dots: false,
+            centerMode: false,
+            focusOnSelect: true,
+            centerPadding: "0px",
+        });
+    </script>
 }

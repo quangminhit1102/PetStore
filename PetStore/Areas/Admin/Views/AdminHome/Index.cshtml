@@ -63,10 +63,32 @@
 </div>
 
 <div class="row">
+    <!--<div class="col-4 col-md-6 col-sm-12">-->
+        <!-- CATEGORY CHART -->
+        <!--<div class="box f-height">
+            <div class="box-body">
+                <div id="category-chart"></div>
+            </div>
+        </div>-->
+        <!-- END CATEGORY CHART -->
+    <!--</div>
+    <div class="col-8 col-md-12 col-sm-12">-->
+        <!-- CUSTOMERS CHART -->
+        <!--<div class="box f-height">
+            <div class="box-header">
+                customers
+            </div>
+            <div class="box-body">
+                <canvas id="customer-chart"></canvas>
+            </div>
+        </div>-->
+        <!-- END CUSTOMERS CHART -->
+    <!--</div>-->
     <div class="col-12">
         <!-- ORDERS TABLE -->
         <div class="box">
             <div class="box-header">Đơn hàng gần đây</div>
+
             <div class="box-body overflow-scroll">
                 <table>
                     <thead>
@@ -126,7 +148,7 @@
 
                                     }
                                 }
-                            <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
+                                <td>@string.Format(info, "{0:0,0}", @item.Total)đ</td>
                             </tr>
                         }
 
@@ -137,3 +159,35 @@
         <!-- END ORDERS TABLE -->
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // === include 'setup' then 'config' above ===
+    const labels = [
+        'Tháng 4',
+        'Tháng 5',
+        'Tháng 6',
+        'Tháng 7',
+    ];
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Danh thu theo tháng',
+            backgroundColor: 'rgb(255, 99, 132)',
+            fill: false,
+            borderColor: 'rgb(255, 99, 132)',
+            data: [3534314, 1232110, 34435,23847],
+             tension: 0.1
+        }]
+    };
+    const config = {
+        type: 'line',
+        data,
+        options: {}
+    };
+    
+   
+    var myChart = new Chart(
+        document.getElementById('customer-chart'),
+        config
+    );
+</script>

@@ -1,0 +1,115 @@
+﻿@model Model.EF.Product
+
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Thêm Sản Phẩm Mới</h2>
+<div class="box">
+    @using (Html.BeginForm("CreateProduct", "AdProduct", FormMethod.Post, new { @area = "Admin", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="col-6">
+            <a href="/admin/adproduct/listproduct" class="btn btn-info" style="display:inline-block">
+                Danh Sách Sản phẩm
+            </a>
+        </div>
+        <div class="col-6">
+            <div class="text-success" style="font-size:large">@ViewBag.success</div>
+        </div>
+        <div class="col-6">
+            <label>Tên Sản phẩm</label>
+            <div class="form_control">
+                <input required
+                       name="Name"
+                       type="text" />
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Loại Thú cưng</label>
+            <div class="form_control">
+                @Html.DropDownList("Cate0", ViewBag.cate0 as SelectList, "--Chọn Thú cưng-- ", new { @Name = "Cata0" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Thể loại phụ kiện</label>
+            <div class="form_control">
+                @Html.DropDownList("Cate1", new SelectList(" "), "--Chọn thể loại phụ kiện-- ", new { @Name = "Cata1" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Loại phụ kiện</label>
+            <div class="form_control">
+                @Html.DropDownList("Cate2", new SelectList(" "), "--Chọn loại phụ kiện-- ", new { @Name = "CateId" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Loại Thú cưng</label>
+            <div class="form_control">
+                @Html.DropDownList("Brand", ViewBag.brand as SelectList, "--Chọn Thương hiệu-- ", new { @Name = "BrandId" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Giá</label>
+            <div class="form_control">
+                <input required
+                       name="Price"
+                       type="number" />
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Hình ảnh 1</label>
+            <div class="form_control">
+                <input required type="file" name="file1" />
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Hình ảnh 2</label>
+            <div class="form_control">
+                <input type="file" name="file2" />
+            </div>
+        </div>
+        <div class="col-6">
+            <label>Hình ảnh 3</label>
+            <div class="form_control">
+                <input type="file" name="file3" />
+            </div>
+        </div>
+        <div class="col-12">
+            <label>Mô tả</label>
+            <div class="form_control">
+                <textarea name="Description">Nhập Mô tả sản phẩm...</textarea>
+            </div>
+        </div>
+        <div class="col-6 col-12">
+            <a href="">
+                <button class="btn btn-success" type="submit">Thêm mới Sản phẩm</button>
+            </a>
+        </div>
+        }
+</div>
+<script>tinymce.init({ selector: 'textarea' });</script>
+<script>
+    $(document).ready(function () {
+        $("#Cate0").change(function () {
+            $.get("/admin/adproduct/GetCate1", { Id: $("#Cate0").val() }, function (data) {
+                $("#Cate1").empty();
+                $.each(data, function (index, row) {
+                    $("#Cate1").append("<option value='" + row.Id +"'>" + row.Name + "</option>")
+                });
+            });
+        })
+        $("#Cate1").change(function () {
+            $.get("/admin/adproduct/GetCate1", { Id: $("#Cate1").val() }, function (data) {
+                $("#Cate2").empty();
+                $.each(data, function (index, row) {
+                    $("#Cate2").append("<option value='" + row.Id + "'>" + row.Name + "</option>")
+                });
+            });
+        })
+    });
+</script>
+

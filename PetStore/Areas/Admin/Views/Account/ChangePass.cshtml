@@ -4,7 +4,21 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 <div class="box">
-    <div class="row" id="user-profile">      
+    <div class="row" id="user-profile">
+        <div class="col-3 col-sm-12 user-avatar">
+            <!--left col-->
+
+            <img src="~/Content/Admin/img/user-image-2.png"
+                 class="avatar"
+                 alt="avatar" width="200px" />
+
+            @{ var user = (PetStore.Models.Common.UserLogin)Session["AD"];}
+            <h2>@user.Name</h2>
+            @if (user.Role == 1)
+            {
+                <h4>Admin</h4>
+            }
+        </div>
         <!--/col-3-->
         <div class="col-9 col-sm-12">
             <ul class="nav nav-tabs" role="tablist">

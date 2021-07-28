@@ -36,14 +36,14 @@
                             {
                                 <li class="cart-products__products mb-2">
                                     <div class="cart-products__inner">
-                                        <div class="cart-products__img">
+                                        <a href="/san-pham/@item.Product.SiteTile-@item.Product.Id" class="cart-products__img">
                                             <img src="@item.Product.ProductImages.FirstOrDefault().Image" width="140" alt="" />
-                                        </div>
+                                        </a>
                                         <div class="cart-products__content">
                                             <div class="cart-products__desc">
-                                                <div class="cart-products__name">
+                                                <a href="/san-pham/@item.Product.SiteTile-@item.Product.Id" class="cart-products__name">
                                                     @item.Product.Name
-                                                </div>
+                                                </a>
                                                 @if (item.AttributeName != null)
                                                 {
                                                     <div class="cart-products__name">

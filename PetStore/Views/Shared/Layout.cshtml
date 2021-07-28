@@ -27,6 +27,12 @@
     <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <div id="loader">
+        <!-- <span class="fas fa-spider xoay icon"></span> -->
+        <div class="loader-content">
+            <img class="img-fluid" src="~/Content/Client/img/ezgif.com-gif-maker_2.gif" alt="" />
+        </div>
+    </div>
     <header class="container-fluid header desktop">
         <div class="container h-100">
             <div class="header-bar mr-3">
@@ -61,7 +67,7 @@
                     {
 
 
-                        <a class="link" href="/login">
+                        <a class="link" href="/dang-nhap">
                             <div class="link">
                                 <div class="icon-wrap">
                                     <i class="bx bx-user"></i>
@@ -79,9 +85,9 @@
                             <div class="user_dropdown">
                                 <div class="my-2 p-0">
                                     <ul>
-                                        <li><a href="/Login/ProfileCustomer">Thông tin tài khoản</a></li>
+                                        <li><a href="/thong-tin-tai-khoan">Thông tin tài khoản</a></li>
                                         <li>
-                                            <a href="/Login/Order">Đơn hàng</a>
+                                            <a href="/quan-ly-don-hang">Đơn hàng</a>
                                         </li>
                                         <li><a href="/Login/Logout">Đăng xuất</a></li>
                                     </ul>
@@ -220,20 +226,29 @@
     <!-- SLICK -->
     <script type="text/javascript"
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-
-
     <script>
+        $(window).on("load", function (event) {
 
-        const user_info = document.querySelector(".user-info");
-        const user_dropdown = document.querySelector(".user_dropdown");
-        user_info.addEventListener("mouseenter", () => {
-            user_dropdown.classList.add("active");
-        });
-        user_info.addEventListener("mouseleave", () => {
-            user_dropdown.classList.remove("active");
+            $("#loader").fadeOut(400);
+
         });
     </script>
+
+    @if (user != null)
+    {
+        <script>
+
+            const user_info = document.querySelector(".user-info");
+            const user_dropdown = document.querySelector(".user_dropdown");
+            user_info.addEventListener("mouseenter", () => {
+                user_dropdown.classList.add("active");
+            });
+            user_info.addEventListener("mouseleave", () => {
+                user_dropdown.classList.remove("active");
+            });
+        </script>
+    }
+
 
 
     @RenderSection("scripts", required: false)

@@ -1,10 +1,10 @@
 ﻿using Model.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using PagedList;
 
 namespace PetStore.Controllers
 {
@@ -29,6 +29,7 @@ namespace PetStore.Controllers
             var brand = db.Brands.Where(x => x.Id == BrandId).FirstOrDefault();
             ViewBag.brand = brand.Name;
             return View(listProduct.OrderBy(x => x.ViewCount).ToPagedList(page, pageSize));
+         
         }
 
     }

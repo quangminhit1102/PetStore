@@ -18,7 +18,7 @@ namespace PetStore.Controllers
         {
             var dao = new UserDao();
             db = new PetStoreDbContext();
-            var listProduct = db.Products.OrderByDescending(x=> x.ViewCount).Take(32).ToList();
+            var listProduct = db.Products.OrderByDescending(x=> x.ViewCount).Take(20).ToList();
             HomeModel homemodel = new HomeModel();
             homemodel.listProduct = listProduct;
             return View(homemodel);
