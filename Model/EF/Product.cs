@@ -15,11 +15,11 @@
             ProductAttributes = new HashSet<ProductAttribute>();
             ProductImages = new HashSet<ProductImage>();
         }
-
+        
         public int Id { get; set; }
 
         [Required]
-        [StringLength(50,ErrorMessage = "Tên sản phẩm không quá 50 kí tự!")]
+        [StringLength(100,ErrorMessage = "Tên sản phẩm không quá 100 kí tự!")]
         public string Name { get; set; }
 
         public int CateId { get; set; }

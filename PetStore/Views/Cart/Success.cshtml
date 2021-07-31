@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Success";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="header-position"></div>
+<section id="payment">
+    <div class="container">
+        <div class="progress-steps">
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+                <div class="circle active">
+                    1
+                    <p class="circle__Content">Đăng nhập</p>
+                </div>
+                <div class="circle active">
+                    2
+                    <p class="circle__Content">Giỏ hàng</p>
+                </div>
+                <div class="circle active">
+                    3
+                    <p class="circle__Content">Thanh Toán</p>
+                </div>
+                <div class="circle active">
+                    4
+                    <p class="circle__Content">Thanh Toán Hoàn Tất</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+           <div class="box">
+               <h2>Đặt Hàng Thành Công</h2>
+               <p class="text-center">Cảm ơn bạn đã đặt hàng. </p>
+               <p class="text-center">Đơn hàng sẽ được giao đến địa chỉ: @ViewBag.address</p>
+               <p class="text-center">Thời gian giao hàng dự kiến từ 3 đến 7 ngày </p>
+           </div>
+   
+    </div>
+</section>
+
+<script>
+    const progress = document.getElementById("progress");
+    const circles = document.querySelectorAll(".circle");
+    update();
+    function update() {
+        const actives = document.querySelectorAll(".circle.active");
+        console.log(((actives.length - 1) / (circles.length - 1)) * 100);
+        progress.style.width =
+            ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
+    }
+
+</script>
+

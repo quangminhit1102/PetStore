@@ -50,9 +50,6 @@ namespace Model.EF
                 .HasForeignKey(e => e.CateId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Order>()
-                .Property(e => e.OrderDate)
-                .IsFixedLength();
 
             modelBuilder.Entity<Post>()
                 .Property(e => e.SiteTitle)

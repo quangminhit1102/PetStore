@@ -1,4 +1,5 @@
 ﻿using Model.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,14 @@ namespace PetStore.Controllers
             return View(listBrand);
         }
 
-        public ActionResult ListProductByBrand(int BrandId)
+        public ActionResult ListProductByBrand(int BrandId, int page = 1, int pageSize = 10)
         {
             db = new PetStoreDbContext();
             var listProduct = db.Products.Where(x => x.BrandId == BrandId).ToList();
             var brand = db.Brands.Where(x => x.Id == BrandId).FirstOrDefault();
             ViewBag.brand = brand.Name;
-            return View(listProduct);
+            return View(listProduct.OrderBy(x => x.ViewCount).ToPagedList(page, pageSize));
+         
         }
 
     }

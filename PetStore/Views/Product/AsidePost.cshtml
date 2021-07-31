@@ -1,0 +1,26 @@
+﻿@model List<Model.EF.Post>
+<aside class="widget widget-categories">
+    <div class="widget-title">
+        <h4>Bài viết nổi bật</h4>
+    </div>
+    <div class="row justify-content-center m-0">
+        @foreach (var item in Model)
+        {
+   
+        
+                <div class="post__item p-2 mb-2 rounded border border-dark col-12">
+                    <a href="/bai-viet/@item.SiteTitle.Replace(" ", "")-@item.Id" class="w-100">
+                        <img class="img-fluid"
+                             src="@item.Image"
+                             alt="" />
+                        <h4>@item.Title</h4>
+                    </a>
+                    <div class="post_content">
+                        @Html.Raw(@item.Content)
+                    </div>
+                </div>
+         
+        }
+
+    </div>
+</aside>

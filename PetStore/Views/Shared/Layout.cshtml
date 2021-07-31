@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trang Chủ</title>
     <!-- BOOTSTRAP  -->
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="icon" href="~/Content/Client/img/logo-mb.png" />
     <!--FONT GOOGLE-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,8 +22,17 @@
 
     <link rel="stylesheet" href="~/Content/Client/css/index.css" />
     <!-- Start Header -->
+    <!-- info css -->
+    <link href="~/Content/Client/css/info.css" rel="stylesheet" />
+    <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
+    <div id="loader">
+        <!-- <span class="fas fa-spider xoay icon"></span> -->
+        <div class="loader-content">
+            <img class="img-fluid" src="~/Content/Client/img/ezgif.com-gif-maker_2.gif" alt="" />
+        </div>
+    </div>
     <header class="container-fluid header desktop">
         <div class="container h-100">
             <div class="header-bar mr-3">
@@ -41,36 +47,27 @@
                 @* End Menu*@
                 @* Search Bar *@
                 <div class="header-search-bar ml-3">
-                    <input placeholder="Tìm kiếm trên Chợ Pet"
-                           maxlength="50"
-                           class="input"
-                           type="search"
-                           value="" />
+                    @using (Html.BeginForm("Index", "Search", FormMethod.Post, new { @class = "input" }))
+                    {
+                        <input placeholder="Tìm kiếm trên Chợ Pet" maxlength="50" class="w-100 height-100 text-center" type="search" name="Keyword" value="" />
+                    }
                     <div class="search-option">
                         <div class="wrap">
                             <span class="value-selected">
-                                <span><i class="fa fa-search"></i></span>
+                                <i class='bx bx-search-alt'></i>
                             </span>
                         </div>
                     </div>
+
                 </div>
                 <div class="nav ml-3 h-100">
-                    <a href="/tin-tuc">
-                        <div class="link">
-                            <div class="icon-wrap">
-                                <i class="bx bx-cart-alt"></i>
-                            </div>
-                            <div class="total-cart">
-                                <span>0</span>
-                            </div>
-                        </div>
-                    </a>
+                    @Html.Action("ViewCart", "Cart")
                     @{ var user = (PetStore.Models.Common.UserLogin)Session["USER"];}
                     @if (user == null)
                     {
 
 
-                        <a class="link" href="/login">
+                        <a class="link" href="/dang-nhap">
                             <div class="link">
                                 <div class="icon-wrap">
                                     <i class="bx bx-user"></i>
@@ -81,15 +78,16 @@
                     else
                     {
                         <div class="user-info pl-3">
+
                             <div class="img-user">
-                                <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt="" />
+                                <img class="img-fluid" src="~/Content/Client/img/user-image.jpg" alt=""
                             </div>
                             <div class="user_dropdown">
                                 <div class="my-2 p-0">
                                     <ul>
-                                        <li><a href="/Account/@user.UserID">Thông tin tài khoản</a></li>
+                                        <li><a href="/thong-tin-tai-khoan">Thông tin tài khoản</a></li>
                                         <li>
-                                            <a href="/Account/Donhang/@user.UserID">Đơn hàng</a>
+                                            <a href="/quan-ly-don-hang">Đơn hàng</a>
                                         </li>
                                         <li><a href="/Login/Logout">Đăng xuất</a></li>
                                     </ul>
@@ -100,21 +98,21 @@
 
                     @*Trường hợp đăng nhập xuất thông tin div phía dưới*@
                     @*<div class="user-info pl-3">
-            <div class="img-user">
-                <img class="img-fluid" src="img/user-image.jpg" alt="" />
-            </div>
-            <div class="user_dropdown">
-                <div class="my-2 p-0">
-                    <ul>
-                        <li><a href="">Thông tin tài khoản</a></li>
-                        <li>
-                            <a href="">Đơn hàng</a>
-                        </li>
-                        <li><a href="">Đăng xuất</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
+                            <div class="img-user">
+                                <img class="img-fluid" src="img/user-image.jpg" alt="" />
+                            </div>
+                            <div class="user_dropdown">
+                                <div class="my-2 p-0">
+                                    <ul>
+                                        <li><a href="">Thông tin tài khoản</a></li>
+                                        <li>
+                                            <a href="">Đơn hàng</a>
+                                        </li>
+                                        <li><a href="">Đăng xuất</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>*@
                 </div>
             </div>
         </div>
@@ -188,9 +186,36 @@
             </p>
         </div>
     </footer>
+    <!-- Messenger Plugin chat Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Plugin chat code -->
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "110928377946240");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     <!-- BOOTSTRAP 4 -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -202,97 +227,31 @@
     <script type="text/javascript"
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-        $(".bestSeller-nav").slick({
-            rows: 4,
-            slidesToShow: 5,
-            slidesToScroll: 2,
-            prevArrow: false,
-            nextArrow: false,
-        });
-        $(".brand-nav").slick({
-            rows: 4,
-            slidesToShow: 5,
-            slidesToScroll: 2,
-            prevArrow: false,
-            nextArrow: false,
-        });
-        // $(".newArrivals-nav").slick({
-        //   rows: 1,
-        //   slidesToShow: 4,
-        //   slidesToScroll: 2,
-        //   prevArrow: '<i class="bx bx-left-arrow arrowPrev" ></i>',
-        //   nextArrow: '<i class="bx bx-right-arrow arrowNext" ></i>',
-        // });
-        $(".featuredPost-nav").slick({
-            rows: 1,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            prevArrow: false,
-            nextArrow: false,
-        });
-    </script>
-    <script>
-        $(".slide-for").slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            centerMode: true,
-            centerPadding: "60px",
-            arrows: false,
-            fade: true,
-            asNavFor: ".slide-nav",
-        });
-        $(".slide-nav").slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
+        $(window).on("load", function (event) {
 
-            prevArrow: false,
-            nextArrow: false,
-            asNavFor: ".slide-for",
-            dots: false,
-            centerMode: false,
-            focusOnSelect: true,
-            centerPadding: "0px",
+            $("#loader").fadeOut(400);
+
         });
     </script>
 
-    <script>
-        const nav_categories = document.querySelectorAll(".nav-categories");
-        const header_category = document.querySelector(".header-category");
-        const header_category_content = document.querySelector(
-            ".header-category-content"
-        );
-        header_category.addEventListener("mouseenter", () => {
-            header_category_content.classList.add("active");
-        });
-        header_category.addEventListener("mouseleave", () => {
-            header_category_content.classList.remove("active");
-        });
+    @if (user != null)
+    {
+        <script>
 
-        nav_categories.forEach((e) => {
-            e.addEventListener("mouseenter", (event) => {
-                event.preventDefault();
-                console.log("nav-categories");
-                e.querySelector(".category-name").classList.add("active");
-                e.querySelector(".category-name").classList.contains("active") ? e.querySelector(".sub-navbar").classList.add('active') : e.querySelector(".sub-navbar").classList.remove("active");
-            })
-            e.addEventListener("mouseleave", (event) => {
-                event.preventDefault();
-                console.log("leave nav-categories");
-                e.querySelector(".category-name").classList.remove("active");
-                e.querySelector(".category-name").classList.contains("active") ? e.querySelector(".sub-navbar").classList.add('active') : e.querySelector(".sub-navbar").classList.remove("active");
-            })
+            const user_info = document.querySelector(".user-info");
+            const user_dropdown = document.querySelector(".user_dropdown");
+            user_info.addEventListener("mouseenter", () => {
+                user_dropdown.classList.add("active");
+            });
+            user_info.addEventListener("mouseleave", () => {
+                user_dropdown.classList.remove("active");
+            });
+        </script>
+    }
 
 
-        });
-        const user_info = document.querySelector(".user-info");
-        const user_dropdown = document.querySelector(".user_dropdown");
-        user_info.addEventListener("mouseenter", () => {
-            user_dropdown.classList.add("active");
-        });
-        user_info.addEventListener("mouseleave", () => {
-            user_dropdown.classList.remove("active");
-        });
-    </script>
 
+    @RenderSection("scripts", required: false)
+    @RenderSection("ProductDetail", required: false)
 </body>
 </html>

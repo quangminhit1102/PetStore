@@ -11,6 +11,17 @@ namespace Model.DAO
     public class ProductDao
     {
         PetStoreDbContext db = new PetStoreDbContext();
+        public ProductDao()
+        {
+            db = new PetStoreDbContext();
+        }
+
+
+        public Product ViewDetail(int id)
+        {
+            return db.Products.Find(id);
+        }
+    
         public IEnumerable<Product> ListAllPaging(string searchString, int page, int pageSize)
         {
             IQueryable<Product> model = db.Products;

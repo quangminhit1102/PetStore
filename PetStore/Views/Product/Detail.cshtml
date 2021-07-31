@@ -3,6 +3,10 @@
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/Layout.cshtml";
     var listProduct = (List<Model.EF.Product>)ViewBag.listRelatedProduct;
+    var listAttributes = (List<Model.EF.ProductAttribute>)ViewBag.listAttributes;
+}
+@{
+    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 }
 
 <div class="header-position"></div>
@@ -10,21 +14,19 @@
     <div class="detail-info">
         <div class="container">
             <div class="row">
-                @{
-                    var info = System.Globalization.CultureInfo.GetCultureInfo("vi-VN");
 
-
-                }
                 <div class="col-12 col-sm-6">
                     <div class="slide-for">
                         @foreach (var item in Model.ProductImages)
                         {
-                            <div class="slide-for-item">
+                            <div class="slide-for-item" style="overflow:hidden">
                                 <img class="img-fluid"
                                      src="@item.Image"
                                      alt="" />
                             </div>
                         }
+
+
                     </div>
                     <div class="bg_slide-nav">
                         <div class="slide-nav">
@@ -38,6 +40,8 @@
                                     </div>
                                 </div>
                             }
+
+
                         </div>
                     </div>
                 </div>
@@ -81,11 +85,18 @@
 
                         <div class="price-single">
                             <ul>
-                                <li class="btn btn-outline-secondary">6 gói - 2000000</li>
-                                <li class="btn btn-outline-secondary">12 gói - 20000</li>
+                                @if (Model.Price == null)
+                                {
+                                    foreach (var item in listAttributes)
+                                    {
+                                        <li class="btn btn-outline-secondary" data-attribute-id="@item.Id"> @item.AttributeValue.Name - @item.Price</li>
+                                    }
+
+                                }
+
 
                             </ul>
-                            <div class="price">
+                            <div>
                                 <span>
                                     @if (@Model.Price == null)
                                     {
@@ -101,7 +112,7 @@
                         </div>
                         <div class="description">
                             <p>
-                                @Html.Raw(@Model.Description)
+                                @Model.Description
                             </p>
                         </div>
                         <form>
@@ -112,18 +123,26 @@
                                             class="plus">
                                         +
                                     </button>
-                                    <input type="number" value="1" min="1" max="" />
+                                    <input id="qty" type="number" value="1" min="1" max="" />
                                     <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
                                             type="button"
                                             class="minus">
                                         -
                                     </button>
                                 </div>
-                                <button class="btn add-cart" type="submit">
-                                    Thêm Vào Giỏ Hàng
-                                </button>
 
-                                <button class="btn buy-cart">Mua Ngay</button>
+                                @if (Model.Price != null)
+                                {
+                                    <a class=" btn add-cart add-cart-item" href="/Cart/AddItem?productId=@Model.Id&quantity=1&url=@Request.Url.ToString()" onclick="add()"> Thêm Vào Giỏ Hàng </a>
+                                    <a class="btn buy-cart buy-cart-item" href="/Cart/AddItemNow?productId=@Model.Id&quantity=1" onclick="add()"> Mua Ngay </a>
+                                }
+                                else
+                                {
+                                    <a class=" btn add-cart add-cart-item" href="/Cart/AddItemAttribute?productId=@Model.Id&quantity=1&url=@Request.Url.ToString()" onclick="addAttribute()"> Thêm Vào Giỏ Hàng </a>
+                                    <a class="btn buy-cart buy-cart-item" href="/Cart/AddItemAttributeNow?productId=@Model.Id&quantity=1" onclick="addAttribute()"> Mua Ngay </a>
+                                }
+
+
                             </div>
                         </form>
                     </div>
@@ -163,7 +182,7 @@
                      id="nav-home"
                      role="tabpanel"
                      aria-labelledby="nav-home-tab">
-                    @Html.Raw(@Model.Description)
+                    @Model.Description
                 </div>
                 <div class="tab-pane fade"
                      id="nav-profile"
@@ -182,55 +201,119 @@
         </div>
     </div>
 </section>
-@if (listProduct.Count != 0 ) { 
-<section id="relatedProducts">
-    <div class="container">
-        <div class="relatedProducts-title w-100">
-            <h2>Sản phẩm liên quan</h2>
-        </div>
-        <div>
-            <div class="row justify-content-center">
-                @foreach (var item in listProduct)
-                {
-                    <a href="#" class="col-3 relatedProducts-product">
-                        <img class="img-fluid"
-                             src="@item.ProductImages.FirstOrDefault().Image"
-                             alt=""
-                             srcset="" />
-                        <div class="products__rating">
-                            @{var soSao = item.Evaluate;}
-                            @for (var i = 0; i < 5; i++)
+@if (listProduct.Count != 0)
+{
+    <section id="relatedProducts">
+        <div class="container">
+            <div class="relatedProducts-title w-100">
+                <h2>Sản phẩm liên quan</h2>
+            </div>
+            <div>
+                <div class="row justify-content-center">
+                    @foreach (var item in listProduct)
+                    {
+                        <a href="#" class="col-3 relatedProducts-product">
+                            <img class="img-fluid"
+                                 src="@item.ProductImages.FirstOrDefault().Image"
+                                 alt=""
+                                 srcset="" />
+                            <div class="products__rating">
+                                @{var soSao = item.Evaluate;}
+                                @for (var i = 0; i < 5; i++)
+                                {
+                                    if ((int)soSao / 1 == 5 || (int)soSao / 1 == 4 || (int)soSao / 1 == 3 || (int)soSao / 1 == 2 || (int)soSao / 1 == 1)
+                                    {
+                                        <i class="bx bxs-star"></i>
+                                        soSao--;
+                                    }
+                                    else if (soSao % 1.0 == 0.5 && soSao < 1)
+                                    {
+                                        <i class="bx bxs-star-half"></i>
+                                        soSao -= 0.5;
+                                    }
+                                    else
+                                    {
+                                        <i class="bx bx-star"></i>
+                                    }
+                                }
+                                <span>(@item.TotalEvaluate)</span>
+                            </div>
+                            <h5>@item.Name</h5>
+                            @if (@item.Price == null)
                             {
-                                if ((int)soSao / 1 == 5 || (int)soSao / 1 == 4 || (int)soSao / 1 == 3 || (int)soSao / 1 == 2 || (int)soSao / 1 == 1)
-                                {
-                                    <i class="bx bxs-star"></i>
-                                    soSao--;
-                                }
-                                else if (soSao % 1.0 == 0.5 && soSao < 1)
-                                {
-                                    <i class="bx bxs-star-half"></i>
-                                    soSao -= 0.5;
-                                }
-                                else
-                                {
-                                    <i class="bx bx-star"></i>
-                                }
+                                <span class="price">@string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price) đ</span>
                             }
-                            <span>(@item.TotalEvaluate)</span>
-                        </div>
-                        <h5>@item.Name</h5>
-                        @if (@item.Price == null)
-                        {
-                            <span class="price">@string.Format(info, "{0:0,0}", @item.ProductAttributes.FirstOrDefault().Price) đ</span>
-                        }
-                        else
-                        {
-                            <span class="price">@string.Format(info, "{0:0,0}", @item.Price) đ</span>
-                        }
-                    </a>
-                }
+                            else
+                            {
+                                <span class="price">@string.Format(info, "{0:0,0}", @item.Price) đ</span>
+                            }
+                        </a>
+                    }
+                </div>
             </div>
         </div>
-    </div>
-</section>}
+    </section>}
 
+@if (Model.Price == null)
+{
+    <script>
+        document.querySelector(".btn.btn-outline-secondary:first-child").classList.add("active");
+
+    </script>
+}
+<script>
+
+    function add() {
+
+        var qty = document.getElementById("qty").value;
+        document.querySelector(".add-cart-item").href = "/Cart/AddItem?productId=" + @Model.Id + "&quantity=" + qty + "&url=" + "@Request.Url.ToString()";
+        document.querySelector(".buy-cart-item").href = "/Cart/AddItemNow?productId=" + @Model.Id + "&quantity=" + qty;
+
+    }
+    function addAttribute() {
+        var attribute = document.querySelector(".btn.btn-outline-secondary.active").dataset.attributeId;
+        var qty = document.getElementById("qty").value;
+        document.querySelector(".add-cart-item").href = "/Cart/AddItemAttribute?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute + "&url=" + "@Request.Url.ToString()";
+        document.querySelector(".buy-cart-item").href = "/Cart/AddItemAttributeNow?productId=" + @Model.Id + "&quantity=" + qty + "&attribute=" + attribute;
+
+    }
+
+        var chooseS = document.querySelectorAll(".btn.btn-outline-secondary");
+        chooseS.forEach((e) => {
+            e.addEventListener('click', (event) => {
+                event.preventDefault();
+                chooseS.forEach((ex) => {
+                    ex.classList.remove("active")
+                })
+                e.classList.add("active")
+
+            })
+        })
+
+
+
+</script>
+@section ProductDetail{
+    <script>
+        $(".slide-for").slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            centerMode: true,
+            centerPadding: "60px",
+            arrows: false,
+            fade: true,
+            asNavFor: ".slide-nav",
+        });
+        $(".slide-nav").slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            prevArrow: false,
+            nextArrow: false,
+            asNavFor: ".slide-for",
+            dots: false,
+            centerMode: false,
+            focusOnSelect: true,
+            centerPadding: "0px",
+        });
+    </script>
+}

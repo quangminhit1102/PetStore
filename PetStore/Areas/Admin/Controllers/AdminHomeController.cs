@@ -16,8 +16,11 @@ namespace PetStore.Areas.Admin.Controllers
             db = new PetStoreDbContext();
             int countOrder = 0;
             int? Profit = 0;
-            List<OrderDetail> listOD = db.OrderDetails.ToList();
-            var listOrder = db.Orders.OrderByDescending(x=>x.OrderDate).Take(5).ToList();
+
+       
+           List <OrderDetail> listOD = db.OrderDetails.ToList();
+            var listOrder = db.Orders.OrderByDescending(x=>x.OrderDate).ToList();
+            
             countOrder = listOrder.Count();
             foreach (OrderDetail item in listOD)
             {
