@@ -11,7 +11,7 @@
                 <div class="userInfo_cata">
                     <ul class="m-0">
                         <li  ><a href="/thong-tin-tai-khoan">Thông tin tài khoản</a></li>
-                        <li  class="/thay-doi-mat-khau"><a href="ChangePassCustomer">Đổi mật khẩu</a></li>
+                        <li  ><a href="/thay-doi-mat-khau">Đổi mật khẩu</a></li>
                         <li><a href="/quan-ly-don-hang">Quản lý đơn hàng</a></li>
                     </ul>
                 </div>
@@ -25,20 +25,26 @@
                             @using (Html.BeginForm("ChangePassCustomer", "Login", FormMethod.Post, new { are = "" }))
                             {
                                 @Html.AntiForgeryToken()
-                                <div class="row">
-                                    @if (ViewBag.WrongPass != null)
-                                    {
-                                        <div class="col-12 mb-2">
-                                            <div class="text-danger">@ViewBag.WrongPass</div>
-                                        </div>
-                                    }
-                                    @if (ViewBag.Success != null)
-                                    {
-                                        <div class="col-12 mb-2">
-                                            <div class="text-success">@ViewBag.success</div>
-                                        </div>
-                                    }
-                                </div>
+                            <div class="row">
+                                @if (ViewBag.WrongPass != null)
+                                {
+                                    <div class="col-12 mb-2">
+                                        <div class="text-danger">@ViewBag.WrongPass</div>
+                                    </div>
+                                }
+                                @if (ViewBag.Success != null)
+                                {
+                                    <div class="col-12 mb-2">
+                                        <div class="text-success">@ViewBag.success</div>
+                                    </div>
+                                }
+                                @if (ViewBag.Same != null)
+                                {
+                                    <div class="col-12">
+                                        <div class="text-danger">@ViewBag.Same</div>
+                                    </div>
+                                }
+                            </div>
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form_control">

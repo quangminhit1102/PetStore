@@ -7,7 +7,6 @@
     <div class="row" id="user-profile">
         <div class="col-3 col-sm-12 user-avatar">
             <!--left col-->
-
             <img src="~/Content/Admin/img/user-image-2.png"
                  class="avatar"
                  alt="avatar" width="200px" />
@@ -54,6 +53,12 @@
                         {
                             <div class="col-12">
                                 <div class="text-success">@ViewBag.success</div>
+                            </div>
+                        }
+                        @if (ViewBag.Same != null)
+                        {
+                            <div class="col-12">
+                                <div class="text-danger">@ViewBag.Same</div>
                             </div>
                         }
                         <div class="col-6 col-sm-12">

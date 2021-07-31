@@ -90,6 +90,12 @@ namespace PetStore.Areas.Admin.Controllers
                 {
                     if (user.Password == MD5Encryptor.MD5Hash(model.password))
                     {
+                        //Same as old password
+                        if(user.Password == MD5Encryptor.MD5Hash(model.newpassword))
+                        {
+                            ViewBag.Same = "Mật khẩu thay đổi trùng với mật khẩu cũ";
+                            return View(model);
+                        }
                         //Update Password
                         user.Password = MD5Encryptor.MD5Hash(model.newpassword);
                         db.Users.AddOrUpdate(user);

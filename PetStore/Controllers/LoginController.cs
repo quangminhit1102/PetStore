@@ -112,6 +112,7 @@ namespace PetStore.Controllers
 
             return View(model);
         }
+        //ProFile View
         PetStoreDbContext db = null;
         [HttpGet]
         public ActionResult ProfileCustomer()
@@ -136,7 +137,6 @@ namespace PetStore.Controllers
             var user = dao.getUserById(userid);
             try
             {
-                var errors = ModelState.Values.SelectMany(b => b.Errors);
                 if (ModelState.IsValid)
                 {
                     //Update Profile
@@ -185,11 +185,16 @@ namespace PetStore.Controllers
             var user = dao.getUserById(userid);
             try
             {
-                var errors = ModelState.Values.SelectMany(b => b.Errors);
                 if (ModelState.IsValid)
                 {
                     if (user.Password == MD5Encryptor.MD5Hash(model.password))
                     {
+                        //Same as old password
+                        if (user.Password == MD5Encryptor.MD5Hash(model.newpassword))
+                        {
+                            ViewBag.Same = "Mật khẩu thay đổi trùng với mật khẩu cũ";
+                            return View(model);
+                        }
                         //Update Password
                         user.Password = MD5Encryptor.MD5Hash(model.newpassword);
                         db.Users.AddOrUpdate(user);
